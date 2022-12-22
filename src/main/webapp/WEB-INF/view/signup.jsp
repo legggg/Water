@@ -9,6 +9,12 @@
 
     <body>
         <form action="/signup" method="post">
+            <div class="mb-3">
+                <label>회원구분</label>
+                기부자<input type="radio" name="mbr_se" value="0" />
+                개인 수혜자<input type="radio" name="mbr_se" value="1" />
+                기관 수혜자<input type="radio" name="mbr_se" value="2" />
+            </div>
             <div>
                 <label>이름</label>
                 <input type="text" id="mbr_nm" name="mbr_nm" required>

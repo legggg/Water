@@ -32,13 +32,11 @@
         FROM tb_mbr
         WHERE mbr_id = #{mbr_id} and use_yn = 'Y'
     </select>
-
     <select id="getUserBySn" resultType="com.example.water_web.Vo.UserVo">
         SELECT *
         FROM tb_mbr
         WHERE mbr_sn = #{mbr_sn} and use_yn = 'Y'
     </select>
-
     <select id="getUserById" resultType="com.example.water_web.Vo.UserVo">
         SELECT *
         FROM tb_mbr
@@ -69,6 +67,7 @@
         WHERE mbr_id= #{mbr_id}
     </select>
 
+    <!-- 아이디 잠금 -->
     <update id="lockMemberLogin">
         UPDATE tb_mbr
         SET FAIL_CNT = #{fail_cnt},

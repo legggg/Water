@@ -116,6 +116,8 @@ public class UserController {
         session.invalidate();
         return "redirect:/main";
     }
+
+    //마이페이지
     @GetMapping("/mypage")
     public String myPage(HttpSession session, Model model) {
         Integer sn = (Integer) session.getAttribute("userSn");
@@ -124,9 +126,10 @@ public class UserController {
         return "userList";
     }
 
+    //아이디 중복체크
     @Autowired
     private UserService userService;
-    //아이디 중복체크
+
     @PostMapping("/idCheck")
     @ResponseBody
     public int idCheck(@RequestParam(value = "mbr_id") String mbr_id) {
