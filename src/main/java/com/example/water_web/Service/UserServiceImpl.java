@@ -15,34 +15,33 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class UserServiceImpl implements UserService{
-    private final UserMapper userMapper;
+public class UserServiceImpl implements UserService {
 
+    private final UserMapper userMapper;
     public List<UserVo> getUserList(Integer sn) {
         return userMapper.getUserList(sn);
     }
-
     public UserVo getUserBySn(Integer mbr_sn) {
         return userMapper.getUserBySn(mbr_sn);
     }
 
+    //암호화 적용
     public void signUp(UserVo userVo) {
         String mbr_id = userVo.getMbr_id();
-        int mbr_sn = userVo.getMbr_sn();
-        String Mbr_password = userVo.getMbr_password();
-        String enc = encryptPassword(Mbr_password, mbr_id);     //암호화 적용
+        String mbr_password = userVo.getMbr_password();
+        String enc = encryptPassword(mbr_password, mbr_id);
 
         userVo.setMbr_password(enc);
         userVo.setMbr_id(mbr_id);
-        userVo.setRgtr_id(mbr_sn);
+        userVo.setRgtr_id(mbr_id);
         userVo.setRgtr_dt(LocalDateTime.now());
 
         userMapper.insertUser(userVo);
     }
-
     public LoginResponse login(UserVo userVo) {
         UserVo loginMember = userMapper.getUserByEmail(userVo);
         LoginResponse loginResponse = new LoginResponse();
+
         try {
             // 회원정보 없는 경우
             if (loginMember == null) {
@@ -64,7 +63,9 @@ public class UserServiceImpl implements UserService{
                 if(loginMember.getFail_cnt() >= 5) {
                     loginMember.setLock_yn("Y");
                 }
+
                 userMapper.lockMemberLogin(loginMember);
+
                 loginResponse.setSuccess(false);
                 loginResponse.setMessage("비밀번호가 틀렸습니다.");
                 return loginResponse;
@@ -82,9 +83,8 @@ public class UserServiceImpl implements UserService{
         }
         return loginResponse;
     }
-
     @Override
-    public Integer getMbrSn(String mbr_id, String mbr_password) {
+    public Integer getMbrSn(String mbr_id, String password) {
         UserVo userVo = userMapper.getUserById(mbr_id);
         UserVo loginMember = userMapper.getUserByEmail(userVo);
         LoginResponse loginResponse = new LoginResponse();
@@ -98,7 +98,6 @@ public class UserServiceImpl implements UserService{
         }
         return userVo.getMbr_sn();
     }
-
     public void modifyInfo(UserVo userVo) {
         String mbr_id = userVo.getMbr_id();
         String mbr_password = userVo.getMbr_password();
@@ -107,7 +106,6 @@ public class UserServiceImpl implements UserService{
         userVo.setMbr_id(mbr_id);
         userMapper.updateUser(userVo);
     }
-
     public void withdraw(int mbr_sn) {
         userMapper.deleteUser(mbr_sn);
     }
@@ -141,6 +139,7 @@ public class UserServiceImpl implements UserService{
 
     @Autowired
     private UserMapper mapper;
+
     //아이디 중복체크 mapper 접근
     @Override
     public int idCheck(String mbr_id) {

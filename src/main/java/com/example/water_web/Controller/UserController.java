@@ -58,11 +58,11 @@ public class UserController {
     // 로그인
     @PostMapping("/login")
     public String login(UserVo userVo, ModelMap model, HttpSession session) {
-        String mbrId = userVo.getMbr_id();
-        String mbrPswd = userVo.getMbr_password();
+        String mbr_id = userVo.getMbr_id();
+        String mbr_password = userVo.getMbr_password();
 
         // 유효성 검사
-        if (StringUtils.isEmpty(mbrId) || StringUtils.isEmpty(mbrPswd)) {
+        if (StringUtils.isEmpty(mbr_id) || StringUtils.isEmpty(mbr_password)) {
             model.addAttribute("message", "모든 정보를 입력해주세요");
             return "login";
         }
@@ -74,7 +74,7 @@ public class UserController {
             model.addAttribute("message", loginResponse.getMessage());
             return "login";
         } else {
-            Integer mbrSn = userServiceImpl.getMbrSn(mbrId, mbrPswd);
+            Integer mbrSn = userServiceImpl.getMbrSn(mbr_id, mbr_password);
             session.setAttribute("userSn", mbrSn);
         }
         session.setAttribute("userId", loginResponse);

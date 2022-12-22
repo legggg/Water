@@ -11,15 +11,15 @@
         <form action="/signup" method="post">
             <div>
                 <label>이름</label>
-                <input type="text" id="mbr_nm" name="mbr_nm">
+                <input type="text" id="mbr_nm" name="mbr_nm" required>
             </div>
             <div>
                 <label>아이디</label>
-                <input type="text" id="mbr_id" name="mbr_id">
+                <input type="text" id="mbr_id" name="mbr_id" required>
             </div>
             <div>
                 <label>비밀번호</label>
-                <input type="password" id="mbr_password" name="mbr_password">
+                <input type="password" id="mbr_password" name="mbr_password" required>
             </div>
 
             <div>

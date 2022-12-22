@@ -25,8 +25,8 @@ public class UserVo {
 
     private String use_yn;
 
-    private int rgtr_id;
+    private String rgtr_id;
     private LocalDateTime rgtr_dt;
-    private int mbfr_id;
+    private String mbfr_id;
     private LocalDateTime mbfr_dt;
 }

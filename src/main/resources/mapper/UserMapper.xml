@@ -48,7 +48,7 @@
     <!-- 회원정보 수정 -->
     <update id="updateUser" parameterType="com.example.water_web.Vo.UserVo">
         UPDATE tb_mbr
-        SET mbr_nick = #{mbr_nick},
+        SET mbr_ncnm = #{mbr_ncnm},
             mbr_password = #{mbr_password},
             mbr_tel = #{mbr_tel},
             mbr_email = #{mbr_email}
