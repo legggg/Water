@@ -10,10 +10,10 @@ import java.time.LocalDateTime;
 @Setter
 public class UserVo {
     private int mbr_sn;
-    private int mbr_se;
-    private String mbr_nm;
     private String mbr_id;
     private String mbr_password;
+    private int mbr_se;
+    private String mbr_nm;
     private String mbr_ncnm;
     private String mbr_gen;
     private String mbr_tel;

@@ -22,6 +22,8 @@ import java.util.List;
 @Controller
 @RequiredArgsConstructor
 public class UserController {
+
+    @Autowired
     private final UserServiceImpl userServiceImpl;
 
     // 회원가입 페이지
