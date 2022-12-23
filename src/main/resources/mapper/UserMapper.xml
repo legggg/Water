@@ -62,7 +62,7 @@
 
     <!-- 아이디 중복 체크 -->
     <select id="idCheck" parameterType="String" resultType="int">
-        SELECT COUNT(mbr_id)
+        SELECT COUNT(*)
         FROM tb_mbr
         WHERE mbr_id= #{mbr_id}
     </select>
