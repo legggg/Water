@@ -2,6 +2,7 @@
 * {
     margin: 0;
     padding: 0;
+    list-style: none;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
@@ -9,6 +10,10 @@
 html,
 body {
     font-family: Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Helvetica Neue', 'Segoe UI', 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+}
+
+li{
+    list-style-type: none;
 }
 
 nav{
@@ -30,7 +35,6 @@ header .logo{
 .site_header {
     background-color: white;
     padding: 0 2rem;
-    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -57,7 +61,7 @@ header .logo{
 }
 
 .site_header.darkmode .menu li a:hover {
-    color: #3b82f6;
+    color: #439A97;
 }
 
 .site_header.darkmode .menu li a.active:hover {
@@ -71,7 +75,7 @@ header .logo{
 }
 
 .brand_point {
-    color: #3b82f6;
+    color: #439A97;
 }
 
 .menu {
@@ -129,7 +133,7 @@ header .logo{
 }
 
 .menu li a.active:before {
-    background-color: #3b82f6;
+    background-color: #439A97;
     z-index: -1;
     -webkit-transform: translateY(0%);
     transform: translateY(0%);
@@ -156,18 +160,20 @@ header .logo{
     content: '';
     width: 100%;
     height: 0px;
-    background-color: #3b82f6;
+    background-color: #439A97;
     -webkit-transition: all 0.1s ease-in-out;
     transition: all 0.1s ease-in-out;
 }
 
 .menu li a:hover {
-    color: #3b82f6;
+    color: #439A97;
 }
 
 .menu li a:hover:after {
     width: 100%;
     height: 4px;
 }
+
+
 
 /*# sourceMappingURL=style.css.map */
