@@ -24,7 +24,7 @@
                     logo
                 </a>
 <%--                <h1 class="brand">lo<span class="brand_point">go</span></h1>--%>
-                <nav  style="position: relative; top:10px; text-align: center">
+                <nav  style="position: relative; top:10px; left: -25px; text-align: center">
                     <ul class="menu">
                         <li><a href="#">소개</a></li>
                         <li><a href="#">기부 카테고리</a></li>
@@ -37,7 +37,7 @@
             </header>
         <script defer src="./scripts.js"></script>
 
-            <div class="container mt-3" style="padding-top: 150px">
+            <div class="container mt-3" style="padding-top: 150px; margin: 0 auto;">
                 <h2></h2>
                 <div id="myCarousel" class="carousel slide" data-ride="carousel">
                     <!-- Indicators -->
@@ -50,6 +50,18 @@
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="images/fox.jpg" width="1100" height="500">
+                            <div class="info">
+                                <p class="name"></p>
+                                <p class="group"></p>
+                                <p class="d-day"></p>
+                                <div class="progressBar">
+                                    <span class="bar chartAnimate active" style="width: 19%"></span>
+                                </div>
+                                <div class="progressInfo">
+                                    <p class="amount">..</p>
+                                    <p class="percent">..</p>
+                                </div>
+                            </div>
                         </div>
                         <div class="carousel-item">
                             <img src="images/fox2.jpg"  width="1100" height="500">
