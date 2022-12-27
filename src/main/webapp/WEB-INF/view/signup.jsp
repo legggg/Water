@@ -9,6 +9,7 @@
         <script type="text/javascript" src="/js/signup/id.js" defer></script>
         <script type="text/javascript" src="/js/signup/password.js" defer></script>
         <script type="text/javascript" src="/js/signup/brthdy.js" defer></script>
+        <script type="text/javascript" src="/js/signup/email.js" defer></script>
         <link rel="stylesheet" href="css/signup.css" />
     </head>
 
