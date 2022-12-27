@@ -20,9 +20,7 @@
     bottom: 23px;
     left: 0;
     top: 80px;
-
-
-
+    border-radius: 0 0 13px 13px;
 }
 
 .container .slide .active .info .name {
