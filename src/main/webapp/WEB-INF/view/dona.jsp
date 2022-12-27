@@ -5,25 +5,18 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>기부 카테고리</title>
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/dona.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
 <body>
     <%@ include file="header.jsp"%>
-
-    <div id="container">
-        <ul class="myMenu">
-            <li class="menu1"><a href="">진행중</a>
-                <ul class="menu1_s submenu">
-                    <li><a href="/list?c=0">아동,청소년</a></li>
-                    <li><a href="/list?c=1">어르신</a></li>
-                    <li><a href="/list?c=2">장애인</a></li>
-                    <li><a href="/list?c=3">동물</a></li>
-                    <li><a href="/list?c=4">기타</a></li>
-                </ul>
-            </li>
-            <li class="menu2"><a href="">소통</a></li>
-        </ul>
+    <div>
+        <nav class="myMenu1">
+            <ul class="menu">
+                <li class="link"><a href="/donaing">진행중</a></li>
+                <li class="link"><a href="">소통</a></li>
+            </ul>
+        </nav>
     </div>
 
 

@@ -129,7 +129,7 @@ public class UserController {
         Integer sn = (Integer) session.getAttribute("userSn");
         List<UserVo> userList = userServiceImpl.getUserList(sn);
         model.addAttribute("list", userList);
-        return "userList";
+        return "mypage";
     }
 
     //아이디 중복체크

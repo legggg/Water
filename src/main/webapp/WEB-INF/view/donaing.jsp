@@ -1,15 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="d" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>asdfasdfsafdsadf</title>
-    <link rel="stylesheet" href="css/style.css" />
+    <title>진행중인 기부</title>
     <link rel="stylesheet" href="css/dona.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
 <body>
     <%@ include file="header.jsp"%>
@@ -29,18 +26,6 @@
             <li><a href="/list?c=2">장애인</a></li>
             <li><a href="/list?c=3">동물</a></li>
             <li><a href="/list?c=4">기타</a></li>
-        </ul>
-    </div>
-
-    <div>
-        <ul class="myContent1">
-            <c:forEach items="${list}" var="list">
-                <li>
-                    <div class="cntr_ttl">
-                    <a>${list.cntr_ttl}</a>
-                    </div>
-                </li>
-            </c:forEach>
         </ul>
     </div>
 

@@ -20,4 +20,8 @@ public class MainController {
     public String toDona() {
         return "dona";
     }
+    @GetMapping("/donaing")
+    public String toDonaIng() {
+        return "donaing";
+    }
 }

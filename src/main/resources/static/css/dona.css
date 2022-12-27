@@ -1,6 +1,11 @@
 ul, ol, li { list-style:none; margin:0; padding:0; }
 
-ul.myMenu {}
+ul.myMenu {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
 ul.myMenu > li {
     display:inline-block;
     width:130px;
@@ -32,4 +37,21 @@ ul.myMenu > li ul.submenu > li {
 }
 ul.myMenu > li ul.submenu > li:hover {
     background:#fff;
+}
+
+.container1 {
+    height: 250px;
+}
+.myContent1 {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px;
+}
+
+.myMenu1 {
+    position: relative;
+    height: 64px;
+    margin: 0 auto;
+    left:1220px;
 }

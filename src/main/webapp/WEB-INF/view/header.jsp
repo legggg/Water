@@ -12,7 +12,8 @@
             background-color: white;
             font-family: 'Noto Sans KR', sans-serif;
             font-size: 17px;
-            cursor: pointer
+            cursor: pointer;
+            margin: 10px;
         }
     </style>
 </head>
@@ -23,7 +24,7 @@
         <a href="/main" class="logo">
             logo
         </a>
-        <nav  style="position: relative; height: 64px;  margin: 0 auto; right:35px ">
+        <nav style="position: relative; height: 64px;  margin: 0 auto; right:45px">
             <ul class="menu">
                 <li><a href="/intro" class="link">소개</a></li>
                 <li><a href="/dona" class="link">기부 카테고리</a></li>
@@ -38,6 +39,8 @@
             <form action="/logout" method="post">
                 <input type="submit" class="loginlogout" value="로그아웃">
             </form>
+
+            <input type="button" class="loginlogout" onclick="location.href='mypage'" value="마이페이지">
         </c:if>
     </header>
 </body>
