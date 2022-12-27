@@ -10,4 +10,14 @@ public class MainController {
     public String mainPage() {
         return "main";
     }
+
+    @GetMapping("/intro")
+    public String introPage() {
+        return "intro";
+    }
+
+    @GetMapping("/dona")
+    public String toDona() {
+        return "dona";
+    }
 }

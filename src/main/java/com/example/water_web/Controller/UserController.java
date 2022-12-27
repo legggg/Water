@@ -1,5 +1,6 @@
 package com.example.water_web.Controller;
 
+import com.example.water_web.Mapper.UserMapper;
 import com.example.water_web.Service.UserService;
 import com.example.water_web.Service.UserServiceImpl;
 import com.example.water_web.Vo.LoginResponse;
@@ -78,9 +79,12 @@ public class UserController {
         } else {
             Integer mbrSn = userServiceImpl.getMbrSn(mbr_id, mbr_password);
             session.setAttribute("userSn", mbrSn);
+            session.setAttribute("mbr_id", mbr_id);
         }
         session.setAttribute("userId", loginResponse);
         return "redirect:/main";
+
+
     }
 
     // 로그아웃
