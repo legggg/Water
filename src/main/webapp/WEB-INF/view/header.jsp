@@ -19,12 +19,11 @@
 
 <body>
 
-    <header class="site_header" style="    width: 100%;
-        height: 64px;">
+    <header class="site_header" style="width: 100%; height: 64px;">
         <a href="/main" class="logo">
             logo
         </a>
-        <nav  style="position: relative; top:10px; text-align: center; height: 80px">
+        <nav  style="position: relative; height: 64px;  margin: 0 auto; right:35px ">
             <ul class="menu">
                 <li><a href="/intro" class="link">소개</a></li>
                 <li><a href="/dona" class="link">기부 카테고리</a></li>
