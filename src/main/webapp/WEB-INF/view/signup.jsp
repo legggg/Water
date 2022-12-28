@@ -96,12 +96,39 @@
                 </datalist>
                 <input type="hidden" id="mbr_email" name="mbr_email" value="">
             </div>
-            <div>
-                <button type="submit">가입하기</button>
-                <button type="button">취소</button>
+            <div class="button_wrap">
+                <div class=login_button_wrap">
+                    <button class="login_button" type="submit" onclick="work()">가입하기</button>
+                </div>
+            </div>
+            <div class="button_wrap">
+                <div class="login_button_wrap">
+                    <button class="login_button" type="button" onclick="delOk()">취소</button>
+                </div>
             </div>
         </div>
     </form>
 </div>
 </body>
 </html>
+
+<script>
+    function delOk(){
+        var result = confirm("이전 페이지로 돌아가시겠습니까?");
+
+        if(result) {
+            return history.go(-1);
+        } else {
+            return false
+        }
+    }
+    function work() {
+        var result = confirm("회원가입을 진행하겠습니까?");
+
+        if (result) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+</script>

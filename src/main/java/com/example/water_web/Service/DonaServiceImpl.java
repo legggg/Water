@@ -17,8 +17,8 @@ public class DonaServiceImpl implements DonaService {
 
     // 카테고리별 상품 리스트
     @Override
-    public List<DonaVo> list(int cntr_category) throws Exception {
-        return dao.list(cntr_category);
+    public List<DonaVo> donainglist(int cntr_category) throws Exception {
+        return dao.donainglist(cntr_category);
     }
 
     // 상품 조회

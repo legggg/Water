@@ -22,12 +22,12 @@ public class DonaController {
     DonaService service;
 
     // 카테고리별 기부 리스트
-    @GetMapping("/list")
+    @GetMapping("/donainglist")
     public void getList(@RequestParam("c") int cntr_category, Model model) throws Exception {
         List<DonaVo> list = null;
-        list = service.list(cntr_category);
+        list = service.donainglist(cntr_category);
 
-        model.addAttribute("list", list);
+        model.addAttribute("donainglist", list);
     }
 
     // 기부 조회

@@ -14,31 +14,31 @@
 <div class="category-theme_area">
     <ul class="category-theme_inner">
         <li class="category-theme_item">
-            <a href="/list?c=0">
+            <a href="/donainglist?c=0" style="text-decoration-line: none;">
                 <img src="images/child.png" width="70" height="70">
                 <figure>아이들</figure>
             </a>
         </li>
         <li class="category-theme_item" >
-            <a href="/list?c=1">
+            <a href="/donainglist?c=1" style="text-decoration-line: none;">
                 <img src="images/old.png" width="70" height="70">
                 <figure>어르신</figure>
             </a>
         </li>
         <li class="category-theme_item">
-            <a href="/list?c=2">
+            <a href="/donainglist?c=2" style="text-decoration-line: none;">
                 <img src="images/handi.png" alt="장애인" width="70" height="70">
                 <figure>장애인</figure>
             </a>
         </li>
         <li class="category-theme_item">
-            <a href="/list?c=3">
+            <a href="/donainglist?c=3" style="text-decoration-line: none;">
                 <img src="images/animal.png" width="70" height="70">
                 <figure>동물</figure>
             </a>
         </li>
         <li class="category-theme_item">
-            <a href="/list?c=4">
+            <a href="/donainglist?c=4" style="text-decoration-line: none;">
                 <img src="images/etc.png" width="70" height="70">
                 <figure>기타</figure>
             </a>
