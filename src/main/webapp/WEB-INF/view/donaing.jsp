@@ -6,30 +6,44 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>진행중인 기부</title>
     <link rel="stylesheet" href="css/dona.css" />
-    <link rel="stylesheet" href="css/style.css" />
+</head>
 
 <body>
-    <%@ include file="header.jsp"%>
-    <div>
-        <nav class="myMenu1">
-            <ul class="menu">
-                <li class="link"><a href="">진행중</a></li>
-                <li class="menu"><a href="">소통</a></li>
-            </ul>
-        </nav>
-    </div>
+<%@ include file="dona.jsp"%>
 
-    <div>
-        <ul>
-            <li><a href="/list?c=0">아동,청소년</a></li>
-            <li><a href="/list?c=1">어르신</a></li>
-            <li><a href="/list?c=2">장애인</a></li>
-            <li><a href="/list?c=3">동물</a></li>
-            <li><a href="/list?c=4">기타</a></li>
-        </ul>
-    </div>
-
-
+<div class="category-theme_area">
+    <ul class="category-theme_inner">
+        <li class="category-theme_item">
+            <a href="/list?c=0">
+                <img src="images/child.png" width="70" height="70">
+                <figure>아이들</figure>
+            </a>
+        </li>
+        <li class="category-theme_item" >
+            <a href="/list?c=1">
+                <img src="images/old.png" width="70" height="70">
+                <figure>어르신</figure>
+            </a>
+        </li>
+        <li class="category-theme_item">
+            <a href="/list?c=2">
+                <img src="images/handi.png" alt="장애인" width="70" height="70">
+                <figure>장애인</figure>
+            </a>
+        </li>
+        <li class="category-theme_item">
+            <a href="/list?c=3">
+                <img src="images/animal.png" width="70" height="70">
+                <figure>동물</figure>
+            </a>
+        </li>
+        <li class="category-theme_item">
+            <a href="/list?c=4">
+                <img src="images/etc.png" width="70" height="70">
+                <figure>기타</figure>
+            </a>
+        </li>
+    </ul>
+</div>
 </body>
-
 </html>

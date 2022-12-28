@@ -73,7 +73,7 @@ header .logo{
 
 .brand {
     text-transform: uppercase;
-    font-size: 24px;
+    font-size: 25px;
     font-weight: 900;
 }
 
@@ -116,7 +116,7 @@ header .logo{
     -ms-flex-align: center;
     align-items: center;
     font-weight: 600;
-    font-size: 0.875rem;
+    font-size: 1rem;
     -webkit-transition: all 0.25s cubic-bezier(0.42, 0, 0, 1);
     transition: all 0.25s cubic-bezier(0.42, 0, 0, 1);
     padding: 0 1rem;
@@ -175,6 +175,47 @@ header .logo{
 .menu li a:hover:after {
     width: 100%;
     height: 4px;
+}
+
+body, button, dd, dl, dt, fieldset, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, select, table, td, textarea, th, ul {
+    margin: 0;
+    padding: 0;
+}
+button, input, select, textarea {
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.category-theme_area{
+    background-color: #10c838;
+}
+.category-theme_inner {
+    width: 1000px;
+    margin: 0 auto;
+    padding: 60px 90px 60px;
+}
+.category-theme_item {
+    display: inline-block;
+    width: 150px;
+    text-align: center;
+    font-size: 17px;
+}
+*, :after, :before {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.blind, input[type=checkbox], input[type=radio] {
+    overflow: hidden;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    clip: rect(0 0 0 0);
 }
 
 

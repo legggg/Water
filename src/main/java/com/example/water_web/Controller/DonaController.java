@@ -21,17 +21,19 @@ public class DonaController {
     @Autowired
     DonaService service;
 
-//    @GetMapping("/dona")
-//    public String toDona() {
-//        return "dona";
-//    }
-
-    // 카테고리별 상품 리스트
+    // 카테고리별 기부 리스트
     @GetMapping("/list")
     public void getList(@RequestParam("c") int cntr_category, Model model) throws Exception {
         List<DonaVo> list = null;
         list = service.list(cntr_category);
 
         model.addAttribute("list", list);
+    }
+
+    // 기부 조회
+    @GetMapping("/view")
+    public void getView(@RequestParam("n") int cntr_sn, Model model) throws Exception {
+        DonaVo view = service.donasView(cntr_sn);
+        model.addAttribute("view", view);
     }
 }
