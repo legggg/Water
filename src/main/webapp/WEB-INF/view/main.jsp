@@ -86,6 +86,64 @@
         </a>
     </div>
 </div>
+
+
+
+
+<style>
+
+    .Maincardarea {
+        display: block;
+        margin: 100px auto 0;
+        width: 1140px;
+    }
+
+
+    .Maincardarea_text {
+        font-size: 25px;
+        font-weight: 900;
+        line-height: 1.2;
+    }
+
+    .Maincardarea_link {
+        color: black;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .Maincarearea_icon {
+        position: relative;
+        width: 12px;
+        height: 24px;
+        margin: 5px 0 0 8px;
+    }
+
+    .Maincarearea_icon::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        -ms-transform: translate(-50%,-50%) rotate(45deg);
+        transform: translate(-50%,-50%) rotate(45deg);
+        border-top: 2px solid #000;
+        border-right: 2px solid #000;
+    }
+
+
+</style>
+<div class="Maincardarea">
+    <h3 class="Maincardarea_text">
+        <a href="#" class="Maincardarea_link" style="text-decoration: none; color: inherit;" > 여기 뭘 적을까 <i class="Maincarearea_icon"></i></a>
+    </h3>
+<%--    <ul class="Donacard">--%>
+<%--        <li><a href="사진" class="Donacard_image">...</a></li>--%>
+<%--        <li></li>--%>
+<%--        <li></li>--%>
+<%--    </ul>--%>
+
+</div>
 </body>
 </html>
 
