@@ -29,7 +29,21 @@
             font-family: NanumSquareWebFont,dotum,Sans-serif;
             text-decoration: none;
             color: inherit;
+
         }
+
+        .card::after {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border: 1px solid rgba(0,0,0,.11);
+            content: "";
+            margin-left: 10px;
+        }
+
+
         *, :after, :before {
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
@@ -93,12 +107,10 @@
             word-break: break-all;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
-            font-size: 17px;
+            font-size: 19px;
             letter-spacing: -.5px;
             color: #333;
-        }
-        strong {
-            font-weight: bold;
+            font-weight: 900;
         }
     </style>
 
@@ -109,14 +121,13 @@
     <div >
         <%@ include file="donaing.jsp"%>
     </div>
-
     <div role="main" class="content">
         <h3 class="content_title">여러분들의 소중한 기부를 기다리고 있어요</h3>
             <div class="card_wrap">
                 <c:forEach items="${donainglist}" var="donainglist">
                     <a class="card" href="/view?n=${donainglist.cntr_sn}" style="text-decoration: none; color: black;">
 <%--                        <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" alt width="267" height="200" class="card_img">--%>
-                        <img src=${donainglist.cntr_file_id} alt width="267" height="200" class="card_img">
+                        <img src=${donainglist.cntr_file_id} alt width="257" height="200" class="card_img" style="margin-left: 10px">
                         <div class="card_content">
                             <strong class="card_title">${donainglist.cntr_ttl}</strong>
                             <div>${donainglist.cntr_adres}</div>

@@ -94,8 +94,8 @@
 
     .Maincardarea {
         display: block;
-        margin: 100px auto 0;
-        width: 1140px;
+        margin: 80px auto 0;
+        width: 1100px;
     }
 
 
@@ -131,17 +131,44 @@
         border-right: 2px solid #000;
     }
 
+    .Donacard_list {
+        overflow: hidden;
+        margin-top: 20px;
+    }
+
+    .Donacard_image {
+        margin: 10px auto 0;
+        float: left;
+        position: relative;
+        width: 267px;
+        height: 363px;
+        background-color: #fff;
+        font-family: NanumSquareWebFont,dotum,Sans-serif;
+    }
+
+    .Donacard_image::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: 1px solid rgba(0,0,0,.11);
+        content: "";
+        margin-left: 10px;
+    }
+
 
 </style>
 <div class="Maincardarea">
     <h3 class="Maincardarea_text">
         <a href="#" class="Maincardarea_link" style="text-decoration: none; color: inherit;" > 여기 뭘 적을까 <i class="Maincarearea_icon"></i></a>
     </h3>
-<%--    <ul class="Donacard">--%>
-<%--        <li><a href="사진" class="Donacard_image">...</a></li>--%>
-<%--        <li></li>--%>
-<%--        <li></li>--%>
-<%--    </ul>--%>
+    <ul class="Donacard_list">
+        <li style="display: inline-block; vertical-align: top;"><a href="/donainglist?c=0" class="Donacard_image"><img src="images/child.png" width="200" height="200" style="margin-left: 38px"></a></li>
+        <li style="display: inline-block; vertical-align: top;"><a href="/donainglist?c=1" class="Donacard_image"><img src="images/old.png" width="200" height="200" style="margin-left: 38px"></a></li>
+        <li style="display: inline-block; vertical-align: top;"><a href="/donainglist?c=2" class="Donacard_image"><img src="images/handi.png" width="200" height="200" style="margin-left: 38px"></a></li>
+        <li style="display: inline-block; vertical-align: top;"><a href="/donainglist?c=3" class="Donacard_image"><img src="images/animal.png" width="200" height="200" style="margin-left: 38px"></a></li>
+    </ul>
 
 </div>
 </body>
