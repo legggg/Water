@@ -8,4 +8,6 @@ public interface UserService {
     LoginResponse login(UserVo userVo);
     Integer getMbrSn(String mbr_id, String mbr_password);
     int idCheck(String mbr_id);
+
+    UserVo signin(UserVo userVo); //관리자 페이지용
 }

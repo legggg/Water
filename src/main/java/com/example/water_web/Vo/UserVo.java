@@ -24,6 +24,7 @@ public class UserVo {
     private String lock_yn;
 
     private String use_yn;
+    private int verify; //관리자 페이지용
 
     private String rgtr_id;
     private LocalDateTime rgtr_dt;

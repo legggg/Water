@@ -63,6 +63,8 @@ public class UserController {
     public String login(UserVo userVo, ModelMap model, HttpSession session) {
         String mbr_id = userVo.getMbr_id();
         String mbr_password = userVo.getMbr_password();
+        UserVo login = userServiceImpl.signin(userVo); //관리자 페이지용
+
 
         // 유효성 검사
         if (StringUtils.isEmpty(mbr_id) || StringUtils.isEmpty(mbr_password)) {
@@ -80,6 +82,7 @@ public class UserController {
             Integer mbrSn = userServiceImpl.getMbrSn(mbr_id, mbr_password);
             session.setAttribute("userSn", mbrSn);
             session.setAttribute("mbr_id", mbr_id);
+            session.setAttribute("user", login);
         }
         session.setAttribute("userId", loginResponse);
         return "redirect:/main";

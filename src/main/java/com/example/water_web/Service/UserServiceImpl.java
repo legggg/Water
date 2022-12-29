@@ -147,4 +147,10 @@ public class UserServiceImpl implements UserService {
 //        System.out.println("cnt: " + cnt);
         return cnt;
     }
+
+    //관리자 페이지용
+    @Override
+    public UserVo signin(UserVo userVo) {
+        return mapper.signin(userVo);
+    }
 }

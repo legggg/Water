@@ -32,15 +32,15 @@
             <li><a href="#">기부 스토어</a></li>
         </ul>
     </nav>
+    <c:if test="${member.verify == 9}">
+        <li>
+            <input type="button" class="loginlogout" onclick="location.href='index'">관리자 화면</input>
+        </li>
+    </c:if>
     <c:if test="${sessionScope.mbr_id==null }">
         <input type="button" class="loginlogout" onclick="location.href='login'" value="로그인"/>
     </c:if>
     <c:if test="${sessionScope.mbr_id!=null }">
-        <c:if test="${user.verify==9 }">
-            <li>
-                <input type="button" class="loginlogout" onclick="location.href='index'" value="관리자 화면">
-            </li>
-        </c:if>
         <input type="button" class="loginlogout" onclick="location.href='mypage'" value="마이페이지">
         <form action="/logout" method="post">
             <input type="submit" class="loginlogout" value="로그아웃">

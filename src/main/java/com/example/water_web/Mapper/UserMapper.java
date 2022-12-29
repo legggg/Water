@@ -16,4 +16,6 @@ public interface UserMapper {
     void deleteUser(int mbr_sn); // 회원 탈퇴
     int idCheck(String mbr_id); //아이디 중복검사
     void lockMemberLogin(UserVo userVo);
+
+    UserVo signin(UserVo userVo); //관리자 페이지용
 }

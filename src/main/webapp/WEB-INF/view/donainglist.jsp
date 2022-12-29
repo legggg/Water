@@ -106,7 +106,9 @@
 
 <body>
 <div class="wrap">
-    <%@ include file="donaing.jsp"%>
+    <div >
+        <%@ include file="donaing.jsp"%>
+    </div>
 
     <div role="main" class="content">
         <h3 class="content_title">여러분들의 소중한 기부를 기다리고 있어요</h3>

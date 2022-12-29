@@ -43,6 +43,13 @@
         WHERE mbr_id = #{mbr_id} and use_yn = 'Y'
     </select>
 
+    <!-- 관리자페이지 가는용 -->
+    <select id="signin" resultType="com.example.water_web.Vo.UserVo">
+        SELECT *
+        FROM tb_mbr
+        WHERE mbr_id = #{mbr_id} and use_yn = 'Y'
+    </select>
+
     <!-- 회원정보 수정 -->
     <update id="updateUser" parameterType="com.example.water_web.Vo.UserVo">
         UPDATE tb_mbr
