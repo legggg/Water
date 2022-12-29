@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.water_web.Mapper.AdminMapper">
+
+    <!-- 카테고리 호출 -->
+    <select id="category" resultType="com.example.water_web.Vo.CtgryVo">
+        select
+            ctgry_nm, ctgry_code
+        from goods_category
+    </select>
+</mapper>

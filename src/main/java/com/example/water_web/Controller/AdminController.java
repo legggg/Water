@@ -5,12 +5,19 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin")
+@RequestMapping("/*")
 public class AdminController {
 
-    //관리자화면
+    // 관리자 화면
     @GetMapping("/index")
     public void getIndex() throws Exception {
+
+    }
+
+    // 상품 등록
+    @GetMapping("/indexregister")
+    public void getDonasRegister() throws Exception {
+
 
     }
 }

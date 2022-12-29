@@ -8,10 +8,11 @@
 </head>
 
 <body>
-    <%@ include file="include/header.jsp"%>
+    <%@ include file="index.jsp"%>
 
-
-
+    <div id="container_box">
+        상품 등록 영역
+    </div>
 
 </body>
 </html>

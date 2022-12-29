@@ -82,7 +82,7 @@ public class UserController {
             Integer mbrSn = userServiceImpl.getMbrSn(mbr_id, mbr_password);
             session.setAttribute("userSn", mbrSn);
             session.setAttribute("mbr_id", mbr_id);
-            session.setAttribute("user", login);
+            session.setAttribute("user", login); //관리자 페이지용
         }
         session.setAttribute("userId", loginResponse);
         return "redirect:/main";
