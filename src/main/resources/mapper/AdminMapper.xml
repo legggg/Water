@@ -3,9 +3,14 @@
 <mapper namespace="com.example.water_web.Mapper.AdminMapper">
 
     <!-- 카테고리 호출 -->
-    <select id="category" resultType="com.example.water_web.Vo.CtgryVo">
-        select
-            ctgry_nm, ctgry_code
-        from goods_category
+    <select id="ctgry" resultType="com.example.water_web.Vo.CtgryVo">
+        select ctgry_nm, ctgry_code
+        from tb_ctgry
     </select>
+
+    <!-- 상품 등록 -->
+    <insert id="register">
+        insert into tb_cntr (cntr_ttl, cntr_cn, cntr_obctr, cntr_category)
+        values ( #{cntr_ttl}, #{cntr_cn}, #{cntr_obctr}, #{cntr_category})
+    </insert>
 </mapper>
