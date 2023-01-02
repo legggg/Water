@@ -5,7 +5,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>관리자 페이지</title>
-    <link rel="stylesheet" href="css/indexregister.css" />
+    <link rel="stylesheet" href="css/indexmodify.css" />
 </head>
 
 <body>
@@ -13,17 +13,18 @@
 
     <div class="wrapper">
         <form role="form" method="post" autocomplete="off">
-            <div class="wrap">
+            <input type="hidden" name="cntr_sn" value="${donas.cntr_sn}" />
 
+            <div class="wrap">
             <h2>상품 등록</h2>
                 <div class="user_wrap">
                     <label for="cntr_ttl">기부명</label>
-                    <input class="user_input" type="text" id="cntr_ttl" name="cntr_ttl" />
+                    <input class="user_input" type="text" id="cntr_ttl" name="cntr_ttl" value="${donas.cntr_ttl}" />
                 </div>
 
                 <div class="user_wrap">
                     <label for="cntr_cn">기부내용</label>
-                    <textarea class="user_input" rows="5" cols="50" id="cntr_cn" name="cntr_cn"></textarea>
+                    <textarea class="user_input" rows="5" cols="50" id="cntr_cn" name="cntr_cn">${donas.cntr_cn}</textarea>
                 </div>
 
                 <div class="se_wrap">
@@ -49,12 +50,13 @@
                 <!-- 기부방법이 기부금일때만 나오도록 해야하는디.... -->
                 <div class="user_wrap">
                     <label for="cntr_obctr">목표금액</label>
-                    <input class="user_input" type="text" id="cntr_obctr" name="cntr_obctr" />
+                    <input class="user_input" type="text" id="cntr_obctr" name="cntr_obctr" value="${donas.cntr_obctr}"/>
                 </div>
 
                 <div class="button_wrap">
                     <div class="login_button_wrap">
-                    <button class="login_button" type="submit" id="register_Btn">등록</button>
+                        <button class="register_button" type="submit">수정</button>
+                        <button class="back_button" type="button" onclick="delOk()">취소</button>
                     </div>
                 </div>
             </div>
@@ -66,30 +68,13 @@
 </html>
 
 <script>
-    // 컨트롤러에서 데이터 받기
-    var jsonData = JSON.parse('${ctgry}');
-    console.log(jsonData);
+    function delOk(){
+        var result = confirm("이전 페이지로 돌아가시겠습니까?");
 
-    var cate1Arr = new Array();
-    var cate1Obj = new Object();
-
-    // 1차 분류 셀렉트 박스에 삽입할 데이터 준비
-    for(var i = 0; i < jsonData.length; i++) {
-
-        if(jsonData[i].level == "1") {
-            cate1Obj = new Object();  //초기화
-            cate1Obj.cateCode = jsonData[i].cateCode;
-            cate1Obj.cateName = jsonData[i].cateName;
-            cate1Arr.push(cate1Obj);
+        if(result) {
+            return location.href='indexview?n=${donas.cntr_sn}'
+        } else {
+            return false
         }
     }
-
-    // 1차 분류 셀렉트 박스에 데이터 삽입
-    var cate1Select = $("select.ctgry1")
-
-    for(var i = 0; i < cate1Arr.length; i++) {
-        cate1Select.append("<option value='" + cate1Arr[i].cateCode + "'>"
-            + cate1Arr[i].cateName + "</option>");
-    }
-
 </script>

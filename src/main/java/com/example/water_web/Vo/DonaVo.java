@@ -23,11 +23,12 @@ public class DonaVo {
     private Date cntr_end_dt;
     private int cntr_obctr;
     private int cntr_category;
+    private int cntr_category2;
 
     private String use_yn;
 
-    private String rgtr_id;
-    private LocalDateTime rgtr_dt;
+    private int rgtr_id;
+    private Date rgtr_dt;
     private String mbfr_id;
     private LocalDateTime mbfr_dt;
 }

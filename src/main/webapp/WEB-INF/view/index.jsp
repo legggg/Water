@@ -31,8 +31,8 @@
     <aside>
         <ul>
             <li><a href="/indexregister">기부글 등록</a></li>
-            <li><a href="">기부글 목록</a></li>
-            <li><a href="">상품 소감</a></li>
+            <li><a href="/indexlist">기부글 목록</a></li>
+            <li><a href="">기부 후기글</a></li>
             <li><a href="">유저 목록</a></li>
         </ul>
     </aside>
