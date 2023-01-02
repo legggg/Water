@@ -15,6 +15,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+<style>
+    body {
+        background-color: white;
+    }
+</style>
 
 <%@ include file="header.jsp"%>
 
@@ -157,6 +162,32 @@
         margin-left: 10px;
     }
 
+    .Donacard_title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        display: -webkit-box;
+        height: 50px;
+        line-height: 25px;
+        word-wrap: break-word;
+        word-break: break-all;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 17px;
+        letter-spacing: -.5px;
+        color: #333;
+    }
+
+    .Donacard_orga {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-top: 8px;
+        font-family: NanumBarunGothic,dotum,Sans-serif;
+        font-size: 15px;
+        color: #828282;
+    }
+
 
 </style>
 <div class="Maincardarea">
@@ -164,10 +195,41 @@
         <a href="#" class="Maincardarea_link" style="text-decoration: none; color: inherit;" > 여기 뭘 적을까 <i class="Maincarearea_icon"></i></a>
     </h3>
     <ul class="Donacard_list">
-        <li style="display: inline-block; vertical-align: top;"><a href="/donainglist?c=0" class="Donacard_image"><img src="images/child.png" width="200" height="200" style="margin-left: 38px"></a></li>
-        <li style="display: inline-block; vertical-align: top;"><a href="/donainglist?c=1" class="Donacard_image"><img src="images/old.png" width="200" height="200" style="margin-left: 38px"></a></li>
-        <li style="display: inline-block; vertical-align: top;"><a href="/donainglist?c=2" class="Donacard_image"><img src="images/handi.png" width="200" height="200" style="margin-left: 38px"></a></li>
-        <li style="display: inline-block; vertical-align: top;"><a href="/donainglist?c=3" class="Donacard_image"><img src="images/animal.png" width="200" height="200" style="margin-left: 38px"></a></li>
+        <li style="display: inline-block; vertical-align: top;">
+            <a href="/donainglist?c=0" class="Donacard_image">
+                <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
+                    <img src="images/child.png" width="200" height="200" style="margin-left: 28px; margin-top: 5px;">
+                </div>
+                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
+                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
+                    제발요!!!!!</strong>
+                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
+                </div>
+
+
+        </a>
+        </li>
+        <li style="display: inline-block; vertical-align: top;">
+            <a href="/donainglist?c=1" class="Donacard_image">
+                <div class="Donacard_imagelist">
+                    <img src="images/old.png" width="200" height="200" style="margin-left: 38px; margin-top: 5px; ">
+                </div>
+            </a>
+        </li>
+        <li style="display: inline-block; vertical-align: top;">
+            <a href="/donainglist?c=2" class="Donacard_image">
+                <div class="Donacard_imagelist">
+                    <img src="images/handi.png" width="200" height="200" style="margin-left: 38px; margin-top: 5px;">
+                </div>
+        </a>
+        </li>
+        <li style="display: inline-block; vertical-align: top;">
+            <a href="/donainglist?c=3" class="Donacard_image">
+                <div class="Donacard_imagelist">
+                    <img src="images/animal.png" width="200" height="200" style="margin-left: 38px; margin-top: 5px;">
+                </div>
+        </a>
+        </li>
     </ul>
 
 </div>

@@ -112,6 +112,10 @@
             color: #333;
             font-weight: 900;
         }
+
+        body {
+            background-color: whitesmoke;
+        }
     </style>
 
 </head>
