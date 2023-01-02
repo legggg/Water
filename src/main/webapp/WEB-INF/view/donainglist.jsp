@@ -40,7 +40,7 @@
             left: 0;
             border: 1px solid rgba(0,0,0,.11);
             content: "";
-            margin-left: 10px;
+            margin: 0 auto;
         }
 
 
@@ -131,7 +131,7 @@
                 <c:forEach items="${donainglist}" var="donainglist">
                     <a class="card" href="/view?n=${donainglist.cntr_sn}" style="text-decoration: none; color: black;">
 <%--                        <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" alt width="267" height="200" class="card_img">--%>
-                        <img src=${donainglist.cntr_file_id} alt width="257" height="200" class="card_img" style="margin-left: 10px">
+                        <img src=${donainglist.cntr_file_id} alt width="267" height="200" class="card_img">
                         <div class="card_content">
                             <strong class="card_title">${donainglist.cntr_ttl}</strong>
                             <div>${donainglist.cntr_adres}</div>
