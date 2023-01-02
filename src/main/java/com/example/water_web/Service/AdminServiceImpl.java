@@ -8,6 +8,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -18,13 +20,43 @@ public class AdminServiceImpl implements AdminService{
     private AdminMapper dao;
 
     // 카테고리
+    @Override
     public List<CtgryVo> ctgry() throws Exception {
         return dao.ctgry();
     }
 
-    // 상품등록
+    // 기부 등록
+    @Override
     public void register(DonaVo vo) throws Exception {
+        int cntr_sn = vo.getCntr_sn();
+        Date date = java.sql.Timestamp.valueOf(LocalDateTime.now());
+
+        vo.setRgtr_id(cntr_sn);
+        vo.setRgtr_dt(date);
+
         dao.register(vo);
+    }
+
+    // 기부 목록
+    @Override
+    public List<DonaVo> donaslist() throws Exception {
+        return dao.donaslist();
+    }
+
+    // 기부 조회
+    @Override
+    public DonaVo donasView(int cntr_sn) throws Exception {
+        return dao.donasView(cntr_sn);
+    }
+
+    // 기부 수정
+    public void donasModify(DonaVo vo) throws Exception {
+        dao.donasModify(vo);
+    }
+
+    // 기부 삭제
+    public void donasDelete(int cntr_sn) throws Exception {
+        dao.donasDelete(cntr_sn);
     }
 
 }

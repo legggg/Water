@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class AdminController {
 
     }
 
-    // 상품등록 페이지
+    // 기부 등록 페이지
     @GetMapping("/indexregister")
     public void getDonasRegister(Model model) throws Exception {
         List<CtgryVo> ctgry = null;
@@ -34,13 +35,57 @@ public class AdminController {
         model.addAttribute("ctgry", JSONArray.fromObject(ctgry));
     }
 
-    // 상품등록
+    // 기부 등록
     @PostMapping("/indexregister")
     public String postDonasRegister(DonaVo vo) throws Exception {
         adminService.register(vo);
 
         return "redirect:/index";
     }
+
+    // 기부 목록
+    @GetMapping("/indexlist")
+    public void getdonasList(Model model) throws Exception {
+        List<DonaVo> list = adminService.donaslist();
+
+        model.addAttribute("list", list);
+    }
+
+    // 기부 조회
+    @GetMapping("/indexview")
+    public void getdonasview(@RequestParam("n") int cntr_sn, Model model) throws Exception {
+        DonaVo donas = adminService.donasView(cntr_sn);
+        model.addAttribute("donas", donas);
+    }
+
+    // 기부 수정
+    @GetMapping("/indexmodify")
+    public void getDonasModify(@RequestParam("n") int cntr_sn, Model model) throws Exception {
+        DonaVo donas = adminService.donasView(cntr_sn);
+        model.addAttribute("donas", donas);
+
+        List<CtgryVo> category = null;
+        category = adminService.ctgry();
+        model.addAttribute("category", JSONArray.fromObject(category));
+    }
+
+    // 기부 수정
+    @PostMapping("/indexmodify")
+    public String postDonasModify(DonaVo vo) throws Exception {
+        adminService.donasModify(vo);
+
+        return "redirect:/index";
+    }
+
+    // 기부 삭제 (잘 안됨;;)
+    @PostMapping("/indexdelete")
+    public String postDonasDelete(@RequestParam("n") int cntr_sn) throws Exception {
+        // @RequestParam("n")으로 인해, URL주소에 있는 n의 값을 가져와 gdsNum에 저장
+        adminService.donasDelete(cntr_sn);
+
+        return "redirect:/index";
+    }
+
 
 
 }

@@ -21,7 +21,7 @@ public class DonaServiceImpl implements DonaService {
         return dao.donainglist(cntr_category);
     }
 
-    // 상품 조회
+    // 기부 조회
     @Override
     public DonaVo donasView(int cntr_sn) throws Exception {
         return dao.donasView(cntr_sn);
