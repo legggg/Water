@@ -21,6 +21,12 @@ label {
     margin: auto;
 }
 
+.datebox2 {
+    height: 45px;
+    border: solid #cbccc9;
+    border-radius: 7px;
+}
+
 /* 페이지 제목 */
 .subjecet{
     width: 100%;
@@ -41,70 +47,32 @@ label {
 }
 
 /* 기부명 영역 */
-.user_wrap{
+.user_wrap2{
     width: 100%;
     margin-top: 20px;
 }
-.user_name{
-    font-size: 25px;
-    font-weight: bold;
-}
-.user_input_box{
-    border: 1px solid black;
-    height:31px;
-    padding: 10px 14px;
-
-}
-.user_input{
+.user_input2{
     width:100%;
     height:100%;
     font-size:28px;
     outline: 1px solid #569a67;
+    border-radius: 7px;
 }
 
 /* 기부대상 영역 */
-.se_wrap{
+.se_wrap2{
     width: 100%;
     margin-top: 20px;
 }
-.se_name{
-    font-size: 25px;
-    font-weight: bold;
-}
-.se_input_box{
-    border: 1px solid black;
-    height:31px;
-    padding: 10px 14px;
-}
-.se_input{
+.se_input2{
     width:70%;
     height:100%;
     font-size:28px;
     outline: 1px solid #569a67;
-}
-
-/* 기부대상 영역 222222*/
-.gen_wrap{
-    width: 100%;
-    margin-top: 20px;
-}
-[type="radio"] {
-    vertical-align: middle;
+    border-radius: 7px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
-    border: max(2px, 0.1em) solid gray;
-    border-radius: 50%;
-    width: 1.25em;
-    height: 1.25em;
-    transition: border 0.5s ease-in-out;
-    font-size: 25px;
-    font-weight: bold;
-}
-[type="radio"]:checked {
-    border: 0.4em solid #62B6B7;
-}
-[type="radio"]:hover {
-    box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
-    cursor: pointer;
 }
 
 /* float 속성 해제 */
@@ -139,4 +107,18 @@ label {
     color: white;
     margin : auto;
     cursor:pointer
+}
+
+/*주소영역*/
+.adres_wrap2{
+    width: 100%;
+    margin-top: 20px;
+}
+.adres_input2{
+    width:100%;
+    height:40px;
+    font-size:25px;
+    outline: 1px solid #569a67;
+    border-radius: 7px;
+    margin-bottom: 13px;
 }

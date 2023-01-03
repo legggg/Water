@@ -4,6 +4,7 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -16,11 +17,12 @@ public class DonaVo {
     private String cntr_ttl;
     private String cntr_cn;
     private String cntr_file_id;
-    private String cntr_adres;
+    private String cntr_adres1;
+    private String cntr_adres2;
     private String cntr_loc_lat;
     private String cntr_loc_lng;
-    private Date cntr_str_dt;
-    private Date cntr_end_dt;
+    private LocalDate cntr_str_dt;
+    private String cntr_end_dt;
     private int cntr_obctr;
     private int cntr_category;
     private int cntr_category2;

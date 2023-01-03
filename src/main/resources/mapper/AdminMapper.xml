@@ -10,8 +10,29 @@
 
     <!-- 기부 등록 -->
     <insert id="register" parameterType="com.example.water_web.Vo.DonaVo">
-        insert into tb_cntr (cntr_ttl, cntr_cn, cntr_obctr, cntr_category, cntr_category2, rgtr_id, rgtr_dt)
-        values ( #{cntr_ttl}, #{cntr_cn}, #{cntr_obctr}, #{cntr_category}, #{cntr_category2}, #{rgtr_id}, #{rgtr_dt})
+        insert into tb_cntr (
+                             cntr_ttl,
+                             cntr_cn,
+                             cntr_str_dt,
+                             cntr_end_dt,
+                             cntr_obctr,
+                             cntr_category,
+                             cntr_category2,
+                             cntr_adres1,
+                             cntr_adres2,
+                             rgtr_id,
+                             rgtr_dt)
+        values ( #{cntr_ttl},
+                #{cntr_cn},
+                #{cntr_str_dt},
+                #{cntr_end_dt},
+                #{cntr_obctr},
+                #{cntr_category},
+                #{cntr_category2},
+                #{cntr_adres1},
+                #{cntr_adres2},
+                #{rgtr_id},
+                #{rgtr_dt})
     </insert>
 
     <!-- 기부 목록 -->

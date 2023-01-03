@@ -19,6 +19,9 @@
     <p><span>기부명: </span>${view.cntr_ttl}</p>
     <p><span>기부내용: </span>${view.cntr_cn}</p>
 </div>
+<div>
+    <button type="button" onclick="location.href='makedona'" >기부하러가기</button>
+</div>
 
 
 </body>

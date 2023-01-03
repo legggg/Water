@@ -40,7 +40,7 @@
         <!-- 관리자만 관리자페이지 뜸 -->
         <c:if test="${user.verify==9 }">
             <li>
-                <input type="button" class="loginlogout" onclick="location.href='index'" value="관리자 화면">
+                <input type="button" class="loginlogout" onclick="location.href='indexlist'" value="관리자 화면">
             </li>
         </c:if>
 

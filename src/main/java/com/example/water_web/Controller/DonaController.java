@@ -36,4 +36,9 @@ public class DonaController {
         DonaVo view = service.donasView(cntr_sn);
         model.addAttribute("view", view);
     }
+
+    @GetMapping("/makedona")
+    public String makeDona() {
+        return "makedona";
+    }
 }

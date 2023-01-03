@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -33,6 +34,7 @@ public class AdminServiceImpl implements AdminService{
 
         vo.setRgtr_id(cntr_sn);
         vo.setRgtr_dt(date);
+        vo.setCntr_str_dt(LocalDate.now());
 
         dao.register(vo);
     }

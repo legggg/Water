@@ -5,63 +5,99 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>관리자 페이지</title>
-    <link rel="stylesheet" href="css/indexregister.css" />
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/adres.js" defer></script>
+
+    <link rel="stylesheet" href="/css/indexregister.css" />
+    <link rel="stylesheet" href="css/signup.css" />
 </head>
+<style>
+    ul { padding:0; margin:0; list-style:none;  }
+    section#container { padding:20px 0; border-top:2px solid #eee; border-bottom:2px solid #eee; }
+    section#container::after { content:""; display:block; clear:both; }
+</style>
 
 <body>
-    <%@ include file="index.jsp"%>
+    <%@ include file="header.jsp"%>
 
-    <div class="wrapper">
-        <form role="form" method="post" autocomplete="off">
-            <div class="wrap">
+    <section id="container">
+        <%@ include file="indexaside.jsp"%>
+        <div class="wrapper">
+            <form role="form" method="post" autocomplete="off">
+                <input type="hidden" name="cntr_sn" value="${donas.cntr_sn}" />
+                    <div class="wrap">
+                        <h2>상품 등록</h2>
+                        <div class="user_wrap">
+                            <label for="cntr_ttl">기부명</label>
+                            <input class="user_input" type="text" id="cntr_ttl" name="cntr_ttl" />
+                        </div>
 
-            <h2>상품 등록</h2>
-                <div class="user_wrap">
-                    <label for="cntr_ttl">기부명</label>
-                    <input class="user_input" type="text" id="cntr_ttl" name="cntr_ttl" />
-                </div>
+                        <div class="user_wrap">
+                            <label for="cntr_cn">기부내용</label>
+                            <textarea class="user_input" rows="5" cols="50" id="cntr_cn" name="cntr_cn"></textarea>
+                        </div>
 
-                <div class="user_wrap">
-                    <label for="cntr_cn">기부내용</label>
-                    <textarea class="user_input" rows="5" cols="50" id="cntr_cn" name="cntr_cn"></textarea>
-                </div>
+                        <div class="se_wrap">
+                            <label for="cntr_category">기부대상</label>
+                            <select class="se_input" id="cntr_category" name="cntr_category">
+                                <option value="0">어린이</option>
+                                <option value="1">어르신</option>
+                                <option value="2">장애인</option>
+                                <option value="3">동물</option>
+                                <option value="4">기타</option>
+                            </select>
+                        </div>
 
-                <div class="se_wrap">
-                    <label for="cntr_category">기부대상</label>
-                    <select class="se_input" type="text" id="cntr_category" name="cntr_category">
-                        <option value="0">어린이</option>
-                        <option value="1">어르신</option>
-                        <option value="2">장애인</option>
-                        <option value="3">동물</option>
-                        <option value="4">기타</option>
-                    </select>
-                </div>
+                        <div class="se_wrap">
+                            <label for="cntr_category2">기부방법</label>
+                            <select class="se_input" id="cntr_category2" name="cntr_category2">
+                                <option value="0">기부금</option>
+                                <option value="1">재능</option>
+                                <option value="2">상품</option>
+                            </select>
+                        </div>
 
-                <div class="se_wrap">
-                    <label for="cntr_category2">기부방법</label>
-                    <select class="se_input" type="text" id="cntr_category2" name="cntr_category2">
-                        <option value="0">기부금</option>
-                        <option value="1">재능</option>
-                        <option value="2">상품</option>
-                    </select>
-                </div>
+                        <!-- 기부방법이 기부금일때만 나오도록 해야하는디.... -->
+                        <div class="user_wrap">
+                            <label for="cntr_obctr">목표금액</label>
+                            <input class="user_input" type="text" id="cntr_obctr" name="cntr_obctr" />
+                        </div>
 
-                <!-- 기부방법이 기부금일때만 나오도록 해야하는디.... -->
-                <div class="user_wrap">
-                    <label for="cntr_obctr">목표금액</label>
-                    <input class="user_input" type="text" id="cntr_obctr" name="cntr_obctr" />
-                </div>
+<%--                        <!-- 파일 업로드좀;;;; -->--%>
+<%--                        <div class="user_wrap">--%>
+<%--                            <label>사진</label>--%>
+<%--                            <input class="user_input" type="file" id="file" name="file" />--%>
+<%--                        </div>--%>
 
-                <div class="button_wrap">
-                    <div class="login_button_wrap">
-                    <button class="login_button" type="submit" id="register_Btn">등록</button>
+                        <!-- 모금 마감날짜;;;; -->
+                        <div class="user_wrap">
+                            <label>모금 마감날짜</label>
+                            <input class="user_input datebox" type = date  name = "cntr_end_dt" size=50>
+                        </div>
+
+                        <div class="adres_wrap">
+                            <label>주소 등록</label>
+                            <input class="adres_input" style="width: 50%" type="text" id="sample4_postcode" placeholder="우편번호">
+                            <input class="adres_input" style="width: 30%" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+
+                            <input class="adres_input" type="text" name="cntr_adres1" id="sample4_roadAddress" placeholder="도로명주소">
+                            <input class="adres_input" type="hidden" id="sample4_jibunAddress" placeholder="지번주소">
+                            <span id="guide" style="color:#999;display:none"></span>
+                            <input class="adres_input" type="text" name="cntr_adres2" id="sample4_detailAddress" placeholder="상세주소">
+                            <input type="hidden" id="sample4_extraAddress" placeholder="참고항목">
+    <%--                        <input type="hidden" id="cntr_adres" name="cntr_adres" value="" >--%>
+                        </div>
+
+                        <div class="button_wrap">
+                            <div class="login_button_wrap">
+                                <button class="login_button" type="submit" id="register_Btn">등록</button>
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </form>
-
-    </div>
-
+            </form>
+        </div>
+    </section>
 </body>
 </html>
 
@@ -90,6 +126,16 @@
     for(var i = 0; i < cate1Arr.length; i++) {
         cate1Select.append("<option value='" + cate1Arr[i].cateCode + "'>"
             + cate1Arr[i].cateName + "</option>");
+    }
+
+    // 숫자만 들어가도록
+    var regExp = /[^0-9]/gi;
+
+    $("#cntr_obctr").keyup(function(){ numCheck($(this)); });
+
+    function numCheck(selector) {
+        var tempVal = selector.val();
+        selector.val(tempVal.replace(regExp, ""));
     }
 
 </script>

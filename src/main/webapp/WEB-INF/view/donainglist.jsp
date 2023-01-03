@@ -134,7 +134,7 @@
                         <img src=${donainglist.cntr_file_id} alt width="267" height="200" class="card_img">
                         <div class="card_content">
                             <strong class="card_title">${donainglist.cntr_ttl}</strong>
-                            <div>${donainglist.cntr_adres}</div>
+                            <div>${donainglist.cntr_adres1}</div>
                             <strong>목표금액 : <fmt:formatNumber value="${donainglist.cntr_obctr}" pattern="#,###"/> <span class="text">원</span></strong>
                         </div>
                     </a>
