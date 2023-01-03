@@ -2,6 +2,7 @@ package com.example.water_web.Service;
 
 import com.example.water_web.Mapper.DonaMapper;
 import com.example.water_web.Vo.DonaVo;
+import com.example.water_web.Vo.MakeDonaVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -25,5 +26,11 @@ public class DonaServiceImpl implements DonaService {
     @Override
     public DonaVo donasView(int cntr_sn) throws Exception {
         return dao.donasView(cntr_sn);
+    }
+
+    // 기부금 등록
+    @Override
+    public void makeDona(MakeDonaVo vo) throws Exception {
+        dao.makeDona(vo);
     }
 }

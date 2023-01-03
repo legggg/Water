@@ -1,6 +1,7 @@
 package com.example.water_web.Mapper;
 
 import com.example.water_web.Vo.DonaVo;
+import com.example.water_web.Vo.MakeDonaVo;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
@@ -12,4 +13,7 @@ public interface DonaMapper {
 
     // 상품 조회
     DonaVo donasView(int cntr_sn);
+
+    // 기부금 등록
+    void makeDona(MakeDonaVo vo) throws Exception;
 }

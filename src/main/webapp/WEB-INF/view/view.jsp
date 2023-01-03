@@ -13,14 +13,20 @@
 <%@ include file="donaing.jsp"%>
 
 <div>
-    <form role="form" method="post">
-        <input type="hidden" name="gdsNum" value="${view.cntr_sn}" />
-    </form>
     <p><span>기부명: </span>${view.cntr_ttl}</p>
     <p><span>기부내용: </span>${view.cntr_cn}</p>
 </div>
 <div>
-    <button type="button" onclick="location.href='makedona'" >기부하러가기</button>
+    <form role="form" method="post">
+        <input type="hidden" name="cntr_sn" value="${view.cntr_sn}" />
+        <div>
+            <label>기부금액을 쓰시오</label>
+            <input type="text" id="btr_pc" name="btr_pc"/>
+        </div>
+        <div>
+            <button type="submit" id="makeDona_Btn" >보내기</button>
+        </div>
+    </form>
 </div>
 
 

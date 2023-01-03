@@ -2,14 +2,12 @@ package com.example.water_web.Controller;
 
 import com.example.water_web.Service.DonaService;
 import com.example.water_web.Vo.DonaVo;
+import com.example.water_web.Vo.MakeDonaVo;
 import com.fasterxml.jackson.annotation.JacksonInject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.List;
@@ -37,8 +35,11 @@ public class DonaController {
         model.addAttribute("view", view);
     }
 
-    @GetMapping("/makedona")
-    public String makeDona() {
-        return "makedona";
+    // 기부하기
+    @PostMapping("/view")
+    public String postMakeDona(MakeDonaVo vo) throws Exception {
+        service.makeDona(vo);
+
+        return "redirect:/main";
     }
 }

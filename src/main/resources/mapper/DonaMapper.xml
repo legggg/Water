@@ -17,4 +17,11 @@
         from tb_cntr
         where cntr_sn = #{cntr_sn}
     </select>
+
+    <insert id="makeDona" parameterType="com.example.water_web.Vo.MakeDonaVo">
+        insert into tb_cntr_btr (
+            cntr_sn,
+            btr_pc)
+        values ( #{cntr_sn}, #{btr_pc})
+    </insert>
 </mapper>
