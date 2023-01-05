@@ -14,6 +14,12 @@
 <div class="category-theme_area">
     <ul class="category-theme_inner">
         <li class="category-theme_item">
+            <a href="/donainglistall" style="text-decoration-line: none;">
+                <img src="images/child.png" width="70" height="70">
+                <figure>전체</figure>
+            </a>
+        </li>
+        <li class="category-theme_item">
             <a href="/donainglist?c=0" style="text-decoration-line: none;">
                 <img src="images/child.png" width="70" height="70">
                 <figure>아이들</figure>

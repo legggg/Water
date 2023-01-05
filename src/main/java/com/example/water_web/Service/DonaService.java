@@ -6,6 +6,10 @@ import com.example.water_web.Vo.MakeDonaVo;
 import java.util.List;
 
 public interface DonaService {
+
+    // 전체 상품 리스트
+    List<DonaVo> donainglistall(DonaVo vo) throws Exception;
+
     // 카테고리별 기부 리스트
     List<DonaVo> donainglist(int cntr_category) throws Exception;
 

@@ -19,6 +19,15 @@ public class DonaController {
     @Autowired
     DonaService service;
 
+    // 전체 기부 리스트
+    @GetMapping("/donainglistall")
+    public void getListall(DonaVo vo, Model model) throws Exception {
+        List<DonaVo> list = null;
+        list = service.donainglistall(vo);
+
+        model.addAttribute("donainglistall", list);
+    }
+
     // 카테고리별 기부 리스트
     @GetMapping("/donainglist")
     public void getList(@RequestParam("c") int cntr_category, Model model) throws Exception {

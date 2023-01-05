@@ -195,11 +195,11 @@ button, input, select, textarea {
 .category-theme_area{
     background-color: #439A97;
 }
-.category-theme_inner {
-    width: 1000px;
-    margin: 0 auto;
-    padding: 60px 90px 60px;
-}
+/*.category-theme_inner {*/
+/*    width: 1200px;*/
+/*    margin: 0 auto;*/
+/*    padding: 60px 90px 60px;*/
+/*}*/
 .category-theme_item {
     display: inline-block;
     width: 150px;

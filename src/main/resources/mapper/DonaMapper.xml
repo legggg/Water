@@ -2,6 +2,13 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.water_web.Mapper.DonaMapper">
 
+    <!-- 전체 상품 리스트 -->
+    <select id="donainglistall" resultType="com.example.water_web.Vo.DonaVo">
+        select
+            cntr_sn, mbr_sn, cntr_ttl, cntr_cn, cntr_adres1, cntr_adres2, cntr_rcvfvr, cntr_str_dt, cntr_end_dt, cntr_obctr, cntr_category, cntr_category2, cntr_file_id
+        from tb_cntr
+    </select>
+
     <!-- 카테고리별 상품 리스트 -->
     <select id="donainglist" resultType="com.example.water_web.Vo.DonaVo">
         select

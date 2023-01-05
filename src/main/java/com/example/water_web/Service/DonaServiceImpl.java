@@ -16,10 +16,16 @@ public class DonaServiceImpl implements DonaService {
     @Autowired
     private DonaMapper dao;
 
-    // 카테고리별 상품 리스트
+    // 전체 상품 리스트
     @Override
     public List<DonaVo> donainglist(int cntr_category) throws Exception {
         return dao.donainglist(cntr_category);
+    }
+
+    // 카테고리별 상품 리스트
+    @Override
+    public List<DonaVo> donainglistall(DonaVo vo) throws Exception {
+        return dao.donainglistall(vo);
     }
 
     // 기부 조회

@@ -8,6 +8,10 @@ import java.util.List;
 
 @Mapper
 public interface DonaMapper {
+
+    // 전체 상품 리스트
+    List<DonaVo> donainglistall(DonaVo vo);
+
     // 카테고리별 상품 리스트
     List<DonaVo> donainglist(int cntr_category);
 
