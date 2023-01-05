@@ -5,7 +5,14 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>관리자 페이지</title>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script> <!-- 주소저장 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- 뭐였지 -->
+    <script src="/resources/ckeditor/ckeditor.js"></script> <!-- ck에디터 -->
+    <script type="text/javascript" src="/js/adres.js" defer></script>
+    <script type="text/javascript" src="/js/delOk.js" defer></script>
+
     <link rel="stylesheet" href="css/indexmodify.css" />
+
 </head>
 <style>
     ul { padding:0; margin:0; list-style:none;  }
@@ -31,6 +38,20 @@
                     <div class="user_wrap2">
                         <label for="cntr_cn">기부내용</label>
                         <textarea class="user_input2" rows="5" cols="50" id="cntr_cn" name="cntr_cn">${donas.cntr_cn}</textarea>
+                        <script>
+                            var ckeditor_config = {
+                                resize_enaleb : false,
+                                enterMode : CKEDITOR.ENTER_BR,
+                                shiftEnterMode : CKEDITOR.ENTER_P,
+                                // filebrowserUploadUrl : "/admin/goods/ckUpload"
+                            };
+                            CKEDITOR.replace("cntr_cn", ckeditor_config);
+                        </script>
+                    </div>
+
+                    <div class="se_wrap2">
+                        <label for="cntr_category">수혜자/수혜기관</label>
+                        <input class="user_input2" type="text" id="cntr_rcvfvr" name="cntr_rcvfvr" value="${donas.cntr_rcvfvr}" required />
                     </div>
 
                     <div class="se_wrap2">
@@ -68,18 +89,18 @@
                     <!-- 모금 마감날짜;;;; -->
                     <div class="user_wrap2">
                         <label>모금 마감날짜</label>
-                        <input class="user_input2 datebox2" type = date  name = "cntr_end_dt" size=50 value="${donas.cntr_end_dt}">
+                        <input class="user_input2 datebox2" type = date  name = "cntr_end_dt" size=50 />
                     </div>
 
                     <div class="adres_wrap2">
                         <label>주소 등록</label>
-                        <input class="adres_input2" style="width: 50%" type="text" id="sample4_postcode" placeholder="우편번호">
-                        <input class="adres_input2" style="width: 30%" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+                        <input class="adres_input2" style="width: 50%" type="text" id="sample4_postcode" placeholder="우편번호" />
+                        <input class="adres_input2" style="width: 30%" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" /><br>
 
-                        <input class="adres_input2" type="text" name="cntr_adres1" id="sample4_roadAddress" placeholder="도로명주소">
-                        <input class="adres_input2" type="hidden" id="sample4_jibunAddress" placeholder="지번주소">
+                        <input class="adres_input2" type="text" name="cntr_adres1" id="sample4_roadAddress" placeholder="도로명주소" />
+                        <input class="adres_input2" type="hidden" id="sample4_jibunAddress" placeholder="지번주소" />
                         <span id="guide" style="color:#999;display:none"></span>
-                        <input class="adres_input2" type="text" name="cntr_adres2" id="sample4_detailAddress" placeholder="상세주소">
+                        <input class="adres_input2" type="text" name="cntr_adres2" id="sample4_detailAddress" placeholder="상세주소" />
                         <input type="hidden" id="sample4_extraAddress" placeholder="참고항목">
                         <%--                        <input type="hidden" id="cntr_adres" name="cntr_adres" value="" >--%>
                     </div>
@@ -99,6 +120,7 @@
 </html>
 
 <script>
+
     function delOk(){
         var result = confirm("이전 페이지로 돌아가시겠습니까?");
 
@@ -108,4 +130,13 @@
             return false
         }
     }
+
+    // 숫자만 들어가도록
+    var regExp = /[^0-9]/gi;
+    $("#cntr_obctr").keyup(function(){ numCheck($(this)); });
+    function numCheck(selector) {
+        var tempVal = selector.val();
+        selector.val(tempVal.replace(regExp, ""));
+    }
+
 </script>

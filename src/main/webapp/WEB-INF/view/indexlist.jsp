@@ -9,11 +9,7 @@
     <link rel="stylesheet" href="css/indexregister.css" />
 </head>
 <style>
-    ul { padding:0; margin:0; list-style:none;  }
-    section#container { padding:20px 0; border-top:2px solid #eee; border-bottom:2px solid #eee; }
-    section#container::after { content:""; display:block; clear:both; }
-    #container_box table td { width:100px; }
-
+    table {width: 1180px; margin-top: 10px; text-align: center; border-spacing: 10px}
 </style>
 
 <body>
@@ -21,12 +17,11 @@
 
 <section id="container">
     <%@ include file="indexaside.jsp"%>
-    <div class="wrapper" style="margin-top: 50px; margin-right: 300px">
+    <div class="wrapper" style="margin-top: 50px; margin-right: 500px">
         <form role="form" method="post" autocomplete="off">
             <div class="wrap">
-
                 <h2>상품 목록</h2>
-                <table style="width: 1000px; margin-top: 10px; text-align: center; border-spacing: 10px">
+                <table>
                     <thead>
                     <tr>
                         <th>번호</th>
@@ -36,6 +31,7 @@
                         <th>기부대상</th>
                         <th>기부방법</th>
                         <th>작성날짜</th>
+                        <th>수혜자/수혜기관</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -47,9 +43,40 @@
                             </td>
     <%--                        <td>${list.cntr_cn}</td>--%>
                             <td><fmt:formatNumber value="${list.cntr_obctr}" pattern="###,###,###"/></td>
-                            <td>${list.cntr_category}</td>
-                            <td>${list.cntr_category2}</td>
+                            <td>
+                                <c:choose>
+                                    <c:when test="${list.cntr_category eq 0}">
+                                        <span>어린이</span>
+                                    </c:when>
+                                    <c:when test="${list.cntr_category eq 1}">
+                                        <span>노인</span>
+                                    </c:when>
+                                    <c:when test="${list.cntr_category eq 2}">
+                                        <span>장애인</span>
+                                    </c:when>
+                                    <c:when test="${list.cntr_category eq 3}">
+                                        <span>동물</span>
+                                    </c:when>
+                                    <c:when test="${list.cntr_category eq 4}">
+                                        <span>기타</span>
+                                    </c:when>
+                                </c:choose>
+                            </td>
+                            <td>
+                                <c:choose>
+                                    <c:when test="${list.cntr_category2 eq 0}">
+                                        <span>기부금</span>
+                                    </c:when>
+                                    <c:when test="${list.cntr_category2 eq 1}">
+                                        <span>재능</span>
+                                    </c:when>
+                                    <c:when test="${list.cntr_category2 eq 2}">
+                                        <span>상품</span>
+                                    </c:when>
+                                </c:choose>
+                            </td>
                             <td><fmt:formatDate value="${list.rgtr_dt}" pattern="yyyy-MM-dd"/></td>
+                            <td>${list.cntr_rcvfvr}</td>
                         </tr>
                     </c:forEach>
                     </tbody>

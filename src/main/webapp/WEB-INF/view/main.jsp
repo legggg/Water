@@ -198,7 +198,7 @@
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
             <c:forEach items="${main1}" var="main1">
-            <a href="/donainglist?c=0" class="Donacard_image">
+            <a href="/view?n=${main1.cntr_sn}" class="Donacard_image">
                 <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
                     <img src=${main1.cntr_file_id} width="100%" height="200" style="margin-top: 5px;">
                 </div>
@@ -219,13 +219,13 @@
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
             <c:forEach items="${main2}" var="main2">
-                <a href="/donainglist?c=0" class="Donacard_image">
+                <a href="/view?n=${main2.cntr_sn}" class="Donacard_image">
                     <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
                         <img src=${main2.cntr_file_id} width="100%" height="200" style="margin-top: 5px;">
                     </div>
                     <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
                         <strong class="Donacard_title" style="color: black">${main2.cntr_ttl}</strong>
-                        <div class="Donacard_orga" style="color: black;">${main2.cntr_adres1}</div>
+                        <div class="Donacard_orga" style="color: black;">${main2.cntr_rcvfvr}</div>
                     </div>
                 </a>
             </c:forEach>
@@ -240,7 +240,7 @@
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
             <c:forEach items="${main3}" var="main3">
-                <a href="/donainglist?c=0" class="Donacard_image">
+                <a href="/view?n=${main3.cntr_sn}" class="Donacard_image">
                     <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
                         <img src=${main3.cntr_file_id} width="100%" height="200" style="margin-top: 5px;">
                     </div>

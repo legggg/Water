@@ -35,6 +35,11 @@
                     <span>${donas.cntr_cn}</span>
                 </div>
 
+                <div class="user_wrap">
+                    <label>수혜자/수혜기관</label>
+                    <span>${donas.cntr_rcvfvr}</span>
+                </div>
+
                 <div class="se_wrap">
                     <label>기부 대상</label>
                     <c:choose>
@@ -92,6 +97,7 @@
 </html>
 
 <script>
+
     function delUser() {
         var result = confirm("삭제하시겠습니까?");
 
@@ -101,4 +107,5 @@
             return false
         }
     }
+
 </script>

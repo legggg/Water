@@ -3,21 +3,21 @@
 <mapper namespace="com.example.water_web.Mapper.MainMapper">
 
     <select id="main1" resultType="com.example.water_web.Vo.DonaVo">
-        select cntr_ttl, cntr_file_id, cntr_adres1, cntr_category2
+        select cntr_sn, cntr_ttl, cntr_file_id, cntr_rcvfvr, cntr_category2
         from tb_cntr
         where cntr_category2 = 0
         ORDER BY cntr_sn DESC LIMIT 4
     </select>
 
     <select id="main2" resultType="com.example.water_web.Vo.DonaVo">
-        select cntr_ttl, cntr_file_id, cntr_adres1, cntr_category2
+        select cntr_sn, cntr_ttl, cntr_file_id, cntr_rcvfvr, cntr_category2
         from tb_cntr
         where cntr_category2 = 1
         ORDER BY cntr_sn DESC LIMIT 4
     </select>
 
     <select id="main3" resultType="com.example.water_web.Vo.DonaVo">
-        select cntr_ttl, cntr_file_id, cntr_adres1, cntr_category2
+        select cntr_sn, cntr_ttl, cntr_file_id, cntr_rcvfvr, cntr_category2
         from tb_cntr
         where cntr_category2 = 2
         ORDER BY cntr_sn DESC LIMIT 4

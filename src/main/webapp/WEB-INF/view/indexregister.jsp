@@ -11,7 +11,7 @@
     <script type="text/javascript" src="/js/adres.js" defer></script>
 
     <link rel="stylesheet" href="/css/indexregister.css" />
-    <link rel="stylesheet" href="css/signup.css" />
+    <link rel="stylesheet" href="/css/signup.css" />
 </head>
 <style>
     ul { padding:0; margin:0; list-style:none;  }
@@ -30,12 +30,12 @@
                         <h2>상품 등록</h2>
                         <div class="user_wrap">
                             <label for="cntr_ttl">기부명</label>
-                            <input class="user_input" type="text" id="cntr_ttl" name="cntr_ttl" />
+                            <input class="user_input" type="text" id="cntr_ttl" name="cntr_ttl" required />
                         </div>
 
                         <div class="user_wrap">
                             <label for="cntr_cn">기부내용</label>
-                            <textarea class="user_input" rows="5" cols="50" id="cntr_cn" name="cntr_cn"></textarea>
+                            <textarea class="user_input" rows="5" cols="50" id="cntr_cn" name="cntr_cn" required></textarea>
                             <script>
                                 var ckeditor_config = {
                                     resize_enaleb : false,
@@ -45,6 +45,11 @@
                                 };
                                 CKEDITOR.replace("cntr_cn", ckeditor_config);
                             </script>
+                        </div>
+
+                        <div class="se_wrap">
+                            <label for="cntr_category">수혜자/수혜기관</label>
+                            <input class="user_input" type="text" id="cntr_rcvfvr" name="cntr_rcvfvr" required />
                         </div>
 
                         <div class="se_wrap">
@@ -82,18 +87,17 @@
                         <!-- 모금 마감날짜;;;; -->
                         <div class="user_wrap">
                             <label>모금 마감날짜</label>
-                            <input class="user_input datebox" type = date  name = "cntr_end_dt" size=50>
+                            <input class="user_input datebox" type = date  name = "cntr_end_dt" size=50 required />
                         </div>
 
                         <div class="adres_wrap">
                             <label>주소 등록</label>
-                            <input class="adres_input" style="width: 50%" type="text" id="sample4_postcode" placeholder="우편번호">
-                            <input class="adres_input" style="width: 30%" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
-
-                            <input class="adres_input" type="text" name="cntr_adres1" id="sample4_roadAddress" placeholder="도로명주소">
-                            <input class="adres_input" type="hidden" id="sample4_jibunAddress" placeholder="지번주소">
+                            <input class="adres_input" style="width: 50%" type="text" id="sample4_postcode" placeholder="우편번호" readonly />
+                            <input class="adres_input" style="width: 30%" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" /><br>
+                            <input class="adres_input" type="text" name="cntr_adres1" id="sample4_roadAddress" placeholder="도로명주소" readonly />
+                            <input class="adres_input" type="hidden" id="sample4_jibunAddress" placeholder="지번주소" readonly />
                             <span id="guide" style="color:#999;display:none"></span>
-                            <input class="adres_input" type="text" name="cntr_adres2" id="sample4_detailAddress" placeholder="상세주소">
+                            <input class="adres_input" type="text" name="cntr_adres2" id="sample4_detailAddress" placeholder="상세주소" />
                             <input type="hidden" id="sample4_extraAddress" placeholder="참고항목">
     <%--                        <input type="hidden" id="cntr_adres" name="cntr_adres" value="" >--%>
                         </div>
@@ -111,16 +115,15 @@
 </html>
 
 <script>
+
     // 컨트롤러에서 데이터 받기
     var jsonData = JSON.parse('${ctgry}');
     console.log(jsonData);
-
     var cate1Arr = new Array();
     var cate1Obj = new Object();
 
     // 1차 분류 셀렉트 박스에 삽입할 데이터 준비
     for(var i = 0; i < jsonData.length; i++) {
-
         if(jsonData[i].level == "1") {
             cate1Obj = new Object();  //초기화
             cate1Obj.cateCode = jsonData[i].cateCode;
@@ -131,7 +134,6 @@
 
     // 1차 분류 셀렉트 박스에 데이터 삽입
     var cate1Select = $("select.ctgry1")
-
     for(var i = 0; i < cate1Arr.length; i++) {
         cate1Select.append("<option value='" + cate1Arr[i].cateCode + "'>"
             + cate1Arr[i].cateName + "</option>");
@@ -139,9 +141,7 @@
 
     // 숫자만 들어가도록
     var regExp = /[^0-9]/gi;
-
     $("#cntr_obctr").keyup(function(){ numCheck($(this)); });
-
     function numCheck(selector) {
         var tempVal = selector.val();
         selector.val(tempVal.replace(regExp, ""));

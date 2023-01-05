@@ -5,7 +5,7 @@
     <!-- 카테고리별 상품 리스트 -->
     <select id="donainglist" resultType="com.example.water_web.Vo.DonaVo">
         select
-            cntr_sn, mbr_sn, cntr_ttl, cntr_cn, cntr_adres1, cntr_adres2, cntr_str_dt, cntr_end_dt, cntr_obctr, cntr_category, cntr_file_id
+            cntr_sn, mbr_sn, cntr_ttl, cntr_cn, cntr_adres1, cntr_adres2, cntr_rcvfvr, cntr_str_dt, cntr_end_dt, cntr_obctr, cntr_category, cntr_category2, cntr_file_id
         from tb_cntr
         where cntr_category = #{cntr_category}
     </select>
@@ -13,7 +13,7 @@
     <!-- 상품 조회 + 카테고리 조인 -->
     <select id="donasView" resultType="com.example.water_web.Vo.DonaVo">
         select
-            cntr_sn, mbr_sn, cntr_ttl, cntr_cn, cntr_adres1, cntr_adres2, cntr_str_dt, cntr_end_dt, cntr_obctr, cntr_category, cntr_file_id
+            cntr_sn, mbr_sn, cntr_ttl, cntr_cn, cntr_adres1, cntr_adres2, cntr_rcvfvr, cntr_str_dt, cntr_end_dt, cntr_obctr, cntr_category, cntr_category2, cntr_file_id
         from tb_cntr
         where cntr_sn = #{cntr_sn}
     </select>

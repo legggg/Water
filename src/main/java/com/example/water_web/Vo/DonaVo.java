@@ -21,6 +21,7 @@ public class DonaVo {
     private String cntr_adres2;
     private String cntr_loc_lat;
     private String cntr_loc_lng;
+    private String cntr_rcvfvr;
     private LocalDate cntr_str_dt;
     private String cntr_end_dt;
     private int cntr_obctr;
