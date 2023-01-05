@@ -13,6 +13,7 @@
         insert into tb_cntr (
                              cntr_ttl,
                              cntr_cn,
+                             cntr_rcvfvr,
                              cntr_str_dt,
                              cntr_end_dt,
                              cntr_obctr,
@@ -24,6 +25,7 @@
                              rgtr_dt)
         values ( #{cntr_ttl},
                 #{cntr_cn},
+                #{cntr_rcvfvr},
                 #{cntr_str_dt},
                 #{cntr_end_dt},
                 #{cntr_obctr},
@@ -37,14 +39,14 @@
 
     <!-- 기부 목록 -->
     <select id="donaslist" resultType="com.example.water_web.Vo.DonaVo">
-        select cntr_sn, cntr_ttl, cntr_cn, cntr_obctr, cntr_category, cntr_category2, rgtr_dt
+        select cntr_sn, cntr_ttl, cntr_cn, cntr_obctr, cntr_rcvfvr, cntr_category, cntr_category2, rgtr_dt
         from tb_cntr
         order by cntr_sn desc
     </select>
 
     <!-- 기부 조회 -->
     <select id="donasView" resultType="com.example.water_web.Vo.DonaVo">
-        select cntr_sn, cntr_ttl, cntr_cn, cntr_obctr, cntr_category, cntr_category2, rgtr_dt
+        select cntr_sn, cntr_ttl, cntr_cn, cntr_obctr, cntr_rcvfvr, cntr_category, cntr_category2, rgtr_dt
         from tb_cntr
         where cntr_sn = #{cntr_sn}
     </select>
@@ -55,9 +57,12 @@
         set
             cntr_ttl = #{cntr_ttl},
             cntr_cn = #{cntr_cn},
+            cntr_rcvfvr = #{cntr_rcvfvr},
             cntr_obctr = #{cntr_obctr},
             cntr_category = #{cntr_category},
-            cntr_category2 = #{cntr_category2}
+            cntr_category2 = #{cntr_category2},
+            cntr_adres1 = #{cntr_adres1},
+            cntr_adres2 = #{cntr_adres2}
         where cntr_sn = #{cntr_sn}
     </update>
 

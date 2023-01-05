@@ -113,15 +113,6 @@
 </html>
 
 <script>
-    function delOk(){
-        var result = confirm("이전 페이지로 돌아가시겠습니까?");
-
-        if(result) {
-            return history.go(-1);
-        } else {
-            return false
-        }
-    }
     function work() {
         var result = confirm("회원가입을 진행하겠습니까?");
 
@@ -129,6 +120,15 @@
             return true;
         } else {
             return false;
+        }
+    }
+    function delOk(){
+        var result = confirm("이전 페이지로 돌아가시겠습니까?");
+
+        if(result) {
+            return history.go(-1);
+        } else {
+            return false
         }
     }
 </script>
