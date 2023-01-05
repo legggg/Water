@@ -197,57 +197,19 @@
     </h3>
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
+            <c:forEach items="${main1}" var="main1">
             <a href="/donainglist?c=0" class="Donacard_image">
                 <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
-                    <img src="images/child.png" width="200" height="200" style="margin-left: 28px; margin-top: 5px;">
+                    <img src=${main1.cntr_file_id} width="100%" height="200" style="margin-top: 5px;">
                 </div>
                 <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
-                        제발요!!!!!</strong>
-                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
-                </div>
-
-
-            </a>
-        </li>
-        <li style="display: inline-block; vertical-align: top;">
-            <a href="/donainglist?c=1" class="Donacard_image">
-                <div class="Donacard_imagelist">
-                    <img src="images/old.png" width="200" height="200" style="margin-left: 38px; margin-top: 5px; ">
-                </div>
-                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
-                        제발요!!!!!</strong>
-                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
+                    <strong class="Donacard_title" style="color: black">${main1.cntr_ttl}</strong>
+                    <div class="Donacard_orga" style="color: black;">${main1.cntr_adres1}</div>
                 </div>
             </a>
-        </li>
-        <li style="display: inline-block; vertical-align: top;">
-            <a href="/donainglist?c=2" class="Donacard_image">
-                <div class="Donacard_imagelist">
-                    <img src="images/handi.png" width="200" height="200" style="margin-left: 38px; margin-top: 5px;">
-                </div>
-                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
-                        제발요!!!!!</strong>
-                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
-                </div>
-            </a>
-        </li>
-        <li style="display: inline-block; vertical-align: top;">
-            <a href="/donainglist?c=3" class="Donacard_image">
-                <div class="Donacard_imagelist">
-                    <img src="images/animal.png" width="200" height="200" style="margin-left: 38px; margin-top: 5px;">
-                </div>
-                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
-                        제발요!!!!!</strong>
-                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
-                </div>
-            </a>
+            </c:forEach>
         </li>
     </ul>
-
 </div>
 
 <div class="Maincardarea">
@@ -256,54 +218,17 @@
     </h3>
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
-            <a href="/donainglist?c=0" class="Donacard_image">
-                <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
-                    <img src="images/child.png" width="200" height="200" style="margin-left: 28px; margin-top: 5px;">
-                </div>
-                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
-                        제발요!!!!!</strong>
-                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
-                </div>
-
-
-            </a>
-        </li>
-        <li style="display: inline-block; vertical-align: top;">
-            <a href="/donainglist?c=1" class="Donacard_image">
-                <div class="Donacard_imagelist">
-                    <img src="images/old.png" width="200" height="200" style="margin-left: 38px; margin-top: 5px; ">
-                </div>
-                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
-                        제발요!!!!!</strong>
-                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
-                </div>
-            </a>
-        </li>
-        <li style="display: inline-block; vertical-align: top;">
-            <a href="/donainglist?c=2" class="Donacard_image">
-                <div class="Donacard_imagelist">
-                    <img src="images/handi.png" width="200" height="200" style="margin-left: 38px; margin-top: 5px;">
-                </div>
-                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
-                        제발요!!!!!</strong>
-                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
-                </div>
-            </a>
-        </li>
-        <li style="display: inline-block; vertical-align: top;">
-            <a href="/donainglist?c=3" class="Donacard_image">
-                <div class="Donacard_imagelist">
-                    <img src="images/animal.png" width="200" height="200" style="margin-left: 38px; margin-top: 5px;">
-                </div>
-                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
-                        제발요!!!!!</strong>
-                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
-                </div>
-            </a>
+            <c:forEach items="${main2}" var="main2">
+                <a href="/donainglist?c=0" class="Donacard_image">
+                    <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
+                        <img src=${main2.cntr_file_id} width="100%" height="200" style="margin-top: 5px;">
+                    </div>
+                    <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
+                        <strong class="Donacard_title" style="color: black">${main2.cntr_ttl}</strong>
+                        <div class="Donacard_orga" style="color: black;">${main2.cntr_adres1}</div>
+                    </div>
+                </a>
+            </c:forEach>
         </li>
     </ul>
 </div>
@@ -314,58 +239,20 @@
     </h3>
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
-            <a href="/donainglist?c=0" class="Donacard_image">
-                <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
-                    <img src="images/child.png" width="200" height="200" style="margin-left: 28px; margin-top: 5px;">
-                </div>
-                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
-                        제발요!!!!!</strong>
-                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
-                </div>
-
-
-            </a>
-        </li>
-        <li style="display: inline-block; vertical-align: top;">
-            <a href="/donainglist?c=1" class="Donacard_image">
-                <div class="Donacard_imagelist">
-                    <img src="images/old.png" width="200" height="200" style="margin-left: 38px; margin-top: 5px; ">
-                </div>
-                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
-                        제발요!!!!!</strong>
-                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
-                </div>
-            </a>
-        </li>
-        <li style="display: inline-block; vertical-align: top;">
-            <a href="/donainglist?c=2" class="Donacard_image">
-                <div class="Donacard_imagelist">
-                    <img src="images/handi.png" width="200" height="200" style="margin-left: 38px; margin-top: 5px;">
-                </div>
-                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
-                        제발요!!!!!</strong>
-                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
-                </div>
-            </a>
-        </li>
-        <li style="display: inline-block; vertical-align: top;">
-            <a href="/donainglist?c=3" class="Donacard_image">
-                <div class="Donacard_imagelist">
-                    <img src="images/animal.png" width="200" height="200" style="margin-left: 38px; margin-top: 5px;">
-                </div>
-                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">어린 아이를 도와주세요!
-                        제발요!!!!!</strong>
-                    <div class="Donacard_orga" style="color: black;"> 어떤 회사 ?</div>
-                </div>
-            </a>
+            <c:forEach items="${main3}" var="main3">
+                <a href="/donainglist?c=0" class="Donacard_image">
+                    <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
+                        <img src=${main3.cntr_file_id} width="100%" height="200" style="margin-top: 5px;">
+                    </div>
+                    <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
+                        <strong class="Donacard_title" style="color: black">${main3.cntr_ttl}</strong>
+                        <div class="Donacard_orga" style="color: black;">${main3.cntr_adres1}</div>
+                    </div>
+                </a>
+            </c:forEach>
         </li>
     </ul>
 </div>
 
 </body>
 </html>
-

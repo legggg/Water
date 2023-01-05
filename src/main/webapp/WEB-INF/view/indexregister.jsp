@@ -25,7 +25,6 @@
         <%@ include file="indexaside.jsp"%>
         <div class="wrapper">
             <form role="form" method="post" autocomplete="off">
-                <input type="hidden" name="cntr_sn" value="${donas.cntr_sn}" />
                     <div class="wrap">
                         <h2>상품 등록</h2>
                         <div class="user_wrap">
