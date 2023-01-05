@@ -16,7 +16,7 @@
 <style>
 
     * {
-        font-family: NanumBarunGothic,"나눔바른고딕","Nanum Barun Gothic",Sans-serif;
+        /*font-family: NanumBarunGothic,"나눔바른고딕","Nanum Barun Gothic",Sans-serif;*/
     }
 
     body{

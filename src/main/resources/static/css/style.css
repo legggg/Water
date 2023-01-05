@@ -52,6 +52,7 @@ header .logo{
     transition: all 0.25s cubic-bezier(0.42, 0, 0, 1);
     -webkit-box-shadow: 0px 2px 4px -1px #0000000f, 0px 4px 6px -1px #0000001a;
     box-shadow: 0px 2px 4px -1px #0000000f, 0px 4px 6px -1px #0000001a;
+    font-family: NanumBarunGothic,"나눔바른고딕","Nanum Barun Gothic",Sans-serif;
 }
 
 .site_header.darkmode {
