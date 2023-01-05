@@ -15,7 +15,7 @@
     <ul class="category-theme_inner">
         <li class="category-theme_item">
             <a href="/donainglistall" style="text-decoration-line: none;">
-                <img src="images/child.png" width="70" height="70">
+                <img src="images/fox.jpg" width="70" height="70">
                 <figure>전체</figure>
             </a>
         </li>

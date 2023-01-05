@@ -27,7 +27,7 @@
     <nav style="position: relative; height: 64px;  margin: 0 auto; right:45px">
         <ul class="menu">
             <li><a href="/intro" class="link">소개</a></li>
-            <li><a href="/donainglist?c=0" class="link">기부 카테고리</a></li>
+            <li><a href="/donainglistall" class="link">기부 카테고리</a></li>
             <li><a href="#" class="link">내 주위</a></li>
             <li><a href="#" class="link">기부 스토어</a></li>
         </ul>

@@ -14,7 +14,7 @@
 <div class="site_header" style="width: 100%; height: 64px; margin-top: 2px">
     <nav style="position: relative; height: 64px;  margin: 0 auto; right:25px">
         <ul class="menu">
-            <li class="link"><a href="/donainglist?c=0">진행중</a></li>
+            <li class="link"><a href="/donainglistall">진행중</a></li>
             <li class="link"><a href="">소통</a></li>
         </ul>
     </nav>
