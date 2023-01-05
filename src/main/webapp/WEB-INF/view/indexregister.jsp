@@ -5,8 +5,9 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>관리자 페이지</title>
-    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script> <!-- 주소저장 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> <!-- 뭐였지 -->
+    <script src="/resources/ckeditor/ckeditor.js"></script> <!-- ck에디터 -->
     <script type="text/javascript" src="/js/adres.js" defer></script>
 
     <link rel="stylesheet" href="/css/indexregister.css" />
@@ -35,6 +36,15 @@
                         <div class="user_wrap">
                             <label for="cntr_cn">기부내용</label>
                             <textarea class="user_input" rows="5" cols="50" id="cntr_cn" name="cntr_cn"></textarea>
+                            <script>
+                                var ckeditor_config = {
+                                    resize_enaleb : false,
+                                    enterMode : CKEDITOR.ENTER_BR,
+                                    shiftEnterMode : CKEDITOR.ENTER_P,
+                                    // filebrowserUploadUrl : "/admin/goods/ckUpload"
+                                };
+                                CKEDITOR.replace("cntr_cn", ckeditor_config);
+                            </script>
                         </div>
 
                         <div class="se_wrap">
