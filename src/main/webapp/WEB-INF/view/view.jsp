@@ -19,6 +19,12 @@
         font-family: NanumBarunGothic,"나눔바른고딕","Nanum Barun Gothic",Sans-serif;
     }
 
+    body{
+        background-color: #fff;
+        -webkit-font-smoothing: antialiased;
+        min-height: 1590px;
+    }
+
     div {
         display: block;
     }
@@ -38,9 +44,16 @@
         background: url(https://ssl.pstatic.net/happyimg2/img/mainhome/bg_crowd.gif) repeat-y;
     }
 
+    .collect_wrap::after{
+        content: '';
+        display: table;
+        width: 100%;
+        clear: both;
+    }
+
     .collect_wrap .content_content {
         float: left;
-        width: 628px;
+        width: 800px;
         padding: 60px 94px 90px;
         font-size: 16px;
     }
@@ -60,7 +73,7 @@
         color: #222;
         letter-spacing: .4px;
         line-height: 40px;
-        padding-bottom: 20px;
+        margin: 20px 0 50px;
 
     }
 
@@ -94,6 +107,37 @@
         letter-spacing: -.01px;
     }
 
+    .collect_wrap .content_side {
+        float: right;
+        width: 282px;
+        font-size: 15px;
+    }
+
+    .content_side .tit {
+        padding-top: 24px;
+        padding-bottom: 24px;
+        text-align: center;
+
+    }
+
+    .content_side .bt {
+        display: inline-block;
+        width: 282px;
+        height: 60px;
+        padding-top: 17px;
+        border: 1px solid rgba(0,0,0,.1);
+        background: #439A97;
+        font-size: 22px;
+        font-weight: 700;
+        color: #fff;
+        text-decoration: none;
+        text-shadow: 0 0 1px #086a1e;
+        text-align: center;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        overflow: hidden;
+    }
+
 
 
 
@@ -105,7 +149,6 @@
             <h2 class="theme"></h2>
             <h3 class="title">${view.cntr_ttl}</h3>
 <%--            <ul class="collect_tab" id="collect_tab"></ul>--%>
-
             <div class="tab_content">
                 <ul class="intro_list editor_base">
                     <li>
@@ -122,32 +165,31 @@
 <%--                            <dd id="paraContent">${view.cntr_cn}</dd>--%>
 <%--                        </dl>--%>
 <%--                    </li>--%>
-
-
-
-
                 </ul>
             </div>
+        </div>
 
+        <div class="content_side">
+            <div class="section_title"><p class="tit">${view.cntr_ttl}</p></div>
+            <div class="section_status"></div>
+            <div class="section_btn"><a href="#" class="bt donate jq_donate" data-google="모금함_View" data-stat="기부하기_상단_BTN_CLK">모금함 기부하기</a> </div>
+        </div>
 
 <br>
 
-<div>
-    <form role="form" method="post">
-        <input type="hidden" name="cntr_sn" value="${view.cntr_sn}" />
-        <div>
-            <label>기부금액을 쓰시오</label>
-            <input type="text" id="btr_pc" name="btr_pc" style="border: solid"/>
-        </div>
-        <div>
-            <button type="submit" id="makeDona_Btn" >보내기</button>
-        </div>
-    </form>
-</div>
+<%--<div>--%>
+<%--    <form role="form" method="post">--%>
+<%--        <input type="hidden" name="cntr_sn" value="${view.cntr_sn}" />--%>
+<%--        <div>--%>
+<%--            <label>기부금액을 쓰시오</label>--%>
+<%--            <input type="text" id="btr_pc" name="btr_pc" style="border: solid"/>--%>
+<%--        </div>--%>
+<%--        <div>--%>
+<%--            <button type="submit" id="makeDona_Btn" >보내기</button>--%>
+<%--        </div>--%>
+<%--    </form>--%>
+<%--</div>--%>
 
 
 </body>
-
-
-
 </html>
