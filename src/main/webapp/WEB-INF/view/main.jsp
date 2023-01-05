@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -186,6 +187,8 @@
         font-family: NanumBarunGothic,dotum,Sans-serif;
         font-size: 15px;
         color: #828282;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
     }
 
 
@@ -204,7 +207,8 @@
                 </div>
                 <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
                     <strong class="Donacard_title" style="color: black">${main1.cntr_ttl}</strong>
-                    <div class="Donacard_orga" style="color: black;">${main1.cntr_adres1}</div>
+                    <div class="Donacard_orga" style="color: black;">${main1.cntr_rcvfvr}</div>
+                    <div class="Donacard_orga" style="color: black;"><strong>목표금액 : <fmt:formatNumber value="${main1.cntr_obctr}" pattern="#,###"/></strong><span class="text">원</span></div>
                 </div>
             </a>
             </c:forEach>
@@ -226,6 +230,7 @@
                     <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
                         <strong class="Donacard_title" style="color: black">${main2.cntr_ttl}</strong>
                         <div class="Donacard_orga" style="color: black;">${main2.cntr_rcvfvr}</div>
+                        <div class="Donacard_orga" style="color: black;"><strong>목표금액 : <fmt:formatNumber value="${main2.cntr_obctr}" pattern="#,###"/></strong><span class="text">원</span></div>
                     </div>
                 </a>
             </c:forEach>
@@ -246,7 +251,8 @@
                     </div>
                     <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
                         <strong class="Donacard_title" style="color: black">${main3.cntr_ttl}</strong>
-                        <div class="Donacard_orga" style="color: black;">${main3.cntr_adres1}</div>
+                        <div class="Donacard_orga" style="color: black;">${main3.cntr_rcvfvr}</div>
+                        <div class="Donacard_orga" style="color: black;"><strong>목표금액 : <fmt:formatNumber value="${main3.cntr_obctr}" pattern="#,###"/></strong><span class="text">원</span></div>
                     </div>
                 </a>
             </c:forEach>
