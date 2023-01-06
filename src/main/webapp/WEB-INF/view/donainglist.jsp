@@ -31,7 +31,7 @@
                             <div>${donainglist.cntr_rcvfvr}</div>
                         </div>
                         <div class="card_content">
-                            <strong>목표금액 : <fmt:formatNumber value="${donainglist.cntr_obctr}" pattern="#,###"/> <span class="text">원</span></strong>
+                            <strong><fmt:formatNumber value="${donainglist.ctbny_pc}" pattern="#,###"/> <span class="text">원</span></strong>
                         </div>
                     </a>
                 </c:forEach>
