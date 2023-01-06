@@ -56,4 +56,19 @@ public class DonaController {
 
         return "redirect:/main";
     }
+
+    @GetMapping("/viewinputdona")
+    public void getMakeDona(@RequestParam("n") int cntr_sn, Model model) throws Exception {
+        DonaVo view = service.donasView(cntr_sn);
+
+        model.addAttribute("view", view);
+    }
+
+    @PostMapping("/viewinputdona")
+    public String postMaGaDona(MakeDonaVo vo, GatherDonaVo vo2) throws Exception {
+        service.makeDona(vo);
+        service.gatherDona(vo2);
+
+        return "redirect:/main";
+    }
 }

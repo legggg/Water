@@ -173,28 +173,8 @@
             <div class="section_title"><p class="tit">${view.cntr_ttl}</p></div>
             <div class="section_title">${view2.ctbny_pc} / ${view.cntr_obctr} 원</div>
             <div class="section_status"></div>
-            <div class="section_btn"><a href="#" class="bt donate jq_donate" data-google="모금함_View" data-stat="기부하기_상단_BTN_CLK">모금함 기부하기</a> </div>
+            <div class="section_btn"><a href='/viewinputdona?n=${view.cntr_sn}' class="bt donate jq_donate" data-google="모금함_View" data-stat="기부하기_상단_BTN_CLK" >모금함 기부하기</a> </div>
         </div>
-
-<br>
-
-<div class="content_side">
-    <form role="form" method="post">
-        <input type="hidden" name="cntr_sn" value="${view.cntr_sn}" />
-        <div>
-            <label>기부자명</label>
-            <input type="text" id="btn_nm" name="btn_nm" style="border: solid"/>
-        </div>
-        <div>
-            <label>기부금액을 쓰시오</label>
-            <input type="text" id="btr_pc" name="btr_pc" style="border: solid"/>
-        </div>
-        <div>
-            <button type="submit" id="makeDona_Btn" >기부하기</button>
-        </div>
-    </form>
-</div>
-
 
 </body>
 </html>
