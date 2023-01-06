@@ -12,16 +12,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script src="js/scripts.js" defer></script>
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/info.css" />
-    <link rel="stylesheet" href="css/main.css" />
 </head>
 <body>
+<style>
+    body {
+        background-color: white;
+    }
+</style>
 
 <%@ include file="header.jsp"%>
 
+<script defer src="./scripts.js"></script>
 
 <div class="container mt-3" style="padding-top: 50px; margin: 0 auto; padding-right: 25px;">
     <h2></h2>
@@ -91,6 +95,106 @@
 </div>
 
 
+
+
+<style>
+
+    .Maincardarea {
+        display: block;
+        margin: 80px auto 0;
+        width: 1100px;
+    }
+
+
+    .Maincardarea_text {
+        font-size: 25px;
+        font-weight: 900;
+        line-height: 1.2;
+    }
+
+    .Maincardarea_link {
+        color: black;
+        display: inline-block;
+        vertical-align: top;
+    }
+
+    .Maincarearea_icon {
+        position: relative;
+        width: 12px;
+        height: 24px;
+        margin: 5px 0 0 8px;
+    }
+
+    .Maincarearea_icon::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 12px;
+        height: 12px;
+        -ms-transform: translate(-50%,-50%) rotate(45deg);
+        transform: translate(-50%,-50%) rotate(45deg);
+        border-top: 2px solid #000;
+        border-right: 2px solid #000;
+    }
+
+    .Donacard_list {
+        overflow: hidden;
+        margin-top: 20px;
+    }
+
+    .Donacard_image {
+        margin: 10px auto 0;
+        float: left;
+        position: relative;
+        width: 267px;
+        height: 363px;
+        background-color: #fff;
+        font-family: NanumSquareWebFont,dotum,Sans-serif;
+    }
+
+    .Donacard_image::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        border: 1px solid rgba(0,0,0,.11);
+        content: "";
+        margin-left: 10px;
+    }
+
+    .Donacard_title {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: block;
+        display: -webkit-box;
+        height: 50px;
+        line-height: 25px;
+        word-wrap: break-word;
+        word-break: break-all;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: 17px;
+        letter-spacing: -.5px;
+        color: #333;
+    }
+
+    .Donacard_orga {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-top: 8px;
+        font-family: NanumBarunGothic,dotum,Sans-serif;
+        font-size: 15px;
+        color: #828282;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+
+
+</style>
+
 <div class="Maincardarea">
     <h3 class="Maincardarea_text">
         <a href="#" class="Maincardarea_link" style="text-decoration: none; color: inherit;" > 기부 목록 <i class="Maincarearea_icon"></i></a>
@@ -98,16 +202,16 @@
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
             <c:forEach items="${main1}" var="main1">
-            <a href="/view?n=${main1.cntr_sn}" class="Donacard_image">
-                <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
-                    <img src=${main1.cntr_file_id} width="100%" height="200" style="margin-top: 5px;">
-                </div>
-                <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                    <strong class="Donacard_title" style="color: black">${main1.cntr_ttl}</strong>
-                    <div class="Donacard_orga" style="color: black;">${main1.cntr_rcvfvr}</div>
-                    <div class="Donacard_orga" style="color: black;">${main1.percent}  <strong><fmt:formatNumber value="${main1.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
-                </div>
-            </a>
+                <a href="/view?n=${main1.cntr_sn}" class="Donacard_image">
+                    <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
+                        <img src=${main1.cntr_file_id} width="100%" height="200" style="margin-top: 5px;">
+                    </div>
+                    <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
+                        <strong class="Donacard_title" style="color: black">${main1.cntr_ttl}</strong>
+                        <div class="Donacard_orga" style="color: black;">${main1.cntr_rcvfvr}</div>
+                        <div class="Donacard_orga" style="color: black;">${main1.percent}   <strong>목표금액 : <fmt:formatNumber value="${main1.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
+                    </div>
+                </a>
             </c:forEach>
         </li>
     </ul>
@@ -127,7 +231,7 @@
                     <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
                         <strong class="Donacard_title" style="color: black">${main2.cntr_ttl}</strong>
                         <div class="Donacard_orga" style="color: black;">${main2.cntr_rcvfvr}</div>
-                        <div class="Donacard_orga" style="color: black;">${main2.percent}  <strong><fmt:formatNumber value="${main2.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
+                        <div class="Donacard_orga" style="color: black;">${main2.percent}   <strong>목표금액 : <fmt:formatNumber value="${main2.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
                     </div>
                 </a>
             </c:forEach>
@@ -149,7 +253,7 @@
                     <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
                         <strong class="Donacard_title" style="color: black">${main3.cntr_ttl}</strong>
                         <div class="Donacard_orga" style="color: black;">${main3.cntr_rcvfvr}</div>
-                        <div class="Donacard_orga" style="color: black;">${main3.percent}  <strong><fmt:formatNumber value="${main3.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
+                        <div class="Donacard_orga" style="color: black;">${main3.percent}   <strong>목표금액 : <fmt:formatNumber value="${main3.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
                     </div>
                 </a>
             </c:forEach>
