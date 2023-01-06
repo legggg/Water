@@ -5,7 +5,7 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>상품 목록</title>
+    <title>기부글 목록</title>
     <link rel="stylesheet" href="css/indexregister.css" />
 </head>
 <style>

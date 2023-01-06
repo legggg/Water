@@ -5,7 +5,7 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>관리자 페이지</title>
+    <title>기부 자세히</title>
     <link rel="stylesheet" href="css/indexview.css" />
 </head>
 <style>
@@ -24,7 +24,7 @@
             <input type="hidden" name="n" value="${donas.cntr_sn}">
             <div class="wrap">
 
-                <h2>상품 자세히 보기</h2>
+                <h2>기부 자세히 보기</h2>
                 <div class="user_wrap">
                     <label>기부명</label>
                     <span>${donas.cntr_ttl}</span>
