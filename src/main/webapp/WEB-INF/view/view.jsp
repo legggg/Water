@@ -171,6 +171,7 @@
 
         <div class="content_side">
             <div class="section_title"><p class="tit">${view.cntr_ttl}</p></div>
+            <div class="section_title">${view2.ctbny_pc} / ${view.cntr_obctr} 원</div>
             <div class="section_status"></div>
             <div class="section_btn"><a href="#" class="bt donate jq_donate" data-google="모금함_View" data-stat="기부하기_상단_BTN_CLK">모금함 기부하기</a> </div>
         </div>

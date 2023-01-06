@@ -28,6 +28,8 @@ public class DonaVo {
     private int cntr_category;
     private int cntr_category2;
 
+    private int ctbny_pc;     // 현재 기부액 조회
+
     private String use_yn;
 
     private int rgtr_id;

@@ -24,4 +24,7 @@ public interface DonaMapper {
 
     // 기부금 모으기
     void gatherDona(GatherDonaVo vo) throws Exception;
+
+    // 현재 기부액 조회
+    DonaVo magaDona(int cntr_sn) throws Exception;
 }

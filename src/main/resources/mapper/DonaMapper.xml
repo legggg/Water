@@ -38,4 +38,14 @@
         from tb_cntr_btr
         where cntr_sn = #{cntr_sn}
     </insert>
+
+    <!-- 현재 기부액 조회 -->
+    <select id="magaDona" resultType="com.example.water_web.Vo.DonaVo">
+        select b.ctbny_pc
+        from tb_cntr AS a
+                 INNER JOIN tb_cntr_ctbny AS b
+                            ON a.cntr_sn = b.cntr_sn
+        WHERE b.cntr_sn = #{cntr_sn}
+    </select>
+
 </mapper>
