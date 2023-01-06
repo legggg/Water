@@ -1,6 +1,7 @@
 package com.example.water_web.Mapper;
 
 import com.example.water_web.Vo.DonaVo;
+import com.example.water_web.Vo.GatherDonaVo;
 import com.example.water_web.Vo.MakeDonaVo;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -20,4 +21,7 @@ public interface DonaMapper {
 
     // 기부금 등록
     void makeDona(MakeDonaVo vo) throws Exception;
+
+    // 기부금 모으기
+    void gatherDona(GatherDonaVo vo) throws Exception;
 }

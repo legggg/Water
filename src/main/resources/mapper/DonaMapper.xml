@@ -27,7 +27,15 @@
 
     <!-- 기부금 등록하기 -->
     <insert id="makeDona" parameterType="com.example.water_web.Vo.MakeDonaVo">
-        insert into tb_cntr_btr (cntr_sn, btr_pc)
-        values ( #{cntr_sn}, #{btr_pc})
+        insert into tb_cntr_btr (cntr_sn, btn_nm, btr_pc, rgtr_id, rgtr_dt)
+        values ( #{cntr_sn}, #{btn_nm}, #{btr_pc}, #{rgtr_id}, #{rgtr_dt})
+    </insert>
+
+    <!-- 기부금 모으기 -->
+    <insert id="gatherDona" parameterType="com.example.water_web.Vo.MakeDonaVo">
+        replace into tb_cntr_ctbny (cntr_sn, ctbny_pc)
+        select cntr_sn, sum(btr_pc)
+        from tb_cntr_btr
+        where cntr_sn = #{cntr_sn}
     </insert>
 </mapper>

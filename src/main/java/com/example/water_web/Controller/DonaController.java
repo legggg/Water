@@ -2,6 +2,7 @@ package com.example.water_web.Controller;
 
 import com.example.water_web.Service.DonaService;
 import com.example.water_web.Vo.DonaVo;
+import com.example.water_web.Vo.GatherDonaVo;
 import com.example.water_web.Vo.MakeDonaVo;
 import com.fasterxml.jackson.annotation.JacksonInject;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -44,10 +45,11 @@ public class DonaController {
         model.addAttribute("view", view);
     }
 
-    // 기부하기
+    // 기부금 등록 + 기부금 모으기
     @PostMapping("/view")
-    public String postMakeDona(MakeDonaVo vo) throws Exception {
+    public String postMakeDona(MakeDonaVo vo, GatherDonaVo vo2) throws Exception {
         service.makeDona(vo);
+        service.gatherDona(vo2);
 
         return "redirect:/main";
     }

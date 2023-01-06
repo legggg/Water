@@ -2,11 +2,13 @@ package com.example.water_web.Service;
 
 import com.example.water_web.Mapper.DonaMapper;
 import com.example.water_web.Vo.DonaVo;
+import com.example.water_web.Vo.GatherDonaVo;
 import com.example.water_web.Vo.MakeDonaVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -37,6 +39,15 @@ public class DonaServiceImpl implements DonaService {
     // 기부금 등록
     @Override
     public void makeDona(MakeDonaVo vo) throws Exception {
+        int btr_sn = vo.getBtr_sn();
+        vo.setRgtr_id(btr_sn);
+        vo.setRgtr_dt(LocalDateTime.now());
+
         dao.makeDona(vo);
+    }
+
+    // 기부금 모으기
+    public void gatherDona(GatherDonaVo vo) throws Exception {
+        dao.gatherDona(vo);
     }
 }
