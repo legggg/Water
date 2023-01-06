@@ -29,6 +29,7 @@ public class DonaVo {
     private int cntr_category2;
 
     private int ctbny_pc;     // 현재 기부액 조회
+    private int percent;
 
     private String use_yn;
 

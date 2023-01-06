@@ -148,7 +148,7 @@
         <div class="content_content">
             <h2 class="theme"></h2>
             <h3 class="title">${view.cntr_ttl}</h3>
-<%--            <ul class="collect_tab" id="collect_tab"></ul>--%>
+            <%--            <ul class="collect_tab" id="collect_tab"></ul>--%>
             <div class="tab_content">
                 <ul class="intro_list editor_base">
                     <li>
@@ -159,72 +159,72 @@
                     </li>
 
                     <%--! 여기서 늘리면됨 --%>
-<%--                    <li>--%>
-<%--                        <dl>--%>
-<%--                            <dt id="paraTitle">소제목</dt>--%>
-<%--                            <dd id="paraContent">${view.cntr_cn}</dd>--%>
-<%--                        </dl>--%>
-<%--                    </li>--%>
+                    <%--                    <li>--%>
+                    <%--                        <dl>--%>
+                    <%--                            <dt id="paraTitle">소제목</dt>--%>
+                    <%--                            <dd id="paraContent">${view.cntr_cn}</dd>--%>
+                    <%--                        </dl>--%>
+                    <%--                    </li>--%>
                 </ul>
             </div>
         </div>
 
-<style>
+        <style>
 
-    div {
-        display: block;
-    }
+            div {
+                display: block;
+            }
 
-.content_side .section_status {
-    position: relative;
-    padding-bottom: 25px;
-}
+            .content_side .section_status {
+                position: relative;
+                padding-bottom: 25px;
+            }
 
-.section_status {
-    margin: 0 1px;
-    padding: 23px 29px 27px;
-    border-bottom: 0;
-}
-.graph_status {
-    padding-right: 2px;
-}
-.graph_status::after{
-    display: block;
-    clear: both;
-    content: "";
-}
+            .section_status {
+                margin: 0 1px;
+                padding: 23px 29px 27px;
+                border-bottom: 0;
+            }
+            .graph_status {
+                padding-right: 2px;
+            }
+            .graph_status::after{
+                display: block;
+                clear: both;
+                content: "";
+            }
 
-.graph_status .per{
-    float: left;
-    font-size: 24px;
-    color: #439A97;
-}
+            .graph_status .per{
+                float: left;
+                font-size: 24px;
+                color: #439A97;
+            }
 
-.graph_status .per strong {
-    font-size: 53px;
-    font-weight: 700;
-    line-height: 70px;
-    letter-spacing: -2px;
-}
+            .graph_status .per strong {
+                font-size: 53px;
+                font-weight: 700;
+                line-height: 70px;
+                letter-spacing: -2px;
+            }
 
-.content_side .section_status .term_area p{
-    padding: 13px 0 11px;
-    font-size: 18px;
-    color: #888;
-    letter-spacing: -.04em;
-}
+            .content_side .section_status .term_area p{
+                padding: 13px 0 11px;
+                font-size: 18px;
+                color: #888;
+                letter-spacing: -.04em;
+            }
 
 
-</style>
+        </style>
 
         <div class="content_side">
             <div class="section_title"><p class="tit" style="font-size: 20px">${view.cntr_ttl}</p></div>
-<%--            <div class="section_title">${view2.ctbny_pc} / ${view.cntr_obctr} 원</div>--%>
+            <%--            <div class="section_title">${view2.ctbny_pc} / ${view.cntr_obctr} 원</div>--%>
             <div class="section_status">
                 <div class="graph_wrap">
                     <div class="graph_status">
                         <span class="per">
-                            <strong class="num"> </strong>%
+                            <strong class="num">${view3.percent}</strong>%
                         </span>
                     </div>
                 </div>

@@ -53,7 +53,13 @@ public class DonaServiceImpl implements DonaService {
     }
 
     // 현재 기부액 조회
+    @Override
     public DonaVo magaDona(int cntr_sn) throws Exception {
         return dao.magaDona(cntr_sn);
+    }
+
+    @Override
+    public DonaVo percent(int cntr_sn) throws Exception {
+        return dao.percent(cntr_sn);
     }
 }

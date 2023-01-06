@@ -25,4 +25,6 @@ public interface DonaService {
 
     // 현재 기부액 조회
     DonaVo magaDona(int cntr_sn) throws Exception;
+
+    DonaVo percent(int cntr_sn) throws Exception;
 }

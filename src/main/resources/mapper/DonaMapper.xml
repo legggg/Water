@@ -48,4 +48,13 @@
         WHERE b.cntr_sn = #{cntr_sn}
     </select>
 
+
+    <select id="percent" resultType="com.example.water_web.Vo.DonaVo">
+    SELECT a.cntr_obctr, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent
+    from tb_cntr AS a
+    INNER JOIN tb_cntr_ctbny AS b
+    ON a.cntr_sn = b.cntr_sn
+    WHERE b.cntr_sn = #{cntr_sn}
+    </select>
+
 </mapper>
