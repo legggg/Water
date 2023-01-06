@@ -15,6 +15,9 @@ public class MakeDonaVo {
     private String btn_nm;
     private int btr_pc;
 
+    private String btr_adres1;
+    private String btr_adres2;
+
     private String use_yn;
 
     private int rgtr_id;

@@ -28,8 +28,8 @@
 
     <!-- 기부금 등록하기 -->
     <insert id="makeDona" parameterType="com.example.water_web.Vo.MakeDonaVo">
-        insert into tb_cntr_btr (cntr_sn, btn_nm, btr_pc, rgtr_id, rgtr_dt)
-        values ( #{cntr_sn}, #{btn_nm}, #{btr_pc}, #{rgtr_id}, #{rgtr_dt})
+        insert into tb_cntr_btr (cntr_sn, btn_nm, btr_pc, btr_adres1, btr_adres2, rgtr_id, rgtr_dt)
+        values ( #{cntr_sn}, #{btn_nm}, #{btr_pc}, #{btr_adres1}, #{btr_adres2}, #{rgtr_id}, #{rgtr_dt})
     </insert>
 
     <!-- 기부금 모으기 -->
