@@ -13,11 +13,6 @@
     <link rel="stylesheet" href="/css/indexregister.css" />
     <link rel="stylesheet" href="/css/signup.css" />
 </head>
-<style>
-    ul { padding:0; margin:0; list-style:none;  }
-    section#container { padding:20px 0; border-top:2px solid #eee; border-bottom:2px solid #eee; }
-    section#container::after { content:""; display:block; clear:both; }
-</style>
 
 <body>
     <%@ include file="header.jsp"%>

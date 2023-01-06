@@ -187,7 +187,6 @@ label {
     margin-top: 20px;
 }
 .mail_check_input_box{
-    border: 1px solid black;
     height: 31px;
     padding: 10px 14px;
     width: 61%;
@@ -199,7 +198,6 @@ label {
     font-size:28px;
 }
 .mail_check_button{
-    border: 1px solid black;
     height: 51px;
     width: 30%;
     float: right;
@@ -234,10 +232,6 @@ label {
 .button_wrap{
     margin-top: 20px;
 }
-.login_button_wrap{
-    margin-top: 20px;
-    text-align: center;
-}
 .login_button{
     width: 100%;
     height: 60px;
@@ -246,5 +240,7 @@ label {
     font-weight: 900;
     color: white;
     margin : auto;
-    cursor:pointer
+    cursor:pointer;
+    border: 0 !important;
+    outline: 1px solid #569a67;
 }

@@ -102,7 +102,8 @@
     color: white;
     margin : auto;
     cursor:pointer;
-    border:none;
+    border: 0 !important;
+    outline: 1px solid #569a67;
 }
 
 /* float 속성 해제 */
