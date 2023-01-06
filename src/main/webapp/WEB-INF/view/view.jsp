@@ -169,12 +169,77 @@
             </div>
         </div>
 
+<style>
+
+    div {
+        display: block;
+    }
+
+.content_side .section_status {
+    position: relative;
+    padding-bottom: 25px;
+}
+
+.section_status {
+    margin: 0 1px;
+    padding: 23px 29px 27px;
+    border-bottom: 0;
+}
+.graph_status {
+    padding-right: 2px;
+}
+.graph_status::after{
+    display: block;
+    clear: both;
+    content: "";
+}
+
+.graph_status .per{
+    float: left;
+    font-size: 24px;
+    color: #439A97;
+}
+
+.graph_status .per strong {
+    font-size: 53px;
+    font-weight: 700;
+    line-height: 70px;
+    letter-spacing: -2px;
+}
+
+.content_side .section_status .term_area p{
+    padding: 13px 0 11px;
+    font-size: 18px;
+    color: #888;
+    letter-spacing: -.04em;
+}
+
+
+</style>
+
         <div class="content_side">
-            <div class="section_title"><p class="tit">${view.cntr_ttl}</p></div>
-            <div class="section_title">${view2.ctbny_pc} / ${view.cntr_obctr} 원</div>
-            <div class="section_status"></div>
+            <div class="section_title"><p class="tit" style="font-size: 20px">${view.cntr_ttl}</p></div>
+<%--            <div class="section_title">${view2.ctbny_pc} / ${view.cntr_obctr} 원</div>--%>
+            <div class="section_status">
+                <div class="graph_wrap">
+                    <div class="graph_status">
+                        <span class="per">
+                            <strong class="num"> </strong>%
+                        </span>
+                    </div>
+                </div>
+                <div class="term_area">
+                    <p>
+                        <strong>${view.cntr_str_dt} ~ ${view.cntr_end_dt}</strong>
+                    </p>
+                </div>
+                <div class="num_area"></div>
+            </div>
+
             <div class="section_btn"><a href='/viewinputdona?n=${view.cntr_sn}' class="bt donate jq_donate" data-google="모금함_View" data-stat="기부하기_상단_BTN_CLK" >모금함 기부하기</a> </div>
         </div>
+    </div>
+</div>
 
 </body>
 </html>
