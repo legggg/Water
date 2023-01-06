@@ -3,7 +3,7 @@
 <mapper namespace="com.example.water_web.Mapper.MainMapper">
 
     <select id="main1" resultType="com.example.water_web.Vo.DonaVo">
-        SELECT a.*, b.ctbny_pc
+        SELECT a.*, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent
         from tb_cntr AS a
             LEFT JOIN tb_cntr_ctbny AS b
                 ON a.cntr_sn = b.cntr_sn
@@ -12,7 +12,7 @@
     </select>
 
     <select id="main2" resultType="com.example.water_web.Vo.DonaVo">
-        SELECT a.*, b.ctbny_pc
+        SELECT a.*, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent
         from tb_cntr AS a
             LEFT JOIN tb_cntr_ctbny AS b
                 ON a.cntr_sn = b.cntr_sn
@@ -21,7 +21,7 @@
     </select>
 
     <select id="main3" resultType="com.example.water_web.Vo.DonaVo">
-        SELECT a.*, b.ctbny_pc
+        SELECT a.*, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent
         from tb_cntr AS a
             LEFT JOIN tb_cntr_ctbny AS b
                 ON a.cntr_sn = b.cntr_sn

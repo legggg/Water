@@ -105,7 +105,7 @@
                 <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
                     <strong class="Donacard_title" style="color: black">${main1.cntr_ttl}</strong>
                     <div class="Donacard_orga" style="color: black;">${main1.cntr_rcvfvr}</div>
-                    <div class="Donacard_orga" style="color: black;"><strong><fmt:formatNumber value="${main1.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
+                    <div class="Donacard_orga" style="color: black;">${main1.percent}  <strong><fmt:formatNumber value="${main1.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
                 </div>
             </a>
             </c:forEach>
@@ -127,7 +127,7 @@
                     <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
                         <strong class="Donacard_title" style="color: black">${main2.cntr_ttl}</strong>
                         <div class="Donacard_orga" style="color: black;">${main2.cntr_rcvfvr}</div>
-                        <div class="Donacard_orga" style="color: black;"><strong><fmt:formatNumber value="${main2.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
+                        <div class="Donacard_orga" style="color: black;">${main2.percent}  <strong><fmt:formatNumber value="${main2.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
                     </div>
                 </a>
             </c:forEach>
@@ -149,7 +149,7 @@
                     <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
                         <strong class="Donacard_title" style="color: black">${main3.cntr_ttl}</strong>
                         <div class="Donacard_orga" style="color: black;">${main3.cntr_rcvfvr}</div>
-                        <div class="Donacard_orga" style="color: black;"><strong><fmt:formatNumber value="${main3.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
+                        <div class="Donacard_orga" style="color: black;">${main3.percent}  <strong><fmt:formatNumber value="${main3.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
                     </div>
                 </a>
             </c:forEach>

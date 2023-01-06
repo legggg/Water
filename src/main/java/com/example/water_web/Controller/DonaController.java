@@ -43,11 +43,11 @@ public class DonaController {
     public void getView(@RequestParam("n") int cntr_sn, Model model) throws Exception {
         DonaVo view = service.donasView(cntr_sn);
         DonaVo view2 = service.magaDona(cntr_sn);
-        DonaVo view3 = service.percent(cntr_sn);
+//        DonaVo view3 = service.percent(cntr_sn);
 
         model.addAttribute("view", view);
         model.addAttribute("view2", view2);
-        model.addAttribute("view3", view3);
+//        model.addAttribute("view3", view3);
     }
 
     // 기부금 등록 + 기부금 모으기

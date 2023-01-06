@@ -38,7 +38,7 @@
                 <div class="graph_wrap">
                     <div class="graph_status">
                         <span class="per">
-                            <strong class="num">${view3.percent}</strong>%
+                            <strong class="num">${view2.percent}</strong>%
                         </span>
                     </div>
                 </div>

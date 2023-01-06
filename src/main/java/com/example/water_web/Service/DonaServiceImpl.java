@@ -58,8 +58,8 @@ public class DonaServiceImpl implements DonaService {
         return dao.magaDona(cntr_sn);
     }
 
-    @Override
-    public DonaVo percent(int cntr_sn) throws Exception {
-        return dao.percent(cntr_sn);
-    }
+//    @Override
+//    public DonaVo percent(int cntr_sn) throws Exception {
+//        return dao.percent(cntr_sn);
+//    }
 }
