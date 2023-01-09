@@ -86,8 +86,6 @@ public class UserController {
         }
         session.setAttribute("userId", loginResponse);
         return "redirect:/main";
-
-
     }
 
     // 로그아웃
@@ -97,7 +95,7 @@ public class UserController {
         return "redirect:/main";
     }
 
-    // 회원 정보 수정 페이지 이동
+    // 회원 정보 수정 페이지
     @GetMapping("/update")
     public String toUpdatePage(HttpSession session, Model model) {
         Integer sn = (Integer) session.getAttribute("userSn");
@@ -126,12 +124,16 @@ public class UserController {
         return "redirect:/main";
     }
 
-    //마이페이지
+    //마이 페이지
     @GetMapping("/mypage")
     public String myPage(HttpSession session, Model model) {
         Integer sn = (Integer) session.getAttribute("userSn");
         List<UserVo> userList = userServiceImpl.getUserList(sn);
-        model.addAttribute("list", userList);
+
+        List<UserVo> userDonaDate = userServiceImpl.getUserDonaDate(sn);
+
+        model.addAttribute("mypage", userList);
+        model.addAttribute("userDonaDate", userDonaDate);
         return "mypage";
     }
 

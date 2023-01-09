@@ -1,0 +1,67 @@
+@charset "UTF-8";
+
+*{
+    margin: 0;
+    padding:0;
+}
+
+/* 화면 전체 렙 */
+.wrapper{
+    vertical-align: middle;
+}
+
+/* content 랩 */
+.wrap{
+    width : 700px;
+    margin: auto;
+}
+
+/* 제몰 */
+.mypage_title {
+    margin-top: 50px;
+    font-weight: bold;
+    padding-bottom: 13px;
+    margin-bottom: 1rem !important;
+}
+
+/* content */
+.content_wrap {
+    width: 100%;
+    margin-top: 27px;
+}
+label {
+    font-weight: bold;
+    display: block;
+    font-size: 30px;
+    margin-top: 15px;
+}
+.contents {
+    font-size: 25px;
+}
+
+/* float 속성 해제 */
+.clearfix{
+    clear: both;
+}
+
+/* 버튼 */
+.button_wrap{
+    margin-top: 20px;
+}
+.modify_button_wrap{
+    margin-top: 40px;
+    text-align: center;
+    border:none;
+}
+.modify_button{
+    width: 30%;
+    height: 40px;
+    background-color: #62B6B7;
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
+    margin : auto;
+    cursor:pointer;
+    border: 0 !important;
+    outline: 1px solid #569a67;
+}

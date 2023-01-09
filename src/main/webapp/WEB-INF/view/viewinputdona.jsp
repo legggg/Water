@@ -76,6 +76,7 @@
 
             <div class="button_wrap">
                 <div class=login_button_wrap">
+                    <input type="hidden" name = "mbr_sn" value ="${user.mbr_sn}">
                     <button class="login_button" type="submit" id="makeDona_Btn" >기부하기</button>
                 </div>
             </div>

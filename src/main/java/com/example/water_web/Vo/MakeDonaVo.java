@@ -10,6 +10,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class MakeDonaVo {
+    private int mbr_sn;
     private int btr_sn;
     private int cntr_sn;
     private String btn_nm;

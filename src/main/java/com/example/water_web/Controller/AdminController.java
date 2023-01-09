@@ -43,7 +43,7 @@ public class AdminController {
         return "redirect:/index";
     }
 
-    // 기부 목록
+    // 기부 목록 페이지
     @GetMapping("/indexlist")
     public void getdonasList(Model model) throws Exception {
         List<DonaVo> list = adminService.donaslist();
@@ -51,14 +51,14 @@ public class AdminController {
         model.addAttribute("list", list);
     }
 
-    // 기부 조회
+    // 기부 조회 페이지
     @GetMapping("/indexview")
     public void getdonasview(@RequestParam("n") int cntr_sn, Model model) throws Exception {
         DonaVo donas = adminService.donasView(cntr_sn);
         model.addAttribute("donas", donas);
     }
 
-    // 기부 수정
+    // 기부 수정 페이지
     @GetMapping("/indexmodify")
     public void getDonasModify(@RequestParam("n") int cntr_sn, Model model) throws Exception {
         DonaVo donas = adminService.donasView(cntr_sn);

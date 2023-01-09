@@ -271,7 +271,14 @@
             </div>
 
             <div class="section_btn">
-                <a href='/viewinputdona?n=${view.cntr_sn}' class="bt donate jq_donate" data-google="모금함_View" data-stat="기부하기_상단_BTN_CLK" >모금함 기부하기</a>
+                <c:choose>
+                    <c:when test="${user.mbr_sn == null}">
+                        <a onclick="delOk()" href='/login' class="bt donate jq_donate" data-google="모금함_View" data-stat="기부하기_상단_BTN_CLK">모금함 기부하기</a>
+                    </c:when>
+                    <c:otherwise>
+                        <a href='/viewinputdona?n=${view.cntr_sn}' class="bt donate jq_donate" data-google="모금함_View" data-stat="기부하기_상단_BTN_CLK" >모금함 기부하기</a>
+                    </c:otherwise>
+                </c:choose>
             </div>
         </div>
     </div>
@@ -279,3 +286,15 @@
 
 </body>
 </html>
+
+<script>
+    function delOk(){
+        var result = confirm("로그인을 먼저 해주세요");
+
+        if(result) {
+            return location.href='login';
+        } else {
+            return false
+        }
+    }
+</script>

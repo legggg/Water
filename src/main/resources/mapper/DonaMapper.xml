@@ -28,8 +28,8 @@
 
     <!-- 기부금 등록하기 -->
     <insert id="makeDona" parameterType="com.example.water_web.Vo.MakeDonaVo">
-        insert into tb_cntr_btr (cntr_sn, btn_nm, btr_pc, btr_adres1, btr_adres2, rgtr_id, rgtr_dt)
-        values ( #{cntr_sn}, #{btn_nm}, #{btr_pc}, #{btr_adres1}, #{btr_adres2}, #{rgtr_id}, #{rgtr_dt})
+        insert into tb_cntr_btr (cntr_sn, mbr_sn, btn_nm, btr_pc, btr_adres1, btr_adres2, rgtr_id, rgtr_dt)
+        values ( #{cntr_sn}, #{mbr_sn}, #{btn_nm}, #{btr_pc}, #{btr_adres1}, #{btr_adres2}, #{rgtr_id}, #{rgtr_dt})
     </insert>
 
     <!-- 기부금 모으기 -->
@@ -48,14 +48,5 @@
                             ON a.cntr_sn = b.cntr_sn
         WHERE b.cntr_sn = #{cntr_sn}
     </select>
-
-    <!--    &lt;!&ndash; 기부 백분율 &ndash;&gt;-->
-    <!--    <select id="percent" resultType="com.example.water_web.Vo.DonaVo">-->
-    <!--    SELECT a.cntr_obctr, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent-->
-    <!--    from tb_cntr AS a-->
-    <!--    INNER JOIN tb_cntr_ctbny AS b-->
-    <!--    ON a.cntr_sn = b.cntr_sn-->
-    <!--    WHERE b.cntr_sn = #{cntr_sn}-->
-    <!--    </select>-->
 
 </mapper>

@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.water_web.Mapper.UserMapper">
-    <!-- User 테이블 가져오기 -->
-    <select id="getUserList" resultType="com.example.water_web.Vo.UserVo">
-        SELECT *
-        FROM tb_mbr
-        WHERE mbr_sn = #{sn}
-    </select>
 
+    <!-- 로그인 입력 -->
     <insert id="insertUser" parameterType="com.example.water_web.Vo.UserVo">
         INSERT INTO tb_mbr(
             mbr_se, mbr_nm, mbr_id, mbr_password, mbr_ncnm, mbr_gen, mbr_tel, mbr_brthdy, mbr_email, rgtr_id, rgtr_dt
@@ -81,4 +76,24 @@
             LOCK_YN = #{lock_yn}
         WHERE MBR_ID = #{mbr_id}
     </update>
+
+    <!-- 마이 페이지 -->
+    <select id="getUserList" resultType="com.example.water_web.Vo.UserVo">
+        SELECT a.*, sum(b.btr_pc) as sum_btr_pc
+        FROM tb_mbr AS a
+                 LEFT JOIN tb_cntr_btr AS b
+                            ON a.mbr_sn = b.mbr_sn
+        WHERE a.mbr_sn = #{mbr_sn}
+    </select>
+    <!-- 마이페이지에서 날짜 가져오기 -->
+    <select id="getUserDonaDate" resultType="com.example.water_web.Vo.UserVo">
+        SELECT a.mbr_sn, b.cntr_sn, b.btr_pc, b.rgtr_dt AS dona_dt, c.cntr_ttl AS dona_ttl
+        FROM tb_mbr AS a
+                 LEFT JOIN tb_cntr_btr AS b
+                           ON a.mbr_sn = b.mbr_sn
+                 LEFT JOIN tb_cntr AS c
+                           ON b.cntr_sn = c.cntr_sn
+        WHERE a.mbr_sn = 4
+        ORDER BY dona_dt DESC
+    </select>
 </mapper>

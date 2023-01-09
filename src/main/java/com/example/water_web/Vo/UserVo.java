@@ -30,4 +30,9 @@ public class UserVo {
     private LocalDateTime rgtr_dt;
     private String mbfr_id;
     private LocalDateTime mbfr_dt;
+
+    private int sum_btr_pc;
+    private int btr_pc;
+    private LocalDateTime dona_dt;
+    private String dona_ttl;
 }

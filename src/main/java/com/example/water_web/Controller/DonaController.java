@@ -1,10 +1,11 @@
 package com.example.water_web.Controller;
 
 import com.example.water_web.Service.DonaService;
+import com.example.water_web.Service.UserService;
 import com.example.water_web.Vo.DonaVo;
 import com.example.water_web.Vo.GatherDonaVo;
 import com.example.water_web.Vo.MakeDonaVo;
-import com.fasterxml.jackson.annotation.JacksonInject;
+import com.example.water_web.Vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +20,9 @@ public class DonaController {
 
     @Autowired
     DonaService service;
+
+    @Autowired
+    private UserService userService;
 
     // 전체 기부 리스트
     @GetMapping("/donainglistall")
@@ -38,7 +42,7 @@ public class DonaController {
         model.addAttribute("donainglist", list);
     }
 
-    // 기부 조회
+    // 기부 조회 페이지
     @GetMapping("/view")
     public void getView(@RequestParam("n") int cntr_sn, Model model) throws Exception {
         DonaVo view = service.donasView(cntr_sn);
@@ -50,7 +54,7 @@ public class DonaController {
 //        model.addAttribute("view3", view3);
     }
 
-    // 기부금 등록 + 기부금 모으기
+    // 기부 조회
     @PostMapping("/view")
     public String postMakeDona(MakeDonaVo vo, GatherDonaVo vo2) throws Exception {
         service.makeDona(vo);
@@ -59,13 +63,19 @@ public class DonaController {
         return "redirect:/main";
     }
 
+    // 기부금 등록 + 기부금 모으기 페이지
     @GetMapping("/viewinputdona")
-    public void getMakeDona(@RequestParam("n") int cntr_sn, Model model) throws Exception {
+    public void getMakeDona(@RequestParam("n") int cntr_sn, Model model, HttpSession session) throws Exception {
+        Integer sn = (Integer) session.getAttribute("userSn");
+        UserVo userVo = userService.getUserBySn(sn);
+
         DonaVo viewinput = service.donasView(cntr_sn);
 
+        model.addAttribute("user", userVo);
         model.addAttribute("viewinput", viewinput);
     }
 
+    // 기부금 등록 + 기부금 모으기
     @PostMapping("/viewinputdona")
     public String postMaGaDona(MakeDonaVo vo, GatherDonaVo vo2) throws Exception {
         service.makeDona(vo);

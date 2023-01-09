@@ -31,7 +31,7 @@
                             <div>${donainglist.cntr_rcvfvr}</div>
                         </div>
                         <div class="card_content">
-                                ${donainglist.percent}   <strong><fmt:formatNumber value="${donainglist.ctbny_pc}" pattern="#,###"/> <span class="text">원</span></strong>
+                            <strong>${donainglist.percent} %</strong><strong style="float: right"><fmt:formatNumber value="${donainglist.ctbny_pc}" pattern="#,###"/>원</strong>
                         </div>
                     </a>
                 </c:forEach>

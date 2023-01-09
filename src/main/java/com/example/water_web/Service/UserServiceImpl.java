@@ -18,9 +18,15 @@ import java.util.List;
 public class UserServiceImpl implements UserService {
 
     private final UserMapper userMapper;
+
     public List<UserVo> getUserList(Integer sn) {
         return userMapper.getUserList(sn);
     }
+
+    public List<UserVo> getUserDonaDate(Integer sn) {
+        return userMapper.getUserDonaDate(sn);
+    }
+
     public UserVo getUserBySn(Integer mbr_sn) {
         return userMapper.getUserBySn(mbr_sn);
     }

@@ -7,7 +7,8 @@ import java.util.List;
 
 @Mapper
 public interface UserMapper {
-    List<UserVo> getUserList(Integer sn); // User 테이블 가져오기
+    List<UserVo> getUserList(Integer sn); // 마이페이지에서 내정보+기부총액 불러오기
+    List<UserVo> getUserDonaDate(Integer sn); // 마이페이지에서 기부금액+날짜 불러오기
     void insertUser(UserVo userVo); // 회원가입
     UserVo getUserByEmail(UserVo userVo);    // 회원 정보 가져오기
     UserVo getUserBySn(Integer mbr_sn);
