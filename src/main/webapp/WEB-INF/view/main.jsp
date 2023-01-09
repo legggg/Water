@@ -79,7 +79,7 @@
                 <%--                                </div>--%>
                 <%--                                <div class="progressInfo">--%>
                 <%--                                    <p class="amount">..</p>--%>
-                <%--                                    <p class="percent">..</p>--%>
+                <%--                                    <p class="percent">.......</p>--%>
                 <%--                                </div>--%>
                 <%--                            </div>--%>
             </div>
