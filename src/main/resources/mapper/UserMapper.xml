@@ -87,7 +87,7 @@
     </select>
     <!-- 마이페이지에서 날짜 가져오기 -->
     <select id="getUserDonaDate" resultType="com.example.water_web.Vo.UserVo">
-        SELECT a.mbr_sn, b.cntr_sn, b.btr_pc, b.rgtr_dt AS dona_dt, c.cntr_ttl AS dona_ttl
+        SELECT a.mbr_sn, b.cntr_sn AS dona_sn, b.btr_pc, b.rgtr_dt AS dona_dt, c.cntr_ttl AS dona_ttl
         FROM tb_mbr AS a
                  LEFT JOIN tb_cntr_btr AS b
                            ON a.mbr_sn = b.mbr_sn

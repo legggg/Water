@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.water_web.Mapper.DonaMapper">
 
-    <!-- 전체 상품 리스트 -->
+    <!-- 기간 남은 전체 기부 리스트 -->
     <select id="donainglistall" resultType="com.example.water_web.Vo.DonaVo">
         select a.*, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent
         from tb_cntr AS a
@@ -10,7 +10,7 @@
                            ON a.cntr_sn = b.cntr_sn
     </select>
 
-    <!-- 카테고리별 상품 리스트 -->
+    <!-- 기간 남은 카테고리별 기부 리스트 -->
     <select id="donainglist" resultType="com.example.water_web.Vo.DonaVo">
         select a.*, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent
         from tb_cntr AS a
@@ -21,7 +21,7 @@
 
     <!-- 상품 조회 + 카테고리 조인 -->
     <select id="donasView" resultType="com.example.water_web.Vo.DonaVo">
-        select cntr_sn, mbr_sn, cntr_ttl, cntr_cn, cntr_adres1, cntr_adres2, cntr_rcvfvr, cntr_str_dt, cntr_end_dt, cntr_obctr, cntr_category, cntr_category2, cntr_file_id
+        select *
         from tb_cntr
         where cntr_sn = #{cntr_sn}
     </select>
@@ -47,6 +47,14 @@
                  INNER JOIN tb_cntr_ctbny AS b
                             ON a.cntr_sn = b.cntr_sn
         WHERE b.cntr_sn = #{cntr_sn}
+    </select>
+
+    <!-- 기간 지난 전체 기부 리스트 -->
+    <select id="donaMlrd" resultType="com.example.water_web.Vo.DonaVo">
+        select a.*, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent
+        from tb_cntr AS a
+                 left JOIN tb_cntr_ctbny AS b
+                           ON a.cntr_sn = b.cntr_sn
     </select>
 
 </mapper>

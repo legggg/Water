@@ -18,13 +18,13 @@ public class DonaServiceImpl implements DonaService {
     @Autowired
     private DonaMapper dao;
 
-    // 전체 상품 리스트
+    // 기간 남은 전체 기부 리스트
     @Override
     public List<DonaVo> donainglist(int cntr_category) throws Exception {
         return dao.donainglist(cntr_category);
     }
 
-    // 카테고리별 상품 리스트
+    // 기간 남은 카테고리별 상품 리스트
     @Override
     public List<DonaVo> donainglistall(DonaVo vo) throws Exception {
         return dao.donainglistall(vo);
@@ -62,4 +62,10 @@ public class DonaServiceImpl implements DonaService {
 //    public DonaVo percent(int cntr_sn) throws Exception {
 //        return dao.percent(cntr_sn);
 //    }
+
+    // 기간 지난 전체 기부 리스트
+    @Override
+    public List<DonaVo> donaMlrd(DonaVo vo) throws Exception {
+        return dao.donaMlrd(vo);
+    }
 }

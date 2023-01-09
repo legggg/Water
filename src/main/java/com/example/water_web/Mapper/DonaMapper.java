@@ -10,13 +10,13 @@ import java.util.List;
 @Mapper
 public interface DonaMapper {
 
-    // 전체 상품 리스트
+    // 기간 남은 전체 기부 리스트
     List<DonaVo> donainglistall(DonaVo vo);
 
-    // 카테고리별 상품 리스트
+    // 기간 남은 카테고리별 상품 리스트
     List<DonaVo> donainglist(int cntr_category);
 
-    // 상품 조회
+    // 기부 조회
     DonaVo donasView(int cntr_sn);
 
     // 기부금 등록
@@ -29,4 +29,7 @@ public interface DonaMapper {
     DonaVo magaDona(int cntr_sn) throws Exception;
 
 //    DonaVo percent(int cntr_sn) throws Exception;
+
+    // 기간 지난 전체 기부 리스트
+    List<DonaVo> donaMlrd(DonaVo vo) throws Exception;
 }

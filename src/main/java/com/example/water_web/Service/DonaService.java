@@ -8,10 +8,10 @@ import java.util.List;
 
 public interface DonaService {
 
-    // 전체 상품 리스트
+    // 기간 남은 전체 기부 리스트
     List<DonaVo> donainglistall(DonaVo vo) throws Exception;
 
-    // 카테고리별 기부 리스트
+    // 기간 남은 카테고리별 기부 리스트
     List<DonaVo> donainglist(int cntr_category) throws Exception;
 
     // 기부 조회
@@ -27,4 +27,7 @@ public interface DonaService {
     DonaVo magaDona(int cntr_sn) throws Exception;
 
 //    DonaVo percent(int cntr_sn) throws Exception;
+
+    // 기간 지난 전체 기부 리스트
+    List<DonaVo> donaMlrd(DonaVo vo) throws Exception;
 }

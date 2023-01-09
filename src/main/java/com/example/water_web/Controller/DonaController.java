@@ -24,7 +24,7 @@ public class DonaController {
     @Autowired
     private UserService userService;
 
-    // 전체 기부 리스트
+    // 기간 남은 전체 기부 리스트
     @GetMapping("/donainglistall")
     public void getListall(DonaVo vo, Model model) throws Exception {
         List<DonaVo> list = null;
@@ -33,7 +33,7 @@ public class DonaController {
         model.addAttribute("donainglistall", list);
     }
 
-    // 카테고리별 기부 리스트
+    // 기간 남은 카테고리별 기부 리스트
     @GetMapping("/donainglist")
     public void getList(@RequestParam("c") int cntr_category, Model model) throws Exception {
         List<DonaVo> list = null;
@@ -82,5 +82,14 @@ public class DonaController {
         service.gatherDona(vo2);
 
         return "redirect:/main";
+    }
+
+    // 기간 지난 전체 기부 리스트
+    @GetMapping("/donamlrd")
+    public void getDonaMlrd(DonaVo vo, Model model) throws Exception {
+        List<DonaVo> list = null;
+        list = service.donaMlrd(vo);
+
+        model.addAttribute("donamlrd", list);
     }
 }

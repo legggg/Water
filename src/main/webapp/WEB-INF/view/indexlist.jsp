@@ -20,7 +20,7 @@
     <div class="wrapper" style="margin-top: 50px; margin-right: 500px">
         <form role="form" method="post" autocomplete="off">
             <div class="wrap">
-                <h2>상품 목록</h2>
+                <h2>기부글 목록</h2>
                 <table>
                     <thead>
                     <tr>

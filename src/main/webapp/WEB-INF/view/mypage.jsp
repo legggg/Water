@@ -50,10 +50,10 @@
                     <div class="content_wrap">
                         <label>기부 내역</label>
                         <c:forEach items="${userDonaDate}" var="userDonaDate">
-                            <p class="contents" style="margin-top: 40px; margin-bottom: 15px"><fmt:parseDate value="${userDonaDate.dona_dt}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
-                                <fmt:formatDate pattern="yyyy년 MM월 dd일   HH시 mm분" value="${parsedDateTime}"/></p>
-                            <p class="contents" style="margin-bottom: 15px">${userDonaDate.dona_ttl}</p>
-                            <p class="contents" style="margin-bottom: 40px"><fmt:formatNumber value="${userDonaDate.btr_pc}" pattern="#,###"/>원</p>
+                            <p class="contents" style="margin-top: 10px; margin-bottom: 15px"><fmt:parseDate value="${userDonaDate.dona_dt}" pattern="yyyy-MM-dd'T'HH:mm" var="parsedDateTime" type="both" />
+                                <fmt:formatDate pattern="yyyy년 MM월 dd일 H시 mm분" value="${parsedDateTime}"/></p>
+                            <a href="/view?n=${userDonaDate.dona_sn}" style="text-decoration-line: none; color: black;"><p class="contents" style="margin-bottom: 15px">${userDonaDate.dona_ttl}</p></a>
+                            <p class="contents" style="margin-bottom: 80px"><fmt:formatNumber value="${userDonaDate.btr_pc}" pattern="#,###"/>원</p>
                         </c:forEach>
                     </div>
                 </form>
@@ -61,7 +61,7 @@
                     <button class="modify_button" type="button" onclick="location.href='update'">정보 수정</button>
                 </div>
                 <div class="button_wrap">
-                    <button class="modify_button" type="button" onclick="delOk()">이전으로</button>
+                    <button class="modify_button" style="margin-bottom: 50px" type="button" onclick="delOk()">이전으로</button>
                 </div>
         </div>
     </div>
