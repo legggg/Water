@@ -10,6 +10,7 @@
     border-radius: 0 0 13px 13px;
     padding-right: 10px;
     padding-bottom: 80px;
+
 }
 
 .container .slide .active .info {
@@ -21,7 +22,13 @@
     left: 0;
     top: 80px;
     border-radius: 0 0 13px 13px;
+
 }
+
+.container .slide .active .info p{
+
+}
+
 
 .container .slide .active .info .name {
     font-size: 18px;

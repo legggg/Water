@@ -42,7 +42,7 @@ public class DonaController {
     @GetMapping("/view")
     public void getView(@RequestParam("n") int cntr_sn, Model model) throws Exception {
         DonaVo view = service.donasView(cntr_sn);
-        DonaVo view2 = service.magaDona(cntr_sn);
+        DonaVo view2 = service.magaDona(cntr_sn); // 현재 기부액 조회 + 기부율
 //        DonaVo view3 = service.percent(cntr_sn);
 
         model.addAttribute("view", view);

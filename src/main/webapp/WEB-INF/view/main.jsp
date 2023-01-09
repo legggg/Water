@@ -8,13 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Water - 투명하게</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/info.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/info.css" />
 </head>
 <body>
 <style>
@@ -39,34 +38,35 @@
         <!-- The slideshow -->
         <div class="carousel-inner">
             <div class="carousel-item active">
+
                 <img src="images/fox.jpg" width="1100" height="500">
-                <%--                            <div class="info">--%>
-                <%--                                <p class="name">여우는 줠라 귀엽습니다.</p>--%>
-                <%--                                <p class="group">인정 하십니까?</p>--%>
-                <%--                                <p class="d-day">인정 합니다.</p>--%>
-                <%--                                <div class="progressBar">--%>
-                <%--                                    <span class="bar chartAnimate active" style="width: 19%"></span>--%>
-                <%--                                </div>--%>
-                <%--                                <div class="progressInfo">--%>
-                <%--                                    <p class="amount">..</p>--%>
-                <%--                                    <p class="percent">..</p>--%>
-                <%--                                </div>--%>
-                <%--                            </div>--%>
+                <%--                    <div class="info">--%>
+                <%--                    <p class="name">여우는 줠라 귀엽습니다.</p>--%>
+                <%--                    <p class="group">인정 하십니까?</p>--%>
+                <%--                    <p class="d-day">인정 합니다.</p>--%>
+                <%--                        <div class="progressBar">--%>
+                <%--                        <span class="bar chartAnimate active" style="width: 19%"></span>--%>
+                <%--                        </div>--%>
+                <%--                        <div class="progressInfo">--%>
+                <%--                            <p class="amount">..</p>--%>
+                <%--                            <p class="percent">..</p>--%>
+                <%--                        </div>--%>
+                <%--                    </div>--%>
             </div>
             <div class="carousel-item">
                 <img src="images/fox2.jpg"  width="1100" height="500">
-                <%--                            <div class="info">--%>
-                <%--                                <p class="name">여우는 줠라 귀엽습니다.</p>--%>
-                <%--                                <p class="group">인정 하십니까?</p>--%>
-                <%--                                <p class="d-day">인정 합니다.</p>--%>
-                <%--                                <div class="progressBar">--%>
-                <%--                                    <span class="bar chartAnimate active" style="width: 19%"></span>--%>
-                <%--                                </div>--%>
-                <%--                                <div class="progressInfo">--%>
-                <%--                                    <p class="amount">..</p>--%>
-                <%--                                    <p class="percent">..</p>--%>
-                <%--                                </div>--%>
-                <%--                            </div>--%>
+                <%--                                            <div class="info">--%>
+                <%--                                                <p class="name">여우는 줠라 귀엽습니다.</p>--%>
+                <%--                                                <p class="group">인정 하십니까?</p>--%>
+                <%--                                                <p class="d-day">인정 합니다.</p>--%>
+                <%--                                                <div class="progressBar">--%>
+                <%--                                                    <span class="bar chartAnimate active" style="width: 19%"></span>--%>
+                <%--                                                </div>--%>
+                <%--                                                <div class="progressInfo">--%>
+                <%--                                                    <p class="amount">..</p>--%>
+                <%--                                                    <p class="percent">..</p>--%>
+                <%--                                                </div>--%>
+                <%--                                            </div>--%>
             </div>
             <div class="carousel-item">
                 <img src="images/tiger.jpg"  width="1100" height="500">
@@ -202,14 +202,14 @@
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
             <c:forEach items="${main1}" var="main1">
-                <a href="/view?n=${main1.cntr_sn}" class="Donacard_image">
+                <a href="/view?n=${main1.cntr_sn}" class="Donacard_image" style="text-decoration-line: none;">
                     <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
-                        <img src=${main1.cntr_file_id} width="100%" height="200" style="margin-top: 5px;">
+                        <img src=${main1.cntr_file_id} width="100%" height="200">
                     </div>
                     <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
-                        <strong class="Donacard_title" style="color: black">${main1.cntr_ttl}</strong>
-                        <div class="Donacard_orga" style="color: black;">${main1.cntr_rcvfvr}</div>
-                        <div class="Donacard_orga" style="color: black;">${main1.percent}   <strong>목표금액 : <fmt:formatNumber value="${main1.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
+                        <strong class="Donacard_title" style="color: black; " >${main1.cntr_ttl}</strong>
+                        <div class="Donacard_orga" style="color: black; ">${main1.cntr_rcvfvr}</div>
+                        <div class="Donacard_orga" style="color: black;"><p><fmt:formatNumber value="${main1.ctbny_pc}" pattern="#,###"/>원</p class="text"><strong><fmt:formatNumber value="${main1.cntr_obctr}" pattern="#,###"/></strong><span class="text">원</span></div>
                     </div>
                 </a>
             </c:forEach>
@@ -226,12 +226,12 @@
             <c:forEach items="${main2}" var="main2">
                 <a href="/view?n=${main2.cntr_sn}" class="Donacard_image">
                     <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
-                        <img src=${main2.cntr_file_id} width="100%" height="200" style="margin-top: 5px;">
+                        <img src=${main2.cntr_file_id} width="100%" height="200">
                     </div>
                     <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
                         <strong class="Donacard_title" style="color: black">${main2.cntr_ttl}</strong>
                         <div class="Donacard_orga" style="color: black;">${main2.cntr_rcvfvr}</div>
-                        <div class="Donacard_orga" style="color: black;">${main2.percent}   <strong>목표금액 : <fmt:formatNumber value="${main2.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
+                        <div class="Donacard_orga" style="color: black;">${main2.percent}   <strong>목표금액 : <fmt:formatNumber value="${main2.cntr_obctr}" pattern="#,###"/></strong><span class="text">원</span></div>
                     </div>
                 </a>
             </c:forEach>
@@ -253,7 +253,7 @@
                     <div class="Donacard_content" style="width: 257px; padding:21px 20px 0; margin-left: 10px">
                         <strong class="Donacard_title" style="color: black">${main3.cntr_ttl}</strong>
                         <div class="Donacard_orga" style="color: black;">${main3.cntr_rcvfvr}</div>
-                        <div class="Donacard_orga" style="color: black;">${main3.percent}   <strong>목표금액 : <fmt:formatNumber value="${main3.ctbny_pc}" pattern="#,###"/></strong><span class="text">원</span></div>
+                        <div class="Donacard_orga" style="color: black;">${main3.percent}   <strong>목표금액 : <fmt:formatNumber value="${main3.cntr_obctr}" pattern="#,###"/></strong><span class="text">원</span></div>
                     </div>
                 </a>
             </c:forEach>

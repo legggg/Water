@@ -9,12 +9,7 @@
     <title>진행중인 기부 자세히</title>
 </head>
 
-<body>
-<%@ include file="donaing.jsp"%>
-
-
 <style>
-
     * {
         /*font-family: NanumBarunGothic,"나눔바른고딕","Nanum Barun Gothic",Sans-serif;*/
     }
@@ -114,7 +109,7 @@
     }
 
     .content_side .tit {
-        padding-top: 24px;
+        padding-top: 96px;
         padding-bottom: 24px;
         text-align: center;
 
@@ -139,9 +134,96 @@
     }
 
 
+    div {
+        display: block;
+    }
 
+    .content_side .section_status {
+        position: relative;
+        padding-bottom: 25px;
+    }
 
+    .section_status {
+        margin: 0 1px;
+        padding: 23px 29px 27px;
+        border-bottom: 0;
+    }
+    .graph_status {
+        padding-right: 2px;
+    }
+    .graph_status::after{
+        display: block;
+        clear: both;
+        content: "";
+    }
+
+    .graph_status .per{
+        float: left;
+        font-size: 24px;
+        color: #439A97;
+    }
+
+    .graph_status .per strong {
+        font-size: 53px;
+        font-weight: 700;
+        line-height: 70px;
+        letter-spacing: -2px;
+    }
+
+    .content_side .section_status .term_area p{
+        padding: 13px 0 11px;
+        font-size: 18px;
+        color: #888;
+        letter-spacing: -.04em;
+    }
+
+    .content_side .section_status .num_area {
+        padding-top: 24px;
+    }
+
+    .section_status .num_area .status_num {
+        padding-bottom: 0px;
+        font-size: 18px;
+        color: #444;
+    }
+
+    .section_status .num_area .status_num strong {
+        display: inline-block;
+        font-size: 34px;
+        font-weight: 400;
+        color: #444;
+        vertical-align: text-top;
+    }
+
+    .section_status .num_area .status_num span {
+        display: inline-block;
+        margin: 8px 0 0 4px;
+        vertical-align: text-top;
+    }
+
+    .num_area .detail_num {
+        margin: 6px 0 0 0;
+        color: #888;
+    }
+
+    .num_area .detail_num strong {
+        font-weight: 400;
+        vertical-align: middle;
+    }
+    .num_area .detail_num span {
+        font-size: 16px;
+        vertical-align: middle;
+    }
+
+    .num_area .detail_num em {
+        margin-top: 0;
+        font-size: 16px;
+    }
 </style>
+
+<body>
+<%@ include file="donaing.jsp"%>
+
 
 <div id="container">
     <div class="collect_wrap">
@@ -157,65 +239,9 @@
                             <dd id="paraContent">${view.cntr_cn}</dd>
                         </dl>
                     </li>
-
-                    <%--! 여기서 늘리면됨 --%>
-                    <%--                    <li>--%>
-                    <%--                        <dl>--%>
-                    <%--                            <dt id="paraTitle">소제목</dt>--%>
-                    <%--                            <dd id="paraContent">${view.cntr_cn}</dd>--%>
-                    <%--                        </dl>--%>
-                    <%--                    </li>--%>
                 </ul>
             </div>
         </div>
-
-        <style>
-
-            div {
-                display: block;
-            }
-
-            .content_side .section_status {
-                position: relative;
-                padding-bottom: 25px;
-            }
-
-            .section_status {
-                margin: 0 1px;
-                padding: 23px 29px 27px;
-                border-bottom: 0;
-            }
-            .graph_status {
-                padding-right: 2px;
-            }
-            .graph_status::after{
-                display: block;
-                clear: both;
-                content: "";
-            }
-
-            .graph_status .per{
-                float: left;
-                font-size: 24px;
-                color: #439A97;
-            }
-
-            .graph_status .per strong {
-                font-size: 53px;
-                font-weight: 700;
-                line-height: 70px;
-                letter-spacing: -2px;
-            }
-
-            .content_side .section_status .term_area p{
-                padding: 13px 0 11px;
-                font-size: 18px;
-                color: #888;
-                letter-spacing: -.04em;
-            }
-
-
-        </style>
 
         <div class="content_side">
             <div class="section_title"><p class="tit" style="font-size: 20px">${view.cntr_ttl}</p></div>
@@ -232,10 +258,21 @@
                         <strong>${view.cntr_str_dt} ~ ${view.cntr_end_dt}</strong>
                     </p>
                 </div>
-                <div class="num_area"></div>
+                <div class="num_area">
+                    <p class="status_num">
+                        <strong><fmt:formatNumber value="${view2.ctbny_pc}" pattern="###,###,###"/></strong>
+                        <span>원 달성</span>
+                    </p>
+                    <p class="detail_num">
+                        <span><fmt:formatNumber value="${view.cntr_obctr}" pattern="###,###,###"/></span>
+                        <em style="font-style: inherit">원 목표</em>
+                    </p>
+                </div>
             </div>
 
-            <div class="section_btn"><a href='/viewinputdona?n=${view.cntr_sn}' class="bt donate jq_donate" data-google="모금함_View" data-stat="기부하기_상단_BTN_CLK" >모금함 기부하기</a> </div>
+            <div class="section_btn">
+                <a href='/viewinputdona?n=${view.cntr_sn}' class="bt donate jq_donate" data-google="모금함_View" data-stat="기부하기_상단_BTN_CLK" >모금함 기부하기</a>
+            </div>
         </div>
     </div>
 </div>

@@ -6,16 +6,16 @@
     <select id="donainglistall" resultType="com.example.water_web.Vo.DonaVo">
         select a.*, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent
         from tb_cntr AS a
-            left JOIN tb_cntr_ctbny AS b
-                ON a.cntr_sn = b.cntr_sn
+                 left JOIN tb_cntr_ctbny AS b
+                           ON a.cntr_sn = b.cntr_sn
     </select>
 
     <!-- 카테고리별 상품 리스트 -->
     <select id="donainglist" resultType="com.example.water_web.Vo.DonaVo">
         select a.*, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent
         from tb_cntr AS a
-            left JOIN tb_cntr_ctbny AS b
-                ON a.cntr_sn = b.cntr_sn
+                 left JOIN tb_cntr_ctbny AS b
+                           ON a.cntr_sn = b.cntr_sn
         where cntr_category = #{cntr_category}
     </select>
 
@@ -40,7 +40,7 @@
         where cntr_sn = #{cntr_sn}
     </insert>
 
-    <!-- 현재 기부액 조회 -->
+    <!-- 현재 기부액 조회 + 기부율 -->
     <select id="magaDona" resultType="com.example.water_web.Vo.DonaVo">
         select a.cntr_obctr, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent
         from tb_cntr AS a
@@ -49,13 +49,13 @@
         WHERE b.cntr_sn = #{cntr_sn}
     </select>
 
-<!--    &lt;!&ndash; 기부 백분율 &ndash;&gt;-->
-<!--    <select id="percent" resultType="com.example.water_web.Vo.DonaVo">-->
-<!--    SELECT a.cntr_obctr, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent-->
-<!--    from tb_cntr AS a-->
-<!--    INNER JOIN tb_cntr_ctbny AS b-->
-<!--    ON a.cntr_sn = b.cntr_sn-->
-<!--    WHERE b.cntr_sn = #{cntr_sn}-->
-<!--    </select>-->
+    <!--    &lt;!&ndash; 기부 백분율 &ndash;&gt;-->
+    <!--    <select id="percent" resultType="com.example.water_web.Vo.DonaVo">-->
+    <!--    SELECT a.cntr_obctr, b.ctbny_pc, (b.ctbny_pc / a.cntr_obctr * 100) as percent-->
+    <!--    from tb_cntr AS a-->
+    <!--    INNER JOIN tb_cntr_ctbny AS b-->
+    <!--    ON a.cntr_sn = b.cntr_sn-->
+    <!--    WHERE b.cntr_sn = #{cntr_sn}-->
+    <!--    </select>-->
 
 </mapper>
