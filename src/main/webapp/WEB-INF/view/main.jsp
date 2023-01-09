@@ -201,6 +201,9 @@
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
             <c:forEach items="${main1}" var="main1">
+                <jsp:useBean id="now1" class="java.util.Date" />
+                <fmt:formatDate value="${now1}" pattern="yyyy-MM-dd" var="today1" />
+                <c:if test="${main1.cntr_end_dt >= today1}">
                 <a href="/view?n=${main1.cntr_sn}" class="Donacard_image" style="text-decoration-line: none;">
                     <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
                         <img src=${main1.cntr_file_id} width="100%" height="200">
@@ -211,6 +214,7 @@
                         <div class="Donacard_orga" style="color: black;"><strong>${main1.percent} %</strong><strong style="float: right"><fmt:formatNumber value="${main1.ctbny_pc}" pattern="#,###"/>원</strong></div>
                     </div>
                 </a>
+            </c:if>
             </c:forEach>
         </li>
     </ul>
@@ -223,6 +227,9 @@
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
             <c:forEach items="${main2}" var="main2">
+                <jsp:useBean id="now2" class="java.util.Date" />
+                <fmt:formatDate value="${now2}" pattern="yyyy-MM-dd" var="today2" />
+                <c:if test="${main2.cntr_end_dt >= today2}">
                 <a href="/view?n=${main2.cntr_sn}" class="Donacard_image">
                     <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
                         <img src=${main2.cntr_file_id} width="100%" height="200">
@@ -233,6 +240,7 @@
                         <div class="Donacard_orga" style="color: black;"><strong>${main2.percent} %</strong><strong style="float: right"><fmt:formatNumber value="${main2.ctbny_pc}" pattern="#,###"/>원</strong></div>
                     </div>
                 </a>
+            </c:if>
             </c:forEach>
         </li>
     </ul>
@@ -245,6 +253,9 @@
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
             <c:forEach items="${main3}" var="main3">
+                <jsp:useBean id="now3" class="java.util.Date" />
+                <fmt:formatDate value="${now3}" pattern="yyyy-MM-dd" var="today3" />
+                <c:if test="${main3.cntr_end_dt >= today3}">
                 <a href="/view?n=${main3.cntr_sn}" class="Donacard_image">
                     <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
                         <img src=${main3.cntr_file_id} width="100%" height="200" style="margin-top: 5px;">
@@ -255,6 +266,7 @@
                         <div class="Donacard_orga" style="color: black;"><strong>${main3.percent} %</strong><strong style="float: right"><fmt:formatNumber value="${main3.ctbny_pc}" pattern="#,###"/>원</strong></div>
                     </div>
                 </a>
+            </c:if>
             </c:forEach>
         </li>
     </ul>
