@@ -38,50 +38,49 @@
         <!-- The slideshow -->
         <div class="carousel-inner">
             <div class="carousel-item active">
-
                 <img src="images/fox.jpg" width="1100" height="500">
-                <%--                    <div class="info">--%>
-                <%--                    <p class="name">여우는 줠라 귀엽습니다.</p>--%>
-                <%--                    <p class="group">인정 하십니까?</p>--%>
-                <%--                    <p class="d-day">인정 합니다.</p>--%>
-                <%--                        <div class="progressBar">--%>
-                <%--                        <span class="bar chartAnimate active" style="width: 19%"></span>--%>
-                <%--                        </div>--%>
-                <%--                        <div class="progressInfo">--%>
-                <%--                            <p class="amount">..</p>--%>
-                <%--                            <p class="percent">..</p>--%>
-                <%--                        </div>--%>
-                <%--                    </div>--%>
+                <div class="info" style="position: absolute">
+                    <p class="name">여우는 줠라 귀엽습니다.</p>
+                    <p class="group">인정 하십니까?</p>
+                    <p class="d-day">인정 합니다.</p>
+                    <div class="progressBar">
+                        <span class="bar chartAnimate active" style="width: 19%"></span>
+                    </div>
+                    <div class="progressInfo">
+                        <p class="amount">..</p>
+                        <p class="percent">..</p>
+                    </div>
+                </div>
             </div>
             <div class="carousel-item">
                 <img src="images/fox2.jpg"  width="1100" height="500">
-                <%--                                            <div class="info">--%>
-                <%--                                                <p class="name">여우는 줠라 귀엽습니다.</p>--%>
-                <%--                                                <p class="group">인정 하십니까?</p>--%>
-                <%--                                                <p class="d-day">인정 합니다.</p>--%>
-                <%--                                                <div class="progressBar">--%>
-                <%--                                                    <span class="bar chartAnimate active" style="width: 19%"></span>--%>
-                <%--                                                </div>--%>
-                <%--                                                <div class="progressInfo">--%>
-                <%--                                                    <p class="amount">..</p>--%>
-                <%--                                                    <p class="percent">..</p>--%>
-                <%--                                                </div>--%>
-                <%--                                            </div>--%>
+                <div class="info" style="position: absolute">
+                    <p class="name">여우는 줠라 귀엽습니다.</p>
+                    <p class="group">인정 하십니까?</p>
+                    <p class="d-day">인정 합니다.</p>
+                    <div class="progressBar">
+                        <span class="bar chartAnimate active" style="width: 19%"></span>
+                    </div>
+                    <div class="progressInfo">
+                        <p class="amount">..</p>
+                        <p class="percent">..</p>
+                    </div>
+                </div>
             </div>
             <div class="carousel-item">
                 <img src="images/tiger.jpg"  width="1100" height="500">
-                <%--                            <div class="info">--%>
-                <%--                                <p class="name">여우는 줠라 귀엽습니다.</p>--%>
-                <%--                                <p class="group">인정 하십니까?</p>--%>
-                <%--                                <p class="d-day">인정 합니다.</p>--%>
-                <%--                                <div class="progressBar">--%>
-                <%--                                    <span class="bar chartAnimate active" style="width: 19%"></span>--%>
-                <%--                                </div>--%>
-                <%--                                <div class="progressInfo">--%>
-                <%--                                    <p class="amount">..</p>--%>
-                <%--                                    <p class="percent">.......</p>--%>
-                <%--                                </div>--%>
-                <%--                            </div>--%>
+                <div class="info" style="position: absolute">
+                    <p class="name">여우는 줠라 귀엽습니다.</p>
+                    <p class="group">인정 하십니까?</p>
+                    <p class="d-day">인정 합니다.</p>
+                    <div class="progressBar">
+                        <span class="bar chartAnimate active" style="width: 19%"></span>
+                    </div>
+                    <div class="progressInfo">
+                        <p class="amount">..</p>
+                        <p class="percent">..</p>
+                    </div>
+                </div>
             </div>
         </div>
         <!-- Left and right controls -->
