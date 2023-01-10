@@ -15,7 +15,7 @@ public class MlrdVo {
 
     private int mlrd_sn;
     private int cntr_sn;
-    private String mlrd_ttl2;
+    private String mlrd_ttl;
     private String mlrd_cn;
     private String mlrd_file_id;
 
@@ -26,6 +26,7 @@ public class MlrdVo {
     private String mbfr_id;
     private LocalDateTime mbfr_dt;
 
+    private String cntr_ttl;
     private int ctbny_pc;     // 현재 기부액 조회
     private int percent;
     private LocalDate cntr_str_dt;

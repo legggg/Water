@@ -229,7 +229,7 @@
     <div class="collect_wrap">
         <div class="content_content">
             <h2 class="theme"></h2>
-            <h3 class="title">${viewmlrd.mlrd_ttl2}</h3>
+            <h3 class="title">${viewmlrd.cntr_ttl}</h3>
             <%--            <ul class="collect_tab" id="collect_tab"></ul>--%>
             <div class="tab_content">
                 <ul class="intro_list editor_base">
@@ -244,7 +244,7 @@
         </div>
 
         <div class="content_side">
-            <div class="section_title"><p class="tit" style="font-size: 20px">${viewmlrd.mlrd_ttl2}</p></div>
+            <div class="section_title"><p class="tit" style="font-size: 20px">${viewmlrd.cntr_ttl}</p></div>
             <div class="section_status">
                 <div class="graph_wrap">
                     <div class="graph_status">

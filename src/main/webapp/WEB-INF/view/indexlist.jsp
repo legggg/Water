@@ -30,7 +30,8 @@
                         <th>목표금액</th>
                         <th>기부대상</th>
                         <th>기부방법</th>
-                        <th>작성날짜</th>
+                        <th>모금 시작일</th>
+                        <th>모금 종료일</th>
                         <th>수혜자/수혜기관</th>
                     </tr>
                     </thead>
@@ -76,6 +77,7 @@
                                 </c:choose>
                             </td>
                             <td><fmt:formatDate value="${list.rgtr_dt}" pattern="yyyy-MM-dd"/></td>
+                            <td>${list.cntr_end_dt}</td>
                             <td>${list.cntr_rcvfvr}</td>
                         </tr>
                     </c:forEach>

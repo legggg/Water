@@ -18,7 +18,7 @@ public class MlrdController {
     @Autowired
     MlrdService service;
 
-    // 기부 조회 페이지
+    // 기간 지난 기부 조회 페이지
     @GetMapping("/viewmlrd")
     public void getView(@RequestParam("n") int cntr_sn, Model model) throws Exception {
         MlrdVo viewmlrd = service.viewMlrd(cntr_sn);

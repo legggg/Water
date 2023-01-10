@@ -43,7 +43,7 @@
                         </div>
 
                         <div class="se_wrap">
-                            <label for="cntr_category">수혜자/수혜기관</label>
+                            <label for="cntr_rcvfvr">수혜자/수혜기관</label>
                             <input class="user_input" type="text" id="cntr_rcvfvr" name="cntr_rcvfvr" required />
                         </div>
 

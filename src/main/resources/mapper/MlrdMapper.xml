@@ -4,7 +4,7 @@
 
     <!-- 기간 지난 기부 조회 -->
     <select id="viewMlrd" resultType="com.example.water_web.Vo.MlrdVo">
-        SELECT a.cntr_sn, a.mlrd_cn, a.mlrd_file_id, b.cntr_ttl AS mlrd_ttl2, (c.ctbny_pc / b.cntr_obctr * 100) as percent, b.cntr_str_dt, b.cntr_end_dt, b.cntr_obctr, c.ctbny_pc
+        SELECT a.cntr_sn, a.mlrd_cn, a.mlrd_file_id, b.cntr_ttl, (c.ctbny_pc / b.cntr_obctr * 100) as percent, b.cntr_str_dt, b.cntr_end_dt, b.cntr_obctr, c.ctbny_pc
         FROM tb_mlrd AS a
                  LEFT JOIN tb_cntr AS b
                            ON a.cntr_sn = b.cntr_sn

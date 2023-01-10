@@ -4,6 +4,7 @@ import com.example.water_web.Mapper.AdminMapper;
 import com.example.water_web.Mapper.DonaMapper;
 import com.example.water_web.Vo.CtgryVo;
 import com.example.water_web.Vo.DonaVo;
+import com.example.water_web.Vo.MlrdVo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -61,4 +62,15 @@ public class AdminServiceImpl implements AdminService{
         dao.donasDelete(cntr_sn);
     }
 
+    // 소통 등록
+    @Override
+    public void mlrdRegister(MlrdVo vo) throws Exception {
+        int cntr_sn = vo.getCntr_sn();
+        Date date = java.sql.Timestamp.valueOf(LocalDateTime.now());
+
+        vo.setRgtr_id(cntr_sn);
+        vo.setRgtr_dt(date);
+
+        dao.mlrdRegister(vo);
+    }
 }

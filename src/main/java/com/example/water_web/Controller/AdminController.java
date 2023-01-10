@@ -1,8 +1,10 @@
 package com.example.water_web.Controller;
 
 import com.example.water_web.Service.AdminService;
+import com.example.water_web.Service.DonaService;
 import com.example.water_web.Vo.CtgryVo;
 import com.example.water_web.Vo.DonaVo;
+import com.example.water_web.Vo.MlrdVo;
 import net.sf.json.JSONArray;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,6 +22,9 @@ public class AdminController {
 
     @Autowired
     AdminService adminService;
+
+    @Autowired
+    DonaService donaService;
 
     // 관리자화면
     @GetMapping("/index")
@@ -86,6 +91,21 @@ public class AdminController {
         return "redirect:/index";
     }
 
+    // 기부 소통글 등록 페이지
+    @GetMapping("/indexmlrdregister")
+    public void getMlrdRegister(DonaVo vo, Model model) throws Exception {
+        List<DonaVo> list = adminService.donaslist();
+
+        model.addAttribute("mlrdlist", list);
+    }
+
+    // 기부 소통글 등록
+    @PostMapping("/indexmlrdregister")
+    public String postMlrdRegister(MlrdVo vo) throws Exception {
+        adminService.mlrdRegister(vo);
+
+        return "redirect:/index";
+    }
 
 
 }

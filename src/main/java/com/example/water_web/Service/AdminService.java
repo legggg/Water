@@ -2,6 +2,7 @@ package com.example.water_web.Service;
 
 import com.example.water_web.Vo.CtgryVo;
 import com.example.water_web.Vo.DonaVo;
+import com.example.water_web.Vo.MlrdVo;
 
 import java.util.List;
 
@@ -24,4 +25,7 @@ public interface AdminService {
 
     // 기부 삭제
     void donasDelete(int cntr_sn) throws Exception;
+
+    // 기부 소통글 등록
+    void mlrdRegister(MlrdVo vo) throws Exception;
 }

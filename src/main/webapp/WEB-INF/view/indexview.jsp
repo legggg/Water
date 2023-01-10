@@ -20,9 +20,15 @@
             <div class="wrap">
 
                 <h2>기부 자세히 보기</h2>
+
                 <div class="user_wrap">
                     <label>기부명</label>
                     <span>${donas.cntr_ttl}</span>
+                </div>
+
+                <div class="user_wrap">
+                    <label>이미지</label>
+                    <span><img src="${donas.cntr_file_id}"/></span>
                 </div>
 
                 <div class="user_wrap">

@@ -39,14 +39,14 @@
 
     <!-- 기부 목록 -->
     <select id="donaslist" resultType="com.example.water_web.Vo.DonaVo">
-        select cntr_sn, cntr_ttl, cntr_cn, cntr_obctr, cntr_rcvfvr, cntr_category, cntr_category2, rgtr_dt
+        select *
         from tb_cntr
-        order by cntr_sn desc
+        order by cntr_end_dt desc
     </select>
 
     <!-- 기부 조회 -->
     <select id="donasView" resultType="com.example.water_web.Vo.DonaVo">
-        select cntr_sn, cntr_ttl, cntr_cn, cntr_obctr, cntr_rcvfvr, cntr_category, cntr_category2, rgtr_dt
+        select *
         from tb_cntr
         where cntr_sn = #{cntr_sn}
     </select>
@@ -71,6 +71,23 @@
         delete from tb_cntr
         where cntr_sn = #{cntr_sn}
     </delete>
+
+    <!-- 기부 소통글 등록 -->
+    <insert id="mlrdRegister" parameterType="com.example.water_web.Vo.MlrdVo">
+        insert into tb_mlrd (
+            cntr_sn,
+            mlrd_ttl,
+            mlrd_cn,
+            rgtr_id,
+            rgtr_dt,
+            cntr_end_dt)
+        values ( #{cntr_sn},
+                 #{mlrd_ttl},
+                 #{mlrd_cn},
+                 #{rgtr_id},
+                 #{rgtr_dt},
+                 #{cntr_end_dt})
+    </insert>
 
 <!--    &lt;!&ndash; 상품 삭제 &ndash;&gt;-->
 <!--    <update id="donasDelete" parameterType="com.example.water_web.Vo.DonaVo">-->
