@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>진행중인 기부</title>
+    <title>기부 카테고리</title>
     <link rel="stylesheet" href="css/dona.css" />
 </head>
 

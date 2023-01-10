@@ -5,7 +5,7 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>기부 자세히</title>
+    <title>기부글 자세히</title>
     <link rel="stylesheet" href="css/indexview.css" />
 </head>
 

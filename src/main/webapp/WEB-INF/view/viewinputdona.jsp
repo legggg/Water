@@ -6,7 +6,7 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>기부를 해주세요</title>
+    <title>기부금 등록</title>
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script> <!-- 주소저장 -->
     <script type="text/javascript" src="/js/adres.js" defer></script>
 

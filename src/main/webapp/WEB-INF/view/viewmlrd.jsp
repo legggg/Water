@@ -6,7 +6,7 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>진행중인 기부 자세히</title>
+    <title>기간 지난 기부글 자세히</title>
 </head>
 
 <style>

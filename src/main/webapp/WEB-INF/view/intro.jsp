@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Water</title>
+    <title>소개</title>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 

@@ -77,7 +77,7 @@ public class AdminController {
         return "redirect:/index";
     }
 
-    // 기부 삭제 (잘 안됨;;)
+    // 기부 삭제
     @PostMapping("/indexdelete")
     public String postDonasDelete(@RequestParam("n") int cntr_sn) throws Exception {
         // @RequestParam("n")으로 인해, URL주소에 있는 n의 값을 가져와 gdsNum에 저장
