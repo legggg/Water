@@ -45,4 +45,9 @@ public class MainController {
     public String toDonaIng() {
         return "donaing";
     }
+
+    @GetMapping("/map")
+    public String map() {
+        return "map";
+    }
 }
