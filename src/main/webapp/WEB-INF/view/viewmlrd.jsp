@@ -239,6 +239,38 @@
                                 <dt id="paraTitle"><img src=${viewmlrd.mlrd_file_id} alt width="100%" height="300" class="card_img"></dt>
                                 <dd id="paraContent1">${viewmlrd.mlrd_ttl}</dd>
                                 <dd id="paraContent2">${viewmlrd.mlrd_cn}</dd>
+
+                                <c:if test="${sessionScope.mbr_id == null }">
+                                    <p>소감을 남기시려면 <a href="login">로그인</a>을 해주세요</p>
+                                </c:if>
+
+                                <c:if test="${sessionScope.mbr_id != null }">
+                                <section>
+                                    <form role="form" method="post" autocomplete="off">
+                                        <input type="hidden" name="mlrd_sn" value="${viewmlrd.mlrd_sn}">
+                                        <div>
+                                            <textarea name="comt_cn" id="comt_cn"></textarea>
+                                        </div>
+                                        <div>
+                                            <button type="submit" id="reply_btn">댓글 등록</button>
+                                        </div>
+                                    </form>
+                                </section>
+                                </c:if>
+
+                                <section>
+                                    <ol>
+                                        <c:forEach items="${comt}" var="comt">
+                                            <li>
+                                                <div>
+                                                    <span>${comt.mbr_nm}</span>
+                                                    <span><fmt:formatDate value="${comt.rgtr_dt}" pattern="yyyy-MM-dd" /></span>
+                                                </div>
+                                                <div>${comt.comt_cn}</div>
+                                            </li>
+                                        </c:forEach>
+                                    </ol>
+                                </section>
                             </c:forEach>
                         </dl>
                     </li>

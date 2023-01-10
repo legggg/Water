@@ -4,9 +4,24 @@
 
     <!-- 기간 지난 기부 조회 -->
     <select id="viewMlrd" resultType="com.example.water_web.Vo.MlrdVo">
-        SELECT cntr_sn, mlrd_ttl, mlrd_cn, mlrd_file_id
+        SELECT mlrd_sn, cntr_sn, mlrd_ttl, mlrd_cn, mlrd_file_id
         FROM tb_mlrd
         WHERE cntr_sn = #{cntr_sn}
+    </select>
+
+    <!-- 후기글에 댓글 작성 -->
+    <insert id="comtRegist" parameterType="com.example.water_web.Vo.MlrdVo">
+        insert into tb_mlrd_comt (mbr_sn, mlrd_sn, comt_cn, rgtr_id, rgtr_dt)
+        values (#{mbr_sn}, #{mlrd_sn}, #{comt_cn}, #{rgtr_id}, #{rgtr_dt})
+    </insert>
+
+    <!-- 후기글에 댓글 작성 -->
+    <select id="comtList" resultType="com.example.water_web.Vo.MlrdVo">
+        select a.comt_sn, a.mbr_sn, a.mlrd_sn, a.comt_cn, a.rgtr_dt, b.mbr_nm
+        from tb_mlrd_comt a
+                 inner join tb_mbr b
+                            on a.mbr_sn = b.mbr_sn
+        where a.mlrd_sn = #{mlrd_sn}
     </select>
 
 </mapper>
