@@ -18,8 +18,7 @@ public class MlrdServiceImpl implements MlrdService {
 
     // 기부 조회
     @Override
-    public MlrdVo viewMlrd(int cntr_sn) throws Exception {
+    public List<MlrdVo> viewMlrd(int cntr_sn) throws Exception {
         return dao.viewMlrd(cntr_sn);
     }
-
 }

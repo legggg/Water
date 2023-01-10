@@ -1,6 +1,8 @@
 package com.example.water_web.Controller;
 
+import com.example.water_web.Service.DonaService;
 import com.example.water_web.Service.MlrdService;
+import com.example.water_web.Vo.DonaVo;
 import com.example.water_web.Vo.MlrdVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,13 +18,24 @@ import java.util.List;
 public class MlrdController {
 
     @Autowired
-    MlrdService service;
+    MlrdService mlrdService;
+
+    @Autowired
+    DonaService service;
 
     // 기간 지난 기부 조회 페이지
     @GetMapping("/viewmlrd")
     public void getView(@RequestParam("n") int cntr_sn, Model model) throws Exception {
-        MlrdVo viewmlrd = service.viewMlrd(cntr_sn);
+        List<MlrdVo> viewmlrd = mlrdService.viewMlrd(cntr_sn); // tb_mlrd 부분 가져옴
+//        List<DonaVo> viewmlrd2 = mlrdService.viewMlrd2(vo); // tb_cntr이랑 tb_cntr_ctbny 부분 가져옴
+
+        DonaVo view = service.donasView(cntr_sn);
+        DonaVo view2 = service.magaDona(cntr_sn); // 현재 기부액 조회 + 기부율
+
+        model.addAttribute("view", view);
+        model.addAttribute("view2", view2);
 
         model.addAttribute("viewmlrd", viewmlrd);
+//        model.addAttribute("viewmlrd2", viewmlrd2);
     }
 }

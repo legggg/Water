@@ -8,6 +8,5 @@ import java.util.List;
 public interface MlrdService {
 
     // 기부 조회
-    MlrdVo viewMlrd(int cntr_sn) throws Exception;
-
+    List<MlrdVo> viewMlrd(int cntr_sn) throws Exception;
 }

@@ -229,14 +229,17 @@
     <div class="collect_wrap">
         <div class="content_content">
             <h2 class="theme"></h2>
-            <h3 class="title">${viewmlrd.cntr_ttl}</h3>
+            <h3 class="title">${view.cntr_ttl}</h3>
             <%--            <ul class="collect_tab" id="collect_tab"></ul>--%>
             <div class="tab_content">
                 <ul class="intro_list editor_base">
                     <li>
                         <dl>
-                            <dt id="paraTitle" style="padding-bottom: 20px"><img src=${viewmlrd.mlrd_file_id} alt width="100%" height="300" class="card_img"></dt>
-                            <dd id="paraContent">${viewmlrd.mlrd_cn}</dd>
+                            <c:forEach items="${viewmlrd}" var="viewmlrd">
+                                <dt id="paraTitle"><img src=${viewmlrd.mlrd_file_id} alt width="100%" height="300" class="card_img"></dt>
+                                <dd id="paraContent1">${viewmlrd.mlrd_ttl}</dd>
+                                <dd id="paraContent2">${viewmlrd.mlrd_cn}</dd>
+                            </c:forEach>
                         </dl>
                     </li>
                 </ul>
@@ -244,27 +247,27 @@
         </div>
 
         <div class="content_side">
-            <div class="section_title"><p class="tit" style="font-size: 20px">${viewmlrd.cntr_ttl}</p></div>
+            <div class="section_title"><p class="tit" style="font-size: 20px">${view.cntr_ttl}</p></div>
             <div class="section_status">
                 <div class="graph_wrap">
                     <div class="graph_status">
                         <span class="per">
-                            <strong class="num">${viewmlrd.percent}</strong>%
+                            <strong class="num">${view2.percent}</strong>%
                         </span>
                     </div>
                 </div>
                 <div class="term_area">
                     <p>
-                        <strong>${viewmlrd.cntr_str_dt} ~ ${viewmlrd.cntr_end_dt}</strong>
+                        <strong>${view.cntr_str_dt} ~ ${view.cntr_end_dt}</strong>
                     </p>
                 </div>
                 <div class="num_area">
                     <p class="status_num">
-                        <strong><fmt:formatNumber value="${viewmlrd.ctbny_pc}" pattern="###,###,###"/></strong>
+                        <strong><fmt:formatNumber value="${view.ctbny_pc}" pattern="###,###,###"/></strong>
                         <span>원 달성</span>
                     </p>
                     <p class="detail_num">
-                        <span><fmt:formatNumber value="${viewmlrd.cntr_obctr}" pattern="###,###,###"/></span>
+                        <span><fmt:formatNumber value="${view.cntr_obctr}" pattern="###,###,###"/></span>
                         <em style="font-style: inherit">원 목표</em>
                     </p>
                 </div>

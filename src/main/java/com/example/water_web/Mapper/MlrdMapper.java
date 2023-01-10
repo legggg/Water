@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface MlrdMapper {
 
-    // 기부 조회
-    MlrdVo viewMlrd(int cntr_sn) throws Exception;
+    // 기부 조회 tb_mlrd 가져오기
+    List<MlrdVo> viewMlrd(int cntr_sn) throws Exception;
 
 }
