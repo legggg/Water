@@ -4,19 +4,25 @@
 <html lang="ko">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>관리자페이지</title>
-    <link rel="stylesheet" href="css/index.css" />
+    <%@ include file="header.jsp"%>
 </head>
 
 <style>
 </style>
 
 <body>
-<%@ include file="header.jsp"%>
+<div id="map" style="width:100%;height:100%;"></div>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e09591bdb881d01b9c0bc77a94108e53"></script>
+<script>
+    var container = document.getElementById('map');
+    var options = {
+        center: new kakao.maps.LatLng(33.450701, 126.570667),
+        level: 3
+    };
 
-<section id="container">
-    <%@ include file="indexaside.jsp"%>
-</section>
+    var map = new kakao.maps.Map(container, options);
+</script>
 
 </body>
+
 </html>
