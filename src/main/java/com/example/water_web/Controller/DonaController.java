@@ -29,7 +29,6 @@ public class DonaController {
     public void getListall(DonaVo vo, Model model) throws Exception {
         List<DonaVo> list = null;
         list = service.donainglistall(vo);
-
         model.addAttribute("donainglistall", list);
     }
 
@@ -38,7 +37,6 @@ public class DonaController {
     public void getList(@RequestParam("c") int cntr_category, Model model) throws Exception {
         List<DonaVo> list = null;
         list = service.donainglist(cntr_category);
-
         model.addAttribute("donainglist", list);
     }
 
@@ -46,12 +44,10 @@ public class DonaController {
     @GetMapping("/view")
     public void getView(@RequestParam("n") int cntr_sn, Model model) throws Exception {
         DonaVo view = service.donasView(cntr_sn);
-        DonaVo view2 = service.magaDona(cntr_sn); // 현재 기부액 조회 + 기부율
-//        DonaVo view3 = service.percent(cntr_sn);
-
         model.addAttribute("view", view);
+
+        DonaVo view2 = service.magaDona(cntr_sn); // 현재 기부액 조회 + 기부율
         model.addAttribute("view2", view2);
-//        model.addAttribute("view3", view3);
     }
 
     // 기부 조회
@@ -68,10 +64,9 @@ public class DonaController {
     public void getMakeDona(@RequestParam("n") int cntr_sn, Model model, HttpSession session) throws Exception {
         Integer sn = (Integer) session.getAttribute("userSn");
         UserVo userVo = userService.getUserBySn(sn);
+        model.addAttribute("user", userVo);
 
         DonaVo viewinput = service.donasView(cntr_sn);
-
-        model.addAttribute("user", userVo);
         model.addAttribute("viewinput", viewinput);
     }
 
@@ -89,7 +84,6 @@ public class DonaController {
     public void getDonaMlrd(DonaVo vo, Model model) throws Exception {
         List<DonaVo> list = null;
         list = service.donaMlrd(vo);
-
         model.addAttribute("donamlrd", list);
     }
 }

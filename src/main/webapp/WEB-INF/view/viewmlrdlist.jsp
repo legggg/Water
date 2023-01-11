@@ -11,7 +11,8 @@
 
 <style>
     * {
-        /*font-family: NanumBarunGothic,"나눔바른고딕","Nanum Barun Gothic",Sans-serif;*/
+        padding: 0;
+        margin: 0;
     }
 
     body{
@@ -219,20 +220,14 @@
         margin-top: 0;
         font-size: 16px;
     }
+    a {font-size: 20px; font-weight: bold}
+    a:link { text-decoration:none; color:black;}
 
-    section.replyForm { padding:20px 0; }
-    section.replyForm div.input_area { margin:10px 0; }
-    section.replyForm textarea { font-size:16px; font-family:'맑은 고딕', verdana; padding:10px; width:600px;; height:100px; border:1px solid #ccc; outline: none; resize: none;}
-    section.replyForm button { font-size:20px; padding:5px 10px; margin:10px 0; background:#fff; border:1px solid #ccc; }
+    a:visited { text-decoration:none;color:black;}
 
-    section.replyList { padding:30px 0; }
-    section.replyList ol { padding:0; margin:0; }
-    section.replyList ol li { padding:10px 0; border-bottom:2px solid #eee; }
-    section.replyList div.userInfo { }
-    section.replyList div.userInfo .userName { font-size:24px; font-weight:bold; }
-    section.replyList div.userInfo .date { color:#999; display:inline-block; margin-left:10px; }
-    section.replyList div.replyContent { padding:10px; margin:20px 0; }
+    a:active {text-decoration:none; color:black;}
 
+    a:hover { text-decoration:none; color:black;}
 </style>
 
 <body>
@@ -243,85 +238,78 @@
     <div class="collect_wrap">
         <div class="content_content">
             <h2 class="theme"></h2>
-            <c:forEach items="${viewmlrd}" var="viewmlrd">
-            <h3 class="title">${viewmlrd.cntr_ttl}</h3>
+            <h3 class="title">${view.cntr_ttl}</h3>
             <div class="tab_content">
                 <ul class="intro_list editor_base">
                     <li>
                         <dl>
-                            <dd style="font-weight: bold; font-size: 30px; margin-bottom: 20px" id="paraContent1">${viewmlrd.mlrd_ttl}</dd>
-                            <dt style="margin-bottom: 20px" id="paraTitle"><img src=${viewmlrd.mlrd_file_id} alt width="100%" height="300" class="card_img"></dt>
-                            <dd style="margin-bottom: 100px" id="paraContent2">${viewmlrd.mlrd_cn}</dd>
-
-                            <!-- 댓글 조회-->
-                            <div style="font-size: 20px;">댓글을 달아주세요</div>
-                            <hr style="border: solid 0.5px #ccc; margin-bottom: 8px; margin-top: 8px">
-                            <section style="margin-top: 30px">
+                            <dt id="paraTitle" style="padding-bottom: 20px"><img src=${view.cntr_file_id} alt width="100%" height="300" class="card_img"></dt>
+                            <dd id="paraContent">${view.cntr_cn}</dd>
+                        </dl>
+                    </li>
+                    <div style="margin-top: 100px">
+                        <table>
+                            <thead>
+                            <div style="margin-bottom: 13px; font-size: 20px">후기글</div>
+                            </thead>
+                            <tbody>
+                            <c:forEach items="${viewmlrdlist}" var="viewmlrdlist">
+                            <tr>
+                                <td style="padding-right: 350px; margin-bottom: 10px">
+                                    <a href="viewmlrd?q=${viewmlrdlist.mlrd_sn}">${viewmlrdlist.mlrd_ttl}</a>
+                                </td>
+                                <td><fmt:formatDate value="${viewmlrdlist.rgtr_dt}" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+                            </tr>
+                            </tbody>
+                            </c:forEach>
+                            <section>
                                 <ol>
                                     <c:forEach items="${comt}" var="comt">
                                         <li>
-                                            <div style="font-size: 18px"><span>${comt.mbr_ncnm}</span> <span>(${comt.mbr_id})</span></div>
-                                            <div style="font-size: 17px">${comt.comt_cn}</div>
-                                            <div style="font-size: 14px; font-weight: lighter; margin-bottom: 10px"><span><fmt:formatDate value="${comt.rgtr_dt}" pattern="yyyy-MM-dd HH:mm:ss" /></span></div>
+                                            <div>
+                                                <span>${comt.mbr_nm}</span>
+                                                <span><fmt:formatDate value="${comt.rgtr_dt}" pattern="yyyy-MM-dd" /></span>
+                                            </div>
+                                            <div>${comt.comt_cn}</div>
                                         </li>
                                     </c:forEach>
                                 </ol>
                             </section>
-
-                            <!-- 댓글 작성-->
-                            <c:if test="${sessionScope.mbr_id == null }">
-                                <p style="margin-top: 60px">소감을 남기시려면 <a href="login">로그인</a>을 해주세요</p>
-                            </c:if>
-                            <c:if test="${sessionScope.mbr_id != null }">
-                                <section class="replyForm">
-                                    <form role="form" method="post" autocomplete="off">
-                                        <input type="hidden" name="mlrd_sn" value="${viewmlrd.mlrd_sn}">
-                                        <div class="input_area">
-                                            <textarea name="comt_cn" id="comt_cn"></textarea>
-                                        </div>
-                                        <div class="input_area">
-                                            <button type="submit" id="reply_btn" style="cursor:pointer;">댓글 등록</button>
-                                        </div>
-                                    </form>
-                                </section>
-                            </c:if>
-                            </c:forEach>
-                        </dl>
-                    </li>
+                            </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </ul>
             </div>
         </div>
 
-
-        <c:forEach items="${viewmlrd}" var="viewmlrd">
         <div class="content_side">
-            <div class="section_title"><p class="tit" style="font-size: 20px">${viewmlrd.cntr_ttl}</p></div>
+            <div class="section_title"><p class="tit" style="font-size: 20px">${view.cntr_ttl}</p></div>
             <div class="section_status">
                 <div class="graph_wrap">
                     <div class="graph_status">
                         <span class="per">
-                            <strong class="num">${viewmlrd.percent}</strong>%
+                            <strong class="num">${view2.percent}</strong>%
                         </span>
                     </div>
                 </div>
                 <div class="term_area">
                     <p>
-                        <strong>${viewmlrd.cntr_str_dt} ~ ${viewmlrd.cntr_end_dt}</strong>
+                        <strong>${view.cntr_str_dt} ~ ${view.cntr_end_dt}</strong>
                     </p>
                 </div>
                 <div class="num_area">
                     <p class="status_num">
-                        <strong><fmt:formatNumber value="${viewmlrd.ctbny_pc}" pattern="###,###,###"/></strong>
+                        <strong><fmt:formatNumber value="${view2.ctbny_pc}" pattern="###,###,###"/></strong>
                         <span>원 달성</span>
                     </p>
                     <p class="detail_num">
-                        <span><fmt:formatNumber value="${viewmlrd.cntr_obctr}" pattern="###,###,###"/></span>
+                        <span><fmt:formatNumber value="${view.cntr_obctr}" pattern="###,###,###"/></span>
                         <em style="font-style: inherit">원 목표</em>
                     </p>
                 </div>
             </div>
         </div>
-        </c:forEach>
     </div>
 </div>
 

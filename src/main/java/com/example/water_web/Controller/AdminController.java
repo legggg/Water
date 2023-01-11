@@ -29,7 +29,6 @@ public class AdminController {
     // 관리자화면
     @GetMapping("/index")
     public void getIndex() throws Exception {
-
     }
 
     // 기부 등록 페이지
@@ -52,7 +51,6 @@ public class AdminController {
     @GetMapping("/indexlist")
     public void getdonasList(Model model) throws Exception {
         List<DonaVo> list = adminService.donaslist();
-
         model.addAttribute("list", list);
     }
 
@@ -95,7 +93,6 @@ public class AdminController {
     @GetMapping("/indexmlrdregister")
     public void getMlrdRegister(DonaVo vo, Model model) throws Exception {
         List<DonaVo> list = adminService.donaslist();
-
         model.addAttribute("mlrdlist", list);
     }
 

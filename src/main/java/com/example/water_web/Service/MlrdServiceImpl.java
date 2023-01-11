@@ -20,10 +20,16 @@ public class MlrdServiceImpl implements MlrdService {
     @Autowired
     private MlrdMapper dao;
 
-    // 기부 조회
+    // 후기글 리스트 조회
     @Override
-    public List<MlrdVo> viewMlrd(int cntr_sn) throws Exception {
-        return dao.viewMlrd(cntr_sn);
+    public List<MlrdVo> viewMlrdList(int cntr_sn) throws Exception {
+        return dao.viewMlrdList(cntr_sn);
+    }
+
+    // 기간 지난 기부글 조회 자세히 + 댓글
+    @Override
+    public List<MlrdVo> viewMlrd(int mlrd_sn) throws Exception {
+        return dao.viewMlrd(mlrd_sn);
     }
 
     // 댓글 작성
@@ -40,7 +46,7 @@ public class MlrdServiceImpl implements MlrdService {
 
     // 댓글 리스트
     @Override
-    public List<ComtVo> comtList(int cntr_sn) throws Exception {
-        return dao.comtList(cntr_sn);
+    public List<ComtVo> comtList(int mlrd_sn) throws Exception {
+        return dao.comtList(mlrd_sn);
     }
 }

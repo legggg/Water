@@ -2,11 +2,23 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.water_web.Mapper.MlrdMapper">
 
-    <!-- 기간 지난 기부 조회 -->
-    <select id="viewMlrd" resultType="com.example.water_web.Vo.MlrdVo">
-        SELECT mlrd_sn, cntr_sn, mlrd_ttl, mlrd_cn, mlrd_file_id
+    <!-- 후기글 리스트 조회 -->
+    <select id="viewMlrdList" resultType="com.example.water_web.Vo.MlrdVo">
+        SELECT *
         FROM tb_mlrd
         WHERE cntr_sn = #{cntr_sn}
+    </select>
+
+    <!-- 후기글 조회 -->
+    <select id="viewMlrd" resultType="com.example.water_web.Vo.MlrdVo">
+
+        SELECT a.*, b.*, (c.ctbny_pc / b.cntr_obctr * 100) AS percent, c.ctbny_pc
+        FROM tb_mlrd as a
+                 LEFT JOIN tb_cntr AS b
+                           ON a.cntr_sn = b.cntr_sn
+                 LEFT JOIN tb_cntr_ctbny AS c
+                           ON a.cntr_sn = c.cntr_sn
+        WHERE mlrd_sn = #{mlrd_sn}
     </select>
 
     <!-- 후기글에 댓글 작성 -->
@@ -15,9 +27,9 @@
         values (#{mbr_sn}, #{mlrd_sn}, #{comt_cn}, #{rgtr_id}, #{rgtr_dt})
     </insert>
 
-    <!-- 후기글에 댓글 작성 -->
+    <!-- 후기글에 댓글 조회 -->
     <select id="comtList" resultType="com.example.water_web.Vo.MlrdVo">
-        select a.comt_sn, a.mbr_sn, a.mlrd_sn, a.comt_cn, a.rgtr_dt, b.mbr_nm
+        select a.comt_sn, a.mbr_sn, a.mlrd_sn, a.comt_cn, a.rgtr_dt, b.mbr_nm, b.mbr_id, b.mbr_ncnm
         from tb_mlrd_comt a
                  inner join tb_mbr b
                             on a.mbr_sn = b.mbr_sn

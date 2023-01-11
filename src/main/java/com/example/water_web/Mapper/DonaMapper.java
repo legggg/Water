@@ -28,8 +28,6 @@ public interface DonaMapper {
     // 현재 기부액 조회
     DonaVo magaDona(int cntr_sn) throws Exception;
 
-//    DonaVo percent(int cntr_sn) throws Exception;
-
     // 기간 지난 전체 기부 리스트
     List<DonaVo> donaMlrd(DonaVo vo) throws Exception;
 }

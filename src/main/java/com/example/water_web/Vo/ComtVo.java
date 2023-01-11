@@ -25,4 +25,5 @@ public class ComtVo {
 
     private int cntr_sn;
     private int mbr_sn;
+    private String mbr_id;
 }
