@@ -25,7 +25,6 @@
                     <fmt:formatDate value="${now}" pattern="yyyy-MM-dd" var="today" />
                     <c:if test="${donainglist.cntr_end_dt >= today}">
                     <a class="card" href="/view?n=${donainglist.cntr_sn}" style="text-decoration: none; color: black;">
-<%--                        <img src="https://bakey-api.codeit.kr/files/629/images/sunglasses.jpg" alt width="267" height="200" class="card_img">--%>
                         <img src=${donainglist.cntr_file_id} alt width="267" height="200" class="card_img">
                         <div class="card_content">
                             <strong class="card_title">${donainglist.cntr_ttl}</strong>

@@ -41,7 +41,7 @@
     <select id="donaslist" resultType="com.example.water_web.Vo.DonaVo">
         select *
         from tb_cntr
-        order by cntr_end_dt desc
+        order by cntr_sn asc
     </select>
 
     <!-- 기부 조회 -->

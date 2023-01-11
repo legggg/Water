@@ -15,63 +15,63 @@
 </head>
 
 <body>
-    <%@ include file="header.jsp"%>
+<%@ include file="header.jsp"%>
 
-    <section id="container">
-        <%@ include file="indexaside.jsp"%>
-        <div class="wrapper">
-            <form role="form" method="post" autocomplete="off">
-                    <div class="wrap">
-                        <h2>기부글 등록</h2>
-                        <div class="user_wrap">
-                            <label for="cntr_ttl">기부명</label>
-                            <input class="user_input" type="text" id="cntr_ttl" name="cntr_ttl" required />
-                        </div>
+<section id="container">
+    <%@ include file="indexaside.jsp"%>
+    <div class="wrapper">
+        <form role="form" method="post" autocomplete="off">
+            <div class="wrap">
+                <h2>기부글 등록</h2>
+                <div class="user_wrap">
+                    <label for="cntr_ttl">기부명</label>
+                    <input class="user_input" type="text" id="cntr_ttl" name="cntr_ttl" required />
+                </div>
 
-                        <div class="user_wrap">
-                            <label for="cntr_cn">기부내용</label>
-                            <textarea class="user_input" rows="5" cols="50" id="cntr_cn" name="cntr_cn" required></textarea>
-                            <script>
-                                var ckeditor_config = {
-                                    resize_enaleb : false,
-                                    enterMode : CKEDITOR.ENTER_BR,
-                                    shiftEnterMode : CKEDITOR.ENTER_P,
-                                    // filebrowserUploadUrl : "/admin/goods/ckUpload"
-                                };
-                                CKEDITOR.replace("cntr_cn", ckeditor_config);
-                            </script>
-                        </div>
+                <div class="user_wrap">
+                    <label for="cntr_cn">기부내용</label>
+                    <textarea class="user_input" rows="5" cols="50" id="cntr_cn" name="cntr_cn" required></textarea>
+                    <script>
+                        var ckeditor_config = {
+                            resize_enaleb : false,
+                            enterMode : CKEDITOR.ENTER_BR,
+                            shiftEnterMode : CKEDITOR.ENTER_P,
+                            // filebrowserUploadUrl : "/admin/goods/ckUpload"
+                        };
+                        CKEDITOR.replace("cntr_cn", ckeditor_config);
+                    </script>
+                </div>
 
-                        <div class="se_wrap">
-                            <label for="cntr_rcvfvr">수혜자/수혜기관</label>
-                            <input class="user_input" type="text" id="cntr_rcvfvr" name="cntr_rcvfvr" required />
-                        </div>
+                <div class="se_wrap">
+                    <label for="cntr_rcvfvr">수혜자/수혜기관</label>
+                    <input class="user_input" type="text" id="cntr_rcvfvr" name="cntr_rcvfvr" required />
+                </div>
 
-                        <div class="se_wrap">
-                            <label for="cntr_category">기부대상</label>
-                            <select class="se_input" id="cntr_category" name="cntr_category">
-                                <option value="0">어린이</option>
-                                <option value="1">어르신</option>
-                                <option value="2">장애인</option>
-                                <option value="3">동물</option>
-                                <option value="4">기타</option>
-                            </select>
-                        </div>
+                <div class="se_wrap">
+                    <label for="cntr_category">기부대상</label>
+                    <select class="se_input" id="cntr_category" name="cntr_category">
+                        <option value="0">어린이</option>
+                        <option value="1">어르신</option>
+                        <option value="2">장애인</option>
+                        <option value="3">동물</option>
+                        <option value="4">기타</option>
+                    </select>
+                </div>
 
-                        <div class="se_wrap">
-                            <label for="cntr_category2">기부방법</label>
-                            <select class="se_input" id="cntr_category2" name="cntr_category2">
-                                <option value="0">기부금</option>
-                                <option value="1">재능</option>
-                                <option value="2">상품</option>
-                            </select>
-                        </div>
+                <div class="se_wrap">
+                    <label for="cntr_category2">기부방법</label>
+                    <select class="se_input" id="cntr_category2" name="cntr_category2">
+                        <option value="0">기부금</option>
+                        <option value="1">재능</option>
+                        <option value="2">상품</option>
+                    </select>
+                </div>
 
-                        <!-- 기부방법이 기부금일때만 나오도록 해야하는디.... -->
-                        <div class="user_wrap">
-                            <label for="cntr_obctr">목표금액</label>
-                            <input class="user_input" type="text" id="cntr_obctr" name="cntr_obctr" />
-                        </div>
+                <!-- 기부방법이 기부금일때만 나오도록 해야하는디.... -->
+                <div class="user_wrap">
+                    <label for="cntr_obctr">목표금액</label>
+                    <input class="user_input" type="text" id="cntr_obctr" name="cntr_obctr" />
+                </div>
 
 <%--                        <!-- 파일 업로드좀;;;; -->--%>
 <%--                        <div class="user_wrap">--%>
@@ -79,33 +79,33 @@
 <%--                            <input class="user_input" type="file" id="file" name="file" />--%>
 <%--                        </div>--%>
 
-                        <!-- 모금 마감날짜;;;; -->
-                        <div class="user_wrap">
-                            <label>모금 마감날짜</label>
-                            <input class="user_input datebox" type = date  name = "cntr_end_dt" size=50 required />
+                <!-- 모금 마감날짜;;;; -->
+                <div class="user_wrap">
+                    <label>모금 마감날짜</label>
+                    <input class="user_input datebox" type = date  name = "cntr_end_dt" size=50 required />
+                </div>
+
+                <div class="adres_wrap">
+                    <label>주소 등록</label>
+                    <input class="adres_input" style="width: 50%" type="text" id="sample4_postcode" placeholder="우편번호" readonly />
+                    <input class="adres_input" style="width: 30%" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" /><br>
+                    <input class="adres_input" type="text" name="cntr_adres1" id="sample4_roadAddress" placeholder="도로명주소" readonly />
+                    <input class="adres_input" type="hidden" id="sample4_jibunAddress" placeholder="지번주소" readonly />
+                    <span id="guide" style="color:#999;display:none"></span>
+                    <input class="adres_input" type="text" name="cntr_adres2" id="sample4_detailAddress" placeholder="상세주소" />
+                    <input type="hidden" id="sample4_extraAddress" placeholder="참고항목">
+<%--                    <input type="hidden" id="cntr_adres" name="cntr_adres" value="" >--%>
                         </div>
 
-                        <div class="adres_wrap">
-                            <label>주소 등록</label>
-                            <input class="adres_input" style="width: 50%" type="text" id="sample4_postcode" placeholder="우편번호" readonly />
-                            <input class="adres_input" style="width: 30%" type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" /><br>
-                            <input class="adres_input" type="text" name="cntr_adres1" id="sample4_roadAddress" placeholder="도로명주소" readonly />
-                            <input class="adres_input" type="hidden" id="sample4_jibunAddress" placeholder="지번주소" readonly />
-                            <span id="guide" style="color:#999;display:none"></span>
-                            <input class="adres_input" type="text" name="cntr_adres2" id="sample4_detailAddress" placeholder="상세주소" />
-                            <input type="hidden" id="sample4_extraAddress" placeholder="참고항목">
-    <%--                        <input type="hidden" id="cntr_adres" name="cntr_adres" value="" >--%>
-                        </div>
-
-                        <div class="button_wrap">
-                            <div class="login_button_wrap">
-                                <button class="login_button" type="submit" id="register_Btn">등록</button>
-                            </div>
-                        </div>
+                <div class="button_wrap">
+                    <div class="login_button_wrap">
+                        <button class="login_button" type="submit" id="register_Btn">등록</button>
                     </div>
-            </form>
-        </div>
-    </section>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
 </body>
 </html>
 

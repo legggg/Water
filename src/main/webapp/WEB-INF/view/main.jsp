@@ -15,13 +15,14 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
-<body>
+
 <style>
     body {
         background-color: white;
     }
 </style>
 
+<body>
 <%@ include file="header.jsp"%>
 
 <script defer src="./scripts.js"></script>
@@ -230,7 +231,7 @@
                 <jsp:useBean id="now2" class="java.util.Date" />
                 <fmt:formatDate value="${now2}" pattern="yyyy-MM-dd" var="today2" />
                 <c:if test="${main2.cntr_end_dt >= today2}">
-                <a href="/view?n=${main2.cntr_sn}" class="Donacard_image">
+                <a href="/view?n=${main2.cntr_sn}" class="Donacard_image" style="text-decoration-line: none;">
                     <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
                         <img src=${main2.cntr_file_id} width="100%" height="200">
                     </div>
@@ -256,7 +257,7 @@
                 <jsp:useBean id="now3" class="java.util.Date" />
                 <fmt:formatDate value="${now3}" pattern="yyyy-MM-dd" var="today3" />
                 <c:if test="${main3.cntr_end_dt >= today3}">
-                <a href="/view?n=${main3.cntr_sn}" class="Donacard_image">
+                <a href="/view?n=${main3.cntr_sn}" class="Donacard_image" style="text-decoration-line: none;">
                     <div class="Donacard_imagelist" style="width: 257px; height: 205px; background-color: white; margin-left: 10px">
                         <img src=${main3.cntr_file_id} width="100%" height="200" style="margin-top: 5px;">
                     </div>

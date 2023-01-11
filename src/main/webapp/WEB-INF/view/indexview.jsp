@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="user_wrap">
-                    <label>기부 내용</label>
+                    <label style="margin-bottom: 10px">기부 내용</label>
                     <span>${donas.cntr_cn}</span>
                 </div>
 

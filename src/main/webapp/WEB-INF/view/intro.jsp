@@ -8,21 +8,19 @@
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
-<body>
-    <%@ include file="header.jsp"%>
-</body>
-
 <style>
     .intro_image {
         margin: 100px;
     }
 </style>
 
+<body>
+<%@ include file="header.jsp"%>
+
 <div class="intro_image">
     <img src="images/dona.jpg"><a>음..</a>
 </div>
 
-
-
+</body>
 
 </html>

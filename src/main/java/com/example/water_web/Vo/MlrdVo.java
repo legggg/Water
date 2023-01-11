@@ -27,6 +27,7 @@ public class MlrdVo {
     private LocalDateTime mbfr_dt;
 
     private String cntr_ttl;
+    private String cntr_rcvfvr;     // 후원기관
     private int ctbny_pc;   // 현재 기부액 조회
     private int percent;    // 현재 기부액 백분율 조회
     private LocalDate cntr_str_dt;
