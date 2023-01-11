@@ -43,6 +43,9 @@
                         </span>
                     </div>
                 </div>
+                <div class="sl_progressBarWrap">
+                    <span class="sl_bar" style="width: ${view2.percent}%"></span>
+                </div>
                 <div class="term_area">
                     <p>
                         <strong>${view.cntr_str_dt} ~ ${view.cntr_end_dt}</strong>

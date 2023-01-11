@@ -81,6 +81,9 @@
                         </span>
                     </div>
                 </div>
+                <div class="sl_progressBarWrap">
+                    <span class="sl_bar" style="width: ${viewmlrd.percent}%"></span>
+                </div>
                 <div class="term_area">
                     <p>
                         <strong>${viewmlrd.cntr_str_dt} ~ ${viewmlrd.cntr_end_dt}</strong>

@@ -30,6 +30,7 @@
                         <table>
                             <thead>
                             <div style="margin-bottom: 13px; font-size: 20px">후기글</div>
+                            <hr style="border: solid 0.5px #ccc; margin-bottom: 8px; margin-top: 8px">
                             </thead>
                             <tbody>
                             <c:forEach items="${viewmlrdlist}" var="viewmlrdlist">
@@ -74,6 +75,9 @@
                             <strong class="num">${view2.percent}</strong>%
                         </span>
                     </div>
+                </div>
+                <div class="sl_progressBarWrap">
+                    <span class="sl_bar" style="width: ${view2.percent}%"></span>
                 </div>
                 <div class="term_area">
                     <p>
