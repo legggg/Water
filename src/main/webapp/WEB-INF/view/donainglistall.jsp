@@ -13,6 +13,29 @@
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 </head>
 
+<style>
+    .sl_progressBarWrap {
+        margin-top: 5px;
+        width: 90%;
+        height: 5px;
+        position: relative;
+        background-color: #e8e8e8;
+        border-radius: 2.5px;
+        margin-left: 15px;
+    }
+    .sl_bar {
+        height: 5px;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #439A97;
+        border-radius: 2.5px;
+        -webkit-animation: animate-width 1.5s both;
+        animation: animate-width 1.5s both;
+    }
+</style>
+
 <body>
 <div class="wrap">
     <div >
@@ -35,6 +58,9 @@
                         </div>
                         <div class="card_content">
                             <strong>${donainglistall.percent} %</strong><strong style="float: right"><fmt:formatNumber value="${donainglistall.ctbny_pc}" pattern="#,###"/>원</strong>
+                        </div>
+                        <div class="sl_progressBarWrap">
+                            <span class="sl_bar" style="width: ${donainglistall.percent}%"></span>
                         </div>
                     </a>
                     </c:if>

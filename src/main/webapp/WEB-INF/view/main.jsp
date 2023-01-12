@@ -21,6 +21,27 @@
     body {
         background-color: white;
     }
+
+    /* progress bar */
+    .sl_progressBarWrap {
+        margin-top: 5px;
+        width: 100%;
+        height: 5px;
+        position: relative;
+        background-color: #e8e8e8;
+        border-radius: 2.5px;
+    }
+    .sl_bar {
+        height: 5px;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: #439A97;
+        border-radius: 2.5px;
+        -webkit-animation: animate-width 1.5s both;
+        animation: animate-width 1.5s both;
+    }
 </style>
 
 <body>
@@ -214,6 +235,9 @@
                         <strong class="Donacard_title" style="color: black; " >${main1.cntr_ttl}</strong>
                         <div class="Donacard_orga" style="color: black; ">${main1.cntr_rcvfvr}</div>
                         <div class="Donacard_orga" style="color: black;"><strong>${main1.percent} %</strong><strong style="float: right"><fmt:formatNumber value="${main1.ctbny_pc}" pattern="#,###"/>원</strong></div>
+                        <div class="sl_progressBarWrap">
+                            <span class="sl_bar" style="width: ${main1.percent}%"></span>
+                        </div>
                     </div>
                 </a>
             </c:if>
@@ -240,6 +264,9 @@
                         <strong class="Donacard_title" style="color: black">${main2.cntr_ttl}</strong>
                         <div class="Donacard_orga" style="color: black;">${main2.cntr_rcvfvr}</div>
                         <div class="Donacard_orga" style="color: black;"><strong>${main2.percent} %</strong><strong style="float: right"><fmt:formatNumber value="${main2.ctbny_pc}" pattern="#,###"/>원</strong></div>
+                        <div class="sl_progressBarWrap">
+                            <span class="sl_bar" style="width: ${main2.percent}%"></span>
+                        </div>
                     </div>
                 </a>
             </c:if>
@@ -266,6 +293,9 @@
                         <strong class="Donacard_title" style="color: black">${main3.cntr_ttl}</strong>
                         <div class="Donacard_orga" style="color: black;">${main3.cntr_rcvfvr}</div>
                         <div class="Donacard_orga" style="color: black;"><strong>${main3.percent} %</strong><strong style="float: right"><fmt:formatNumber value="${main3.ctbny_pc}" pattern="#,###"/>원</strong></div>
+                        <div class="sl_progressBarWrap">
+                            <span class="sl_bar" style="width: ${main3.percent}%"></span>
+                        </div>
                     </div>
                 </a>
             </c:if>
