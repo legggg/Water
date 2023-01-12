@@ -1,3 +1,7 @@
+*{
+    font-family: 'Nanum Gothic', cursive;
+}
+
 div {
     display: block;
 }
