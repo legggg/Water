@@ -44,7 +44,7 @@ public class AdminController {
     public String postDonasRegister(DonaVo vo) throws Exception {
         adminService.register(vo);
 
-        return "redirect:/index";
+        return "redirect:/indexlist";
     }
 
     // 기부 목록 페이지
@@ -77,7 +77,7 @@ public class AdminController {
     public String postDonasModify(DonaVo vo) throws Exception {
         adminService.donasModify(vo);
 
-        return "redirect:/index";
+        return "redirect:/indexlist";
     }
 
     // 기부 삭제
@@ -85,7 +85,7 @@ public class AdminController {
     public String postDonasDelete(@RequestParam("n") int cntr_sn) {
         adminService.donasDelete(cntr_sn);
 
-        return "redirect:/index";
+        return "redirect:/indexlist";
     }
 
     // 기부 소통글 등록 페이지
@@ -100,7 +100,7 @@ public class AdminController {
     public String postMlrdRegister(MlrdVo vo) throws Exception {
         adminService.mlrdRegister(vo);
 
-        return "redirect:/index";
+        return "redirect:/indexmlrdlist";
     }
 
     // 기부 소통글 목록 페이지
@@ -117,18 +117,22 @@ public class AdminController {
         model.addAttribute("mlrdview", mlrdview);
     }
 
-    // 기부 수정 페이지
+
+    // 기부 소통글 수정 페이지
     @GetMapping("/indexmlrdmodify")
     public void getMlrdModify(@RequestParam("n") int mlrd_sn, Model model) throws Exception {
-        MlrdVo mlrd = adminService.mlrdView(mlrd_sn);
-        model.addAttribute("mlrd", mlrd);
+        MlrdVo mlrdview = adminService.mlrdView(mlrd_sn);
+        model.addAttribute("mlrdview", mlrdview);
+
+        List<DonaVo> list = adminService.donaslist();
+        model.addAttribute("mlrdlist", list);
     }
 
-    // 기부 소통 수정
+    // 기부 소통글 수정
     @PostMapping("/indexmlrdmodify")
     public String postMlrdModify(MlrdVo vo) throws Exception {
         adminService.mlrdModify(vo);
 
-        return "redirect:/index";
+        return "redirect:/indexmlrdlist";
     }
 }

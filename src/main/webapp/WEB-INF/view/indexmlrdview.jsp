@@ -38,7 +38,7 @@
                 </div>
 
                 <div class="button_wrap">
-                    <button type="button" class="modify_button" onclick="location.href='indexmlrdmodify?n=${mlrdview.cntr_sn}'">수정</button>
+                    <button type="button" class="modify_button" onclick="location.href='indexmlrdmodify?n=${mlrdview.mlrd_sn}'">수정</button>
                     <form action="/indexmlrddelete" method="post">
                         <button type="button" id="delete_Btn" class="delete_button">삭제</button>
                     </form>
