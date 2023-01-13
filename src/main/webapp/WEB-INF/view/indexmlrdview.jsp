@@ -36,6 +36,13 @@
                     <label style="margin-bottom: 10px">기부 내용</label>
                     <span>${mlrdview.mlrd_cn}</span>
                 </div>
+
+                <div class="button_wrap">
+                    <button type="button" class="modify_button" onclick="location.href='indexmlrdmodify?n=${mlrdview.cntr_sn}'">수정</button>
+                    <form action="/indexmlrddelete" method="post">
+                        <button type="button" id="delete_Btn" class="delete_button">삭제</button>
+                    </form>
+                </div>
             </div>
         </form>
     </div>

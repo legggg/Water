@@ -46,8 +46,4 @@ public class MainController {
         return "donaing";
     }
 
-    @GetMapping("/map")
-    public String map() {
-        return "map";
-    }
 }

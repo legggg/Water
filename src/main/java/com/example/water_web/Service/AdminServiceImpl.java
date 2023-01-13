@@ -60,7 +60,7 @@ public class AdminServiceImpl implements AdminService{
 
     // 기부 삭제
     @Override
-    public void donasDelete(int cntr_sn) throws Exception {
+    public void donasDelete(int cntr_sn) {
         dao.donasDelete(cntr_sn);
     }
 
@@ -86,5 +86,11 @@ public class AdminServiceImpl implements AdminService{
     @Override
     public MlrdVo mlrdView(int mlrd_sn) throws Exception {
         return dao.mlrdView(mlrd_sn);
+    }
+
+    // 소통 수정
+    @Override
+    public void mlrdModify(MlrdVo vo) throws Exception {
+        dao.mlrdModify(vo);
     }
 }

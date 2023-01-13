@@ -86,7 +86,9 @@
 
                 <div class="button_wrap">
                     <button type="button" class="modify_button" onclick="location.href='indexmodify?n=${donas.cntr_sn}'">수정</button>
-                    <button type="button" class="delete_button">삭제</button>
+                    <form action="/indexdelete" method="post">
+                        <button type="button" id="delete_Btn" class="delete_button">삭제</button>
+                    </form>
                 </div>
             </div>
         </form>
@@ -95,17 +97,3 @@
 
 </body>
 </html>
-
-<script>
-
-    $("#delete_button").click(function(){
-
-        var con = confirm("정말로 삭제하시겠습니까?");
-
-        if(con) {
-            formObj.attr("action", "/indexdelete");
-            formObj.submit();
-        }
-    });
-
-</script>

@@ -82,7 +82,7 @@ public class AdminController {
 
     // 기부 삭제
     @PostMapping("/indexdelete")
-    public String postDonasDelete(@RequestParam("n") int cntr_sn) throws Exception {
+    public String postDonasDelete(@RequestParam("n") int cntr_sn) {
         adminService.donasDelete(cntr_sn);
 
         return "redirect:/index";
@@ -115,5 +115,20 @@ public class AdminController {
     public void getMlrdview(@RequestParam("q") int mlrd_sn, Model model) throws Exception {
         MlrdVo mlrdview = adminService.mlrdView(mlrd_sn);
         model.addAttribute("mlrdview", mlrdview);
+    }
+
+    // 기부 수정 페이지
+    @GetMapping("/indexmlrdmodify")
+    public void getMlrdModify(@RequestParam("n") int mlrd_sn, Model model) throws Exception {
+        MlrdVo mlrd = adminService.mlrdView(mlrd_sn);
+        model.addAttribute("mlrd", mlrd);
+    }
+
+    // 기부 소통 수정
+    @PostMapping("/indexmlrdmodify")
+    public String postMlrdModify(MlrdVo vo) throws Exception {
+        adminService.mlrdModify(vo);
+
+        return "redirect:/index";
     }
 }
