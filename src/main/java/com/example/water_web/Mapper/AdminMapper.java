@@ -30,4 +30,10 @@ public interface AdminMapper {
 
     // 기부 소통글 등록
     void mlrdRegister(MlrdVo vo) throws Exception;
+
+    // 기부 소통글 목록
+    List<DonaVo> mlrdList() throws Exception;
+
+    // 기부 소통글 조회
+    MlrdVo mlrdView(int mlrd_sn) throws Exception;
 }

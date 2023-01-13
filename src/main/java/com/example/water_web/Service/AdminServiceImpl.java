@@ -53,11 +53,13 @@ public class AdminServiceImpl implements AdminService{
     }
 
     // 기부 수정
+    @Override
     public void donasModify(DonaVo vo) throws Exception {
         dao.donasModify(vo);
     }
 
     // 기부 삭제
+    @Override
     public void donasDelete(int cntr_sn) throws Exception {
         dao.donasDelete(cntr_sn);
     }
@@ -72,5 +74,17 @@ public class AdminServiceImpl implements AdminService{
         vo.setRgtr_dt(date);
 
         dao.mlrdRegister(vo);
+    }
+
+    // 소통 목록
+    @Override
+    public List<DonaVo> mlrdList() throws Exception {
+        return dao.mlrdList();
+    }
+
+    // 소통 조회
+    @Override
+    public MlrdVo mlrdView(int mlrd_sn) throws Exception {
+        return dao.mlrdView(mlrd_sn);
     }
 }

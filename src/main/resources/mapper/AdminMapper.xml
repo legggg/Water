@@ -72,6 +72,12 @@
         delete from tb_cntr
         where cntr_sn = #{cntr_sn}
     </delete>
+        <!-- 상품 삭제 -->
+<!--        <update id="donasDelete" parameterType="com.example.water_web.Vo.DonaVo">-->
+<!--            UPDATE tb_cntr-->
+<!--            SET use_yn = 'N'-->
+<!--            WHERE cntr_sn = #{cntr_sn}-->
+<!--        </update>-->
 
     <!-- 기부 소통글 등록 -->
     <insert id="mlrdRegister" parameterType="com.example.water_web.Vo.MlrdVo">
@@ -90,11 +96,18 @@
                  #{cntr_end_dt})
     </insert>
 
-<!--    &lt;!&ndash; 상품 삭제 &ndash;&gt;-->
-<!--    <update id="donasDelete" parameterType="com.example.water_web.Vo.DonaVo">-->
-<!--        UPDATE tb_cntr-->
-<!--        SET use_yn = 'N'-->
-<!--        WHERE cntr_sn = #{cntr_sn}-->
-<!--    </update>-->
+    <!-- 기부 소통글 조회 -->
+    <select id="mlrdList" resultType="com.example.water_web.Vo.MlrdVo">
+        select *
+        from tb_mlrd
+        order by cntr_sn asc
+    </select>
+
+    <!-- 기부 소통글 조회 -->
+    <select id="mlrdView" resultType="com.example.water_web.Vo.MlrdVo">
+        select *
+        from tb_mlrd
+        where mlrd_sn = #{mlrd_sn}
+    </select>
 
 </mapper>

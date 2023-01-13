@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/donainglist.css">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap" rel="stylesheet">
 </head>
+
 <style>
     .sl_progressBarWrap {
         margin-top: 5px;
@@ -32,6 +33,8 @@
         -webkit-animation: animate-width 1.5s both;
         animation: animate-width 1.5s both;
     }
+    .cross_bar { background-color: #439A97; height: 215.46px; text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;}
+    .cbt { font-size: 25px; color: white; line-height: 42px }
 </style>
 
 <body>
@@ -39,8 +42,10 @@
     <div>
         <%@ include file="dona.jsp"%>
     </div>
+    <div class="cross_bar">
+        <h3 class="content_title cbt">여러분들의 소중한 기부가<br/> 이들에게는 큰 힘이 되었어요!</h3>
+    </div>
     <div role="main" class="content">
-        <h3 class="content_title">소중한 기부 감사드려요</h3>
         <div class="card_wrap">
             <c:forEach items="${donamlrd}" var="donamlrd">
                 <jsp:useBean id="now" class="java.util.Date" />

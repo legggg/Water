@@ -83,7 +83,6 @@ public class AdminController {
     // 기부 삭제
     @PostMapping("/indexdelete")
     public String postDonasDelete(@RequestParam("n") int cntr_sn) throws Exception {
-        // @RequestParam("n")으로 인해, URL주소에 있는 n의 값을 가져와 gdsNum에 저장
         adminService.donasDelete(cntr_sn);
 
         return "redirect:/index";
@@ -104,8 +103,17 @@ public class AdminController {
         return "redirect:/index";
     }
 
+    // 기부 소통글 목록 페이지
+    @GetMapping("/indexmlrdlist")
+    public void getMlrdList(Model model) throws Exception {
+        List<DonaVo> mlrdlist = adminService.mlrdList();
+        model.addAttribute("mlrdlist", mlrdlist);
+    }
 
-
-
-
+    // 기부 소통글 조회 페이지
+    @GetMapping("/indexmlrdview")
+    public void getMlrdview(@RequestParam("q") int mlrd_sn, Model model) throws Exception {
+        MlrdVo mlrdview = adminService.mlrdView(mlrd_sn);
+        model.addAttribute("mlrdview", mlrdview);
+    }
 }

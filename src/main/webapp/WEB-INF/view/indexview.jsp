@@ -80,15 +80,13 @@
 
                 <!-- 기부방법이 기부금일때만 나오도록 해야하는디.... -->
                 <div class="user_wrap">
-                    <label>기부가격</label>
+                    <label>현재까지 모인 기부액</label>
                     <span><fmt:formatNumber value="${donas.cntr_obctr}" pattern="###,###,###"/></span>
                 </div>
 
                 <div class="button_wrap">
                     <button type="button" class="modify_button" onclick="location.href='indexmodify?n=${donas.cntr_sn}'">수정</button>
-                    <form action="/indexdelete" method="post">
-                        <button type="button" class="delete_button" onclick="delUser()">삭제</button>
-                    </form>
+                    <button type="button" class="delete_button">삭제</button>
                 </div>
             </div>
         </form>
@@ -100,14 +98,14 @@
 
 <script>
 
-    function delUser() {
-        var result = confirm("삭제하시겠습니까?");
+    $("#delete_button").click(function(){
 
-        if (result) {
-            alert("삭제되었습니다.");
-        } else {
-            return false
+        var con = confirm("정말로 삭제하시겠습니까?");
+
+        if(con) {
+            formObj.attr("action", "/indexdelete");
+            formObj.submit();
         }
-    }
+    });
 
 </script>
