@@ -13,13 +13,25 @@
     .intro_image {
         margin: 100px;
     }
+    body {
+        height: 100%
+    }
+    .wrapper {
+        position: relative;
+        padding-bottom: 60px;
+    }
 </style>
 
 <body>
 <%@ include file="header.jsp"%>
 
-<div class="intro_image">
-    <img src="images/dona.jpg"><a>음..</a>
+<div class="wrapper">
+    <div class="intro_image">
+        <img src="images/dona.jpg"><a>음..</a>
+    </div>
+</div>
+<div>
+    <%@ include file="footer.jsp"%>
 </div>
 
 </body>
