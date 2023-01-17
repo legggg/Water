@@ -78,12 +78,12 @@
                     <!-- Sale badge-->
                     <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">Sale</div>
                     <!-- Product image-->
-                    <img class="card-img-top" src="images/cushion.jpg" alt="..." />
+                    <img class="card-img-top" src="images/5.png" alt="..." />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">이미지 쿠션</h5>
+                            <h5 class="fw-bolder">제주 노지 하우스 감귤</h5>
                             <!-- Product reviews-->
                             <div class="d-flex justify-content-center small text-warning mb-2">
                                 <div class="bi-star-fill"></div>
@@ -93,8 +93,8 @@
                                 <div class="bi-star-fill"></div>
                             </div>
                             <!-- Product price-->
-                            <span class="text-muted text-decoration-line-through">20,000원</span>
-                            15,000원
+                            <span class="text-muted text-decoration-line-through">15,900원</span>
+                            9,900원
                         </div>
                     </div>
                     <!-- Product actions-->
@@ -128,12 +128,12 @@
             <div class="col mb-5">
                 <div class="card h-100">
                     <!-- Product image-->
-                    <img class="card-img-top" src="images/miniphoto.jpg" alt="..." />
+                    <img class="card-img-top" src="images/4.png" alt="..." />
                     <!-- Product details-->
                     <div class="card-body p-4">
                         <div class="text-center">
                             <!-- Product name-->
-                            <h5 class="fw-bolder">미니 앨범</h5>
+                            <h5 class="fw-bolder">고려은단 멀티비타민 60정</h5>
                             <!-- Product reviews-->
                             <div class="d-flex justify-content-center small text-warning mb-2">
                                 <div class="bi-star-fill"></div>
@@ -143,7 +143,7 @@
                                 <div class="bi-star-fill"></div>
                             </div>
                             <!-- Product price-->
-                            20,000원
+                            21,600원
                         </div>
                     </div>
                     <!-- Product actions-->
