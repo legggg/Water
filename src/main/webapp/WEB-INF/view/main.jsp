@@ -220,7 +220,7 @@
 
 <div class="Maincardarea">
     <h3 class="Maincardarea_text">
-        <a href="#" class="Maincardarea_link" style="text-decoration: none; color: inherit;" > 기부 목록 <i class="Maincarearea_icon"></i></a>
+        <a href="#" class="Maincardarea_link" style="text-decoration: none; color: inherit;" > 기부금으로 기부하기 <i class="Maincarearea_icon"></i></a>
     </h3>
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
@@ -249,7 +249,7 @@
 
 <div class="Maincardarea">
     <h3 class="Maincardarea_text">
-        <a href="#" class="Maincardarea_link" style="text-decoration: none; color: inherit;" > 대충 재능 기부 <i class="Maincarearea_icon"></i></a>
+        <a href="#" class="Maincardarea_link" style="text-decoration: none; color: inherit;" > 당신의 재능을 나눠주세요 <i class="Maincarearea_icon"></i></a>
     </h3>
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
@@ -278,7 +278,7 @@
 
 <div class="Maincardarea">
     <h3 class="Maincardarea_text">
-        <a href="#" class="Maincardarea_link" style="text-decoration: none; color: inherit;" > 자투리 상품 기부 <i class="Maincarearea_icon"></i></a>
+        <a href="#" class="Maincardarea_link" style="text-decoration: none; color: inherit;" > 안쓰는 물품들을 전달해 보아요 <i class="Maincarearea_icon"></i></a>
     </h3>
     <ul class="Donacard_list">
         <li style="display: inline-block; vertical-align: top;">
